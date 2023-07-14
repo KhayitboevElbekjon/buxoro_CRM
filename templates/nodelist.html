@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Saqlanmalar</title>
+  
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+ 
+     <!-- root CSS -->
+     <link rel="stylesheet" href="../root.css">
+     <!-- standart CSS -->
+     <link rel="stylesheet" href="../standart.css">
+	 <!-- hard CSS -->
+	 <link rel="stylesheet" href="nodelist.css">
+</head>
+<body>
+	
+	
+	<nav class="navbar">
+		<div class="logo_item">
+			<i class="fa-solid fa-bars" id="sidebarOpen"></i>
+		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		</div>
+		<div class="search_bar">
+			 <p>Ustozlar oynasi</p>
+		</div>
+		<div class="navbar_content">
+		  <i class="bi bi-grid"></i>
+		  <i class='bx' id="darkLight"></i>
+		  <i class='bx bx-bell' ></i>
+		  <img src="images/profile.jpg" alt="" class="profile" />
+		</div>
+	  </nav>
+	  <!-- sidebar -->
+	  <nav class="sidebar">
+		<div class="menu_content">
+		  <ul class="menu_items">
+			<div class="menu_title menu_dahsboard"></div>
+			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+			<!-- start -->
+			<li class="item">
+				<a href="./indexteacher.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-chart-line"></i>
+				  </span>
+				  <span class="navlink"> Dashboard</span>
+				</a>
+			  </li>
+	
+			  <li class="item">
+				<a href="./reja.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-layer-group"></i>                  </span>
+				  <span class="navlink"> O'quv Rejasi</span>
+				</a>
+			  </li>
+			  <li class="item">
+				<a href="./guruh.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-people-group"></i>                  </span>
+				  <span class="navlink"> Guruhlar</span>
+				</a>
+			  </li>
+			  <li class="item">
+				<a href="#" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-bookmark"></i>              </span>
+				  <span class="navlink"> Saqlamalar</span>
+				</a>
+			  </li>
+			  <li class="item">
+				<a href="#" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-notes-medical"></i>                  </span>
+				  <span class="navlink">Notion</span>
+				</a>
+			  </li>
+		  </ul>
+	
+		  <!-- Sidebar Open / Close -->
+		  <div class="bottom_content">
+			<div class="bottom expand_sidebar">
+			  <span> Expand</span>
+			  <i class="fa-solid fa-right-to-bracket"></i>
+			</div>
+			<div class="bottom collapse_sidebar">
+			  <span> Collapse</span>
+			  <i class="fa-solid fa-arrow-left"></i>
+			</div>
+		  </div>
+		</div>
+	  </nav>
+	  <section class="big_box">
+
+		  <header>
+			  
+			  <form id="new-task-form">
+				  <input 
+				  type="text" 
+				  name="new-task-input" 
+				  id="new-task-input" 
+				  placeholder="Yangi Saqlama qo'shing " />
+				  <input 
+				  type="submit"
+				  id="new-task-submit" 
+				  value="Qo'shing" />
+				</form>
+			</header>
+			<main>
+				<section class="task-list">
+					<h2>Saqlanganlar</h2>
+					
+					<div id="tasks">
+						
+						<div class="task">
+							<div class="content">
+								<input 
+								type="text" 
+								class="text" 
+								value="A new task"
+								readonly>
+								<p class="time">07.01.2023</p>
+							</div>
+							<div class="actions">
+								<button class="edit">Edit</button>
+								<button class="delete">Delete</button>
+							</div>
+						</div>
+						
+					</div>
+				</section>
+			</main>
+			
+			</section>
+	<script src="./nodelist.js"></script>
+	<script src="/standart.js"></script>
+</body>
+</html>

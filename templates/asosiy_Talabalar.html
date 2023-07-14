@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talabalar </title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- root CSS -->
+    <link rel="stylesheet" href="../root.css">
+    <!-- standart CSS -->
+    <link rel="stylesheet" href="../standart.css">
+
+   <!-- table CSS -->
+    <link rel="stylesheet" href="/table.css">
+    <link rel="stylesheet" href="admin_form.css">
+    <style></style>
+</head>
+<body>
+  <nav class="navbar">
+		<div class="logo_item">
+      <i class="fa-solid fa-bars" id="sidebarOpen"></i>
+		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		</div>
+		<div class="search_bar">
+			 <p>Ustozlar oynasi</p>
+		</div>
+		<div class="navbar_content">
+		  <i class="bi bi-grid"></i>
+		  <i class='bx' id="darkLight"></i>
+		  <i class='bx bx-bell' ></i>
+		  <img src="images/profile.jpg" alt="" class="profile" />
+		</div>
+	  </nav>
+	  <!-- sidebar -->
+	  <nav class="sidebar">
+		<div class="menu_content">
+		  <ul class="menu_items">
+			<div class="menu_title menu_dahsboard"></div>
+			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+			<!-- start -->
+			<li class="item">
+				<a href="./indexadmin.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-chart-line"></i>
+          
+				  </span>
+				  <span class="navlink"> Dashboard</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="./kurs.html" class="nav_link">
+            <span class="navlink_icon">
+           <i class="fa-solid fa-book-open-reader"></i>             </span>
+            <span class="navlink"> Kurslar</span>
+          </a>
+          </li>
+        <li class="item">
+          <a href="./guruhadmin.html" class="nav_link">
+            <span class="navlink_icon">
+            <i class="fa-solid fa-people-group"></i>                  </span>
+            <span class="navlink"> Guruhlar</span>
+          </a>
+          </li>
+			  <li class="item">
+				<a href="./talabgorTalabalar.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-brands fa-stack-overflow"></i>                </span>
+				  <span class="navlink">So'rov</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="./kutish.html" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-eye"></i>                 </span>
+            <span class="navlink">Kutayotganlar</span>
+          </a>
+        </li>
+			  <li class="item">
+          <a href="./sinov.html" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-spell-check"></i>               </span>
+            <span class="navlink">Sinovdagilar</span>
+          </a>
+        </li>
+			  <li class="item">
+				<a href="./asosiy_Talabalar.html" class="nav_link">
+				  <span class="navlink_icon">
+            <i class="fa-solid fa-people-group"></i>                  </span>
+				  <span class="navlink">Talabalar</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="./davomatadmin.html" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-bell-slash"></i>                </span>
+            <span class="navlink">Davomat</span>
+          </a>
+          </li>
+          <li class="item">
+            <a href="./hujjatlar.html" class="nav_link">
+              <span class="navlink_icon">
+                <i class="fa-solid fa-file-pdf"></i>                </span>
+              <span class="navlink">Hujjat</span>
+            </a>
+            </li>
+            <li class="item">
+              <a href="./teacher_table.html" class="nav_link">
+                <span class="navlink_icon">
+                  <i class="fa-solid fa-chalkboard-user"></i>                </span>
+                <span class="navlink">Teacher</span>
+              </a>
+              </li>
+              <li class="item">
+                <a href="./dars.html" class="nav_link">
+                  <span class="navlink_icon">
+                    <i class="fa-solid fa-graduation-cap"></i>               </span>
+                  <span class="navlink">Dars</span>
+                </a>
+                </li>
+                <li class="item">
+                  <a href="./dars.html" class="nav_link">
+                    <span class="navlink_icon">
+                      <i class="fa-solid fa-sack-dollar"></i>              </span>
+                    <span class="navlink">Moliya</span>
+                  </a>
+                  </li>
+		  </ul>
+	
+		  <!-- Sidebar Open / Close -->
+		  <div class="bottom_content">
+			<div class="bottom expand_sidebar">
+			  <span> Expand</span>
+			  <i class="fa-solid fa-right-to-bracket"></i>
+			</div>
+			<div class="bottom collapse_sidebar">
+			  <span> Collapse</span>
+			  <i class="fa-solid fa-arrow-left"></i>
+			</div>
+		  </div>
+		</div>
+	  </nav>
+    <main class="table">
+        <section class="table__header">
+            <h1> Talabalar</h1>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"><i class="fa-solid fa-download"></i></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <label>Export As &nbsp; &#10140;</label>
+                    <label for="export-file" id="toPDF">PDF <img src="images/pdf.png" alt=""></label>
+                    <label for="export-file" id="toJSON">JSON <img src="images/json.png" alt=""></label>
+                    <label for="export-file" id="toCSV">CSV <img src="images/csv.png" alt=""></label>
+                    <label for="export-file" id="toEXCEL">EXCEL <img src="images/excel.png" alt=""></label>
+                </div>
+            </div>
+        </section>
+        <section class="table__body">
+            <table id="customers_table">
+                <thead>
+                    <tr>
+            
+                        <th> rasm </th>
+                        <th> ism <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Familya <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>  Telefon raqami <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Ota-ona  raqami <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Kursi<span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Guruh<span class="icon-arrow">&UpArrow;</span></th>
+                        <th>hissobi<span class="icon-arrow">&UpArrow;</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        
+                        <td class="name"> <img src="/forUsers/images/img2.jpg" alt="" srcset=""> </td>
+                        <td class="fam"> ivan</td>
+                        <td class="fam"> Lee</td>
+                        <td class="yili">+998 90 123 45 67</td>
+                        <td class="tel"> +998 90 123 45 67 </td>
+                        <td>
+                            <p class="status">Ona tili</p>  
+                        </td>
+                        <td> 615-21</td>
+                        <td> 10 000</td>
+                    </tr>
+                    <tr>
+                        
+                        <td class="name"> <img src="/forUsers/images/img3.jpg" alt="" srcset=""> </td>
+                        <td class="fam"> ivan</td>
+                        <td class="fam"> Le</td>
+                        <td class="yili">+998 90 123 45 67</td>
+                        <td class="tel"> +998 90 123 45 67 </td>
+                        <td>
+                            <p class="status">Ona tili</p>  
+                        </td>
+                        <td> 615-21</td>
+                        <td> 50 000</td>
+                    </tr>
+                    <tr>
+                        
+                        <td class="name"> <img src="/forUsers/images/img2.jpg" alt="" srcset=""> </td>
+                        <td class="fam"> ivan</td>
+                        <td class="fam"> Lee</td>
+                        <td class="yili">+998 90 123 45 67</td>
+                        <td class="tel"> +998 90 123 45 67 </td>
+                        <td>
+                            <p class="status">Ona tili</p>  
+                        </td>
+                        <td> 615-21</td>
+                        <td> 50 000</td>
+                    </tr>
+                   
+        
+                     
+                    
+                </tbody>
+            </table>
+            
+          </section>
+         
+    </main>   
+    
+    <section class="container hidden ">
+        <i class="beack fa-solid fa-circle-left fa-xl"></i>
+      <form action="#">
+        <div class="form first">
+            <div class="details personal">
+                <span class="title">Hissobni to'ldirish</span>
+                <div class="fields">
+                    <div class="input-field ">
+                        <label>to'lov qilayotgan shaxs</label>
+                        <input type="text" placeholder="Ism" required>
+                    </div>
+                    <div class="input-field">
+                        <label>To'lov miqdori</label>
+                        <input type="number" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Kartasi</label>
+                        <input  type="text" placeholder="" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Telefon raqami</label>
+                        <input  type="tel" value="+998 9" required>
+                    </div>
+                   
+                </div>
+                
+                <div class="buttons">
+                    
+                    <button type="submit" class="sumbit">
+                        <span class="btnText">Submit</span>
+                    </button>
+                </div>
+                <p>To'lov tarixi</p>
+                <section class="table__body">
+                    <table  id="hissob_tb">
+                        <thead>
+                            <tr>
+                    
+                                <th> ism </th>
+                                <th>  Telefon raqami </th>
+                                <th>Miqdori</th>
+                                <th>sanasi</th> 
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            <tr>
+                                
+                                <td class="fam"> ivan</td>
+                                <td class="yili">+998 90 123 45 67</td>
+                                <td class="tel"> 70 000 </td>
+                                <td class="oxirgi"> 2022.01.25</td>
+                               
+                            </tr>
+                            <tr>
+                                
+                                <td class="fam"> ivan</td>
+                                <td class="yili">+998 90 123 45 67</td>
+                                <td class="tel"> 70 000 </td>
+                                <td class="oxirgi"> 2022.01.25</td>
+                               
+                            </tr>
+                            <tr>
+                                
+                                <td class="fam"> ivan</td>
+                                <td class="yili">+998 90 123 45 67</td>
+                                <td class="tel"> 70 000 </td>
+                                <td class="oxirgi"> 2022.01.25</td>
+                               
+                            </tr>
+                            <tr>
+                                
+                                <td class="fam"> ivan</td>
+                                <td class="yili">+998 90 123 45 67</td>
+                                <td class="tel"> 70 00 </td>
+                                <td class="oxirgi"> 2022.01.25</td>
+                               
+                            </tr>
+                
+                             
+                            
+                        </tbody>
+                    </table>
+                    
+                  </section>
+            </div>
+            <div class="studen_action">
+                <div class="delete">
+                    <i class="fa-solid fa-trash"></i>
+                </div>
+            </div>
+        </div>
+    </form>
+    </section> 
+
+    <footer>
+      <div class="content">
+        <div class="top">
+          <div class="logo-details">
+            <i class="fab fa-slack"></i>
+            <span class="logo_name">NodirbekEDU</span>
+          </div>
+          <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+  
+      </div>
+      <div class="bottom-details">
+        <div class="bottom_text">
+          <span class="copyright_text">Copyright © 2021 <a href="#">CodingLab.</a>All rights reserved</span>
+          <span class="policy_terms">
+            <a href="#">Privacy policy</a>
+            <a href="#">Terms & condition</a>
+          </span>
+        </div>
+      </div>
+    </footer>
+    <style>
+      footer{
+  background: #5683ff;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  margin-top: 200px;
+}
+/* footer::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 100px;
+  height: 1px;
+  width: 100%;
+  background: #AFAFB6;
+} */
+footer .content{
+  max-width: 1250px;
+  margin: auto;
+  padding: 30px 40px 40px 40px;
+}
+footer .content .top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.content .top .logo-details{
+  color: #fff;
+  font-size: 30px;
+}
+.content .top .media-icons{
+  display: flex;
+}
+.content .top .media-icons a{
+  height: 40px;
+  width: 40px;
+  margin: 0 8px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  color: #fff;
+  font-size: 17px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+.top .media-icons a:nth-child(1){
+  background: #4267B2;
+}
+.top .media-icons a:nth-child(1):hover{
+  color: #4267B2;
+  background: #fff;
+}
+.top .media-icons a:nth-child(2){
+  background: #1DA1F2;
+}
+.top .media-icons a:nth-child(2):hover{
+  color: #1DA1F2;
+  background: #fff;
+}
+.top .media-icons a:nth-child(3){
+  background: #E1306C;
+}
+.top .media-icons a:nth-child(3):hover{
+  color: #E1306C;
+  background: #fff;
+}
+.top .media-icons a:nth-child(4){
+  background: #0077B5;
+}
+.top .media-icons a:nth-child(4):hover{
+  color: #0077B5;
+  background: #fff;
+}
+.top .media-icons a:nth-child(5){
+  background: #FF0000;
+}
+.top .media-icons a:nth-child(5):hover{
+  color: #FF0000;
+  background: #fff;
+}
+
+
+footer .bottom-details{
+  width: 100%;
+  background: #4267B2;
+}
+footer .bottom-details .bottom_text{
+  max-width: 1250px;
+  margin: auto;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.bottom-details .bottom_text span,
+.bottom-details .bottom_text a{
+  font-size: 14px;
+  font-weight: 300;
+  color: #fff;
+  opacity: 0.8;
+  text-decoration: none;
+}
+.bottom-details .bottom_text a:hover{
+  opacity: 1;
+  text-decoration: underline;
+}
+.bottom-details .bottom_text a{
+  margin-right: 10px;
+}
+@media (max-width: 900px) {
+  footer .content .link-boxes{
+    flex-wrap: wrap;
+  }
+  footer .content .link-boxes .input-box{
+    width: 40%;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 700px){
+  footer{
+    position: relative;
+  }
+  .content .top .logo-details{
+    font-size: 26px;
+  }
+  .content .top .media-icons a{
+    height: 35px;
+    width: 35px;
+    font-size: 14px;
+    line-height: 35px;
+  }
+  footer .content .link-boxes .box{
+    width: calc(100% / 3 - 10px);
+  }
+  footer .content .link-boxes .input-box{
+    width: 60%;
+  }
+  .bottom-details .bottom_text span,
+  .bottom-details .bottom_text a{
+    font-size: 12px;
+  }
+}
+@media (max-width: 520px){
+  footer::before{
+    top: 145px;
+  }
+  footer .content .top{
+    flex-direction: column;
+  }
+  .content .top .media-icons{
+    margin-top: 16px;
+  }
+  footer .content .link-boxes .box{
+    width: calc(100% / 2 - 10px);
+  }
+  footer .content .link-boxes .input-box{
+    width: 100%;
+  }
+}
+    </style>
+
+
+<script src="./asosiyTalaba.js"></script>   
+    <script src="/table.js"></script>
+    <script src="/standart.js"></script>
+</body>
+</html>

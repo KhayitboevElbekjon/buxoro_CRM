@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Table</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- root CSS -->
+    <link rel="stylesheet" href="../root.css">
+    <!-- standart CSS -->
+    <link rel="stylesheet" href="../standart.css">
+
+   <!-- table CSS -->
+    <link rel="stylesheet" href="/table.css">
+
+    <link rel="stylesheet" href="./admin_form.css">
+</head>
+<body>
+  <nav class="navbar">
+		<div class="logo_item">
+      <i class="fa-solid fa-bars" id="sidebarOpen"></i>
+		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		</div>
+		<div class="search_bar">
+			 <p>Ustozlar oynasi</p>
+		</div>
+		<div class="navbar_content">
+		  <i class="bi bi-grid"></i>
+		  <i class='bx' id="darkLight"></i>
+		  <i class='bx bx-bell' ></i>
+		  <img src="images/profile.jpg" alt="" class="profile" />
+		</div>
+	  </nav>
+	  <!-- sidebar -->
+	  <nav class="sidebar">
+		<div class="menu_content">
+		  <ul class="menu_items">
+			<div class="menu_title menu_dahsboard"></div>
+			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+			<!-- start -->
+			<li class="item">
+				<a href="./indexadmin.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-chart-line"></i>
+          
+				  </span>
+				  <span class="navlink"> Dashboard</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="./kurs.html" class="nav_link">
+            <span class="navlink_icon">
+           <i class="fa-solid fa-book-open-reader"></i>             </span>
+            <span class="navlink"> Kurslar</span>
+          </a>
+          </li>
+        <li class="item">
+          <a href="./guruhadmin.html" class="nav_link">
+            <span class="navlink_icon">
+            <i class="fa-solid fa-people-group"></i>                  </span>
+            <span class="navlink"> Guruhlar</span>
+          </a>
+          </li>
+			  <li class="item">
+				<a href="./talabgorTalabalar.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-brands fa-stack-overflow"></i>                </span>
+				  <span class="navlink">So'rov</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="./kutish.html" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-eye"></i>                 </span>
+            <span class="navlink">Kutayotganlar</span>
+          </a>
+        </li>
+			  <li class="item">
+          <a href="./sinov.html" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-spell-check"></i>               </span>
+            <span class="navlink">Sinovdagilar</span>
+          </a>
+        </li>
+			  <li class="item">
+				<a href="./asosiy_Talabalar.html" class="nav_link">
+				  <span class="navlink_icon">
+            <i class="fa-solid fa-people-group"></i>                  </span>
+				  <span class="navlink">Talabalar</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="./davomatadmin.html" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-bell-slash"></i>                </span>
+            <span class="navlink">Davomat</span>
+          </a>
+          </li>
+          <li class="item">
+            <a href="./hujjatlar.html" class="nav_link">
+              <span class="navlink_icon">
+                <i class="fa-solid fa-file-pdf"></i>                </span>
+              <span class="navlink">Hujjat</span>
+            </a>
+            </li>
+            <li class="item">
+              <a href="./teacher_table.html" class="nav_link">
+                <span class="navlink_icon">
+                  <i class="fa-solid fa-chalkboard-user"></i>                </span>
+                <span class="navlink">Teacher</span>
+              </a>
+              </li>
+              <li class="item">
+                <a href="./dars.html" class="nav_link">
+                  <span class="navlink_icon">
+                    <i class="fa-solid fa-graduation-cap"></i>               </span>
+                  <span class="navlink">Dars</span>
+                </a>
+                </li>
+                <li class="item">
+                  <a href="./dars.html" class="nav_link">
+                    <span class="navlink_icon">
+                      <i class="fa-solid fa-sack-dollar"></i>              </span>
+                    <span class="navlink">Moliya</span>
+                  </a>
+                  </li>
+		  </ul>
+	
+		  <!-- Sidebar Open / Close -->
+		  <div class="bottom_content">
+			<div class="bottom expand_sidebar">
+			  <span> Expand</span>
+			  <i class="fa-solid fa-right-to-bracket"></i>
+			</div>
+			<div class="bottom collapse_sidebar">
+			  <span> Collapse</span>
+			  <i class="fa-solid fa-arrow-left"></i>
+			</div>
+		  </div>
+		</div>
+	  </nav>
+    <main class="table">
+        <section class="table__header">
+            <h1>O'qituvchilar jadvali</h1>
+            <div class="add">
+              <i class="fa-solid fa-plus"></i>  
+          </div>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"><i class="fa-solid fa-download"></i></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <label>Export As &nbsp; &#10140;</label>
+                    <label for="export-file" id="toPDF">PDF <img src="images/pdf.png" alt=""></label>
+                    <label for="export-file" id="toJSON">JSON <img src="images/json.png" alt=""></label>
+                    <label for="export-file" id="toCSV">CSV <img src="images/csv.png" alt=""></label>
+                    <label for="export-file" id="toEXCEL">EXCEL <img src="images/excel.png" alt=""></label>
+                </div>
+            </div>
+        </section>
+        <section class="table__body">
+            <table id="customers_table">
+                <thead>
+                    <tr>
+                        <th> ism <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Famliyasi <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Tug'ulgan sana <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Telefon raqami <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Manzili <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> login <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> parol <span class="icon-arrow">&UpArrow;</span></th>
+                
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> Ivan</td>
+                        <td> Lee</td>
+                        <td> 2003.06.12</td>
+                        <td> +998 90 123 45 67 </td>
+                        <td> Namangan</td>
+                        <td> AD0145736</td>
+                        <td> FD1234</td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+          </section>
+
+          <section class="select_student hidden">
+            <h1></h1>
+            <form action="">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+             
+                
+                <div class="form_input">
+                  <label for="">Ism</label>
+                    <input type="text" value="" placeholder="ism">
+                    <label for="">Familya</label>
+                    <input type="text"  placeholder="familya">
+                    <label for=""> TugulganSana</label>
+                    <input type="date" value="" placeholder="">
+                    <label for="">Manzil</label>
+                    <input type="text"  placeholder="familya">
+                    <label for="">Login</label>
+                    <input type="text"  placeholder="familya">
+                    <label for="">Parol</label>
+                    <input type="text"  placeholder="familya">
+                </div>
+                <button>kiritish</button>
+            </form>
+            </section>
+
+    </main>
+    <script src="admin_from.js"></script>
+    <script src="/table.js"></script>
+    <script src="/standart.js"></script>
+    
+</body>
+</html>

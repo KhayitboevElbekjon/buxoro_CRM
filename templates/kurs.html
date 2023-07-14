@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurslar || Nodirbek ADU</title>
+    <!-- font CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- root CSS -->
+    <link rel="stylesheet" href="{% static 'root.css' %}">
+    <!-- standart CSS -->
+    <link rel="stylesheet" href="{% static 'standart.css' %}">
+    <!-- hard CSS  -->
+   <link rel="stylesheet" href="{% static '/addbox.css' %}">
+</head>
+<body>
+  <nav class="navbar">
+		<div class="logo_item">
+      <i class="fa-solid fa-bars" id="sidebarOpen"></i>
+		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		</div>
+		<div class="search_bar">
+			 <p>Ustozlar oynasi</p>
+		</div>
+		<div class="navbar_content">
+		  <i class="bi bi-grid"></i>
+		  <i class='bx' id="darkLight"></i>
+		  <i class='bx bx-bell' ></i>
+		  <img src="images/profile.jpg" alt="" class="profile" />
+		</div>
+	  </nav>
+	  <!-- sidebar -->
+	  <nav class="sidebar">
+		<div class="menu_content">
+		  <ul class="menu_items">
+			<div class="menu_title menu_dahsboard"></div>
+			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+			<!-- start -->
+			<li class="item">
+				<a href="/asosiy/IndexAdmin" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-chart-line"></i>
+          
+				  </span>
+				  <span class="navlink"> Dashboard</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="/asosiy/kurslar" class="nav_link">
+            <span class="navlink_icon">
+           <i class="fa-solid fa-book-open-reader"></i>             </span>
+            <span class="navlink"> Kurslar</span>
+          </a>
+          </li>
+        <li class="item">
+          <a href="/asosiy/guruhlar" class="nav_link">
+            <span class="navlink_icon">
+            <i class="fa-solid fa-people-group"></i>                  </span>
+            <span class="navlink"> Guruhlar</span>
+          </a>
+          </li>
+			  <li class="item">
+				<a href="./talabgorTalabalar.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-brands fa-stack-overflow"></i>                </span>
+				  <span class="navlink">So'rov</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="./kutish.html" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-eye"></i>                 </span>
+            <span class="navlink">Kutayotganlar</span>
+          </a>
+        </li>
+			  <li class="item">
+          <a href="./sinov.html" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-spell-check"></i>               </span>
+            <span class="navlink">Sinovdagilar</span>
+          </a>
+        </li>
+			  <li class="item">
+				<a href="./asosiy_Talabalar.html" class="nav_link">
+				  <span class="navlink_icon">
+            <i class="fa-solid fa-people-group"></i>                  </span>
+				  <span class="navlink">Talabalar</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="./davomatadmin.html" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-bell-slash"></i>                </span>
+            <span class="navlink">Davomat</span>
+          </a>
+          </li>
+          <li class="item">
+            <a href="./hujjatlar.html" class="nav_link">
+              <span class="navlink_icon">
+                <i class="fa-solid fa-file-pdf"></i>                </span>
+              <span class="navlink">Hujjat</span>
+            </a>
+            </li>
+            <li class="item">
+              <a href="./teacher_table.html" class="nav_link">
+                <span class="navlink_icon">
+                  <i class="fa-solid fa-chalkboard-user"></i>                </span>
+                <span class="navlink">Teacher</span>
+              </a>
+              </li>
+              <li class="item">
+                <a href="./dars.html" class="nav_link">
+                  <span class="navlink_icon">
+                    <i class="fa-solid fa-graduation-cap"></i>               </span>
+                  <span class="navlink">Dars</span>
+                </a>
+                </li>
+                <li class="item">
+                  <a href="./dars.html" class="nav_link">
+                    <span class="navlink_icon">
+                      <i class="fa-solid fa-sack-dollar"></i>              </span>
+                    <span class="navlink">Moliya</span>
+                  </a>
+                  </li>
+		  </ul>
+	
+		  <!-- Sidebar Open / Close -->
+		  <div class="bottom_content">
+			<div class="bottom expand_sidebar">
+			  <span> Expand</span>
+			  <i class="fa-solid fa-right-to-bracket"></i>
+			</div>
+			<div class="bottom collapse_sidebar">
+			  <span> Collapse</span>
+			  <i class="fa-solid fa-arrow-left"></i>
+			</div>
+		  </div>
+		</div>
+	  </nav>
+<section class="mavzu">
+
+  <div class="popup-box">
+    <div class="popup">
+      <div class="content">
+        <header>
+          <p></p>
+          <i class="fa-solid fa-xmark"></i>
+        </header>
+
+
+        <form method="post"> {% csrf_token %}
+          <div class="row title">
+            <label>Kurs Nomi:</label>
+            <input type="text" spellcheck="false" name="nom">
+          </div>
+            <div class="row title">
+            <label>Ochilgan vaqti:</label>
+            <input type="date" spellcheck="false" name="vaqt">
+          </div>
+<!--          <div class="row description">-->
+<!--            <label>Fan Nomi:</label>-->
+<!--            <input disabled class="havola" type="text" spellcheck="false">-->
+<!--          </div>-->
+<!--          <div class="row description">-->
+<!--            <label>Fan Nomi:</label>-->
+<!--            <input disabled class="havola" type="text" spellcheck="false">-->
+<!--          </div>-->
+          <button></button>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="wrapper">
+
+    <li class="add-box">
+      <div class="icon"><i class="fa-solid fa-plus"></i></div>
+      <p >Yangi Kurs qo'shish</p>
+    </li>
+
+{% for i in kurslar %}
+	<li class="note">
+		<div class="details">
+			<p>Kurs nomi</p>
+		     <span>{{i.nom}}</span>
+             <!-- <span>1-chifan</span> -->
+		</div>
+		<div class="bottom-content">
+			<span>{{i.ochilgan_sana}}</span>
+			<div class="settings">
+				<i  class="fa-solid fa-ellipsis"></i>
+				<ul class="menu">
+					<li class="edit" ><i class="fa-solid fa-pen " ></i>Edit</li>
+					<li><i class="fa-solid fa-trash-can"></i>Delete</li>
+				</ul>
+			</div>
+		</div>
+	</li>
+	  {% endfor %}
+</div>
+</section>
+
+<script src="{% static '/addSection.js' %}"></script>
+
+
+
+
+
+      <script src="{% static '/standart.js' %}"></script>
+</body>
+</html>

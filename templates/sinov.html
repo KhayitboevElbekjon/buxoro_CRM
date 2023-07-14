@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sinovdagi talabalar</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- root CSS -->
+    <link rel="stylesheet" href="../root.css">
+    <!-- standart CSS -->
+    <link rel="stylesheet" href="../standart.css">
+
+   <!-- table CSS -->
+    <link rel="stylesheet" href="/table.css">
+    <link rel="stylesheet" href="./admin_form.css">
+</head>
+<body>
+  <nav class="navbar">
+		<div class="logo_item">
+      <i class="fa-solid fa-bars" id="sidebarOpen"></i>
+		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		</div>
+		<div class="search_bar">
+			 <p>Ustozlar oynasi</p>
+		</div>
+		<div class="navbar_content">
+		  <i class="bi bi-grid"></i>
+		  <i class='bx' id="darkLight"></i>
+		  <i class='bx bx-bell' ></i>
+		  <img src="images/profile.jpg" alt="" class="profile" />
+		</div>
+	  </nav>
+	  <!-- sidebar -->
+	  <nav class="sidebar">
+		<div class="menu_content">
+		  <ul class="menu_items">
+			<div class="menu_title menu_dahsboard"></div>
+			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+			<!-- start -->
+			<li class="item">
+				<a href="./indexadmin.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-chart-line"></i>
+          
+				  </span>
+				  <span class="navlink"> Dashboard</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="./kurs.html" class="nav_link">
+            <span class="navlink_icon">
+           <i class="fa-solid fa-book-open-reader"></i>             </span>
+            <span class="navlink"> Kurslar</span>
+          </a>
+          </li>
+        <li class="item">
+          <a href="./guruhadmin.html" class="nav_link">
+            <span class="navlink_icon">
+            <i class="fa-solid fa-people-group"></i>                  </span>
+            <span class="navlink"> Guruhlar</span>
+          </a>
+          </li>
+			  <li class="item">
+				<a href="./talabgorTalabalar.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-brands fa-stack-overflow"></i>                </span>
+				  <span class="navlink">So'rov</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="./kutish.html" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-eye"></i>                 </span>
+            <span class="navlink">Kutayotganlar</span>
+          </a>
+        </li>
+			  <li class="item">
+          <a href="./sinov.html" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-spell-check"></i>               </span>
+            <span class="navlink">Sinovdagilar</span>
+          </a>
+        </li>
+			  <li class="item">
+				<a href="./asosiy_Talabalar.html" class="nav_link">
+				  <span class="navlink_icon">
+            <i class="fa-solid fa-people-group"></i>                  </span>
+				  <span class="navlink">Talabalar</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="./davomatadmin.html" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-bell-slash"></i>                </span>
+            <span class="navlink">Davomat</span>
+          </a>
+          </li>
+          <li class="item">
+            <a href="./hujjatlar.html" class="nav_link">
+              <span class="navlink_icon">
+                <i class="fa-solid fa-file-pdf"></i>                </span>
+              <span class="navlink">Hujjat</span>
+            </a>
+            </li>
+            <li class="item">
+              <a href="./teacher_table.html" class="nav_link">
+                <span class="navlink_icon">
+                  <i class="fa-solid fa-chalkboard-user"></i>                </span>
+                <span class="navlink">Teacher</span>
+              </a>
+              </li>
+              <li class="item">
+                <a href="./dars.html" class="nav_link">
+                  <span class="navlink_icon">
+                    <i class="fa-solid fa-graduation-cap"></i>               </span>
+                  <span class="navlink">Dars</span>
+                </a>
+                </li>
+                <li class="item">
+                  <a href="./dars.html" class="nav_link">
+                    <span class="navlink_icon">
+                      <i class="fa-solid fa-sack-dollar"></i>              </span>
+                    <span class="navlink">Moliya</span>
+                  </a>
+                  </li>
+		  </ul>
+	
+		  <!-- Sidebar Open / Close -->
+		  <div class="bottom_content">
+			<div class="bottom expand_sidebar">
+			  <span> Expand</span>
+			  <i class="fa-solid fa-right-to-bracket"></i>
+			</div>
+			<div class="bottom collapse_sidebar">
+			  <span> Collapse</span>
+			  <i class="fa-solid fa-arrow-left"></i>
+			</div>
+		  </div>
+		</div>
+	  </nav>
+    <main class="table">
+        <section class="table__header">
+            <h1>Sinovdagi talabalar</h1>
+            <div class="add">
+                <i class="fa-solid fa-plus"></i>  
+            </div>
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"><i class="fa-solid fa-download"></i></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <label>Export As &nbsp; &#10140;</label>
+                    <label for="export-file" id="toPDF">PDF <img src="images/pdf.png" alt=""></label>
+                    <label for="export-file" id="toJSON">JSON <img src="images/json.png" alt=""></label>
+                    <label for="export-file" id="toCSV">CSV <img src="images/csv.png" alt=""></label>
+                    <label for="export-file" id="toEXCEL">EXCEL <img src="images/excel.png" alt=""></label>
+                </div>
+            </div>
+        </section>
+        <section class="table__body">
+            <table id="customers_table">
+                <thead>
+                    <tr>
+                        <th> ism <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Familya <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> manzili<span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Telefon raqami <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>talabgorligi<span class="icon-arrow">&UpArrow;</span></th>
+                        <th>o'qituvchisi<span class="icon-arrow">&UpArrow;</span></th>
+                        <th>guruhi<span class="icon-arrow">&UpArrow;</span></th>
+                        <th>kursi<span class="icon-arrow">&UpArrow;</span></th>
+                        <th>Boshlanish<span class="icon-arrow">&UpArrow;</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="name"> Ivan </td>
+                        <td class="fam"> Lee</td>
+                        <td class="yili"> Namamngan</td>
+                        <td class="tel"> +998 90 123 45 67 </td>
+                        <td>
+                            <p class="status">Ona tili</p>  
+                        </td>
+                        <td> aliyev Valijon</td>
+                        <td> tex_MJ_24</td>
+                        <td> Ona tili</td>
+                        <td> 2023.06.12</td>
+                    </tr>
+                 
+                
+        
+                     
+                    
+                </tbody>
+            </table>
+            
+          </section>
+         
+    </main>   
+    
+    <section class="container hidden ">
+        <i class="beack fa-solid fa-circle-left fa-xl"></i>
+      <form action="#">
+        <div class="form first">
+            <div class="details personal">
+                <span class="title">Personal Details</span>
+                <div class="fields">
+                    <div class="input-field ">
+                        <label>Ism</label>
+                        <input class="input_ism" type="text" placeholder="Ism" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Tugulgan sana</label>
+                        <input class="input_yili" type="date"  value="2003-06-12" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Familya</label>
+                        <input class="input_fam" type="text" placeholder="Familya" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Telefon raqami</label>
+                        <input class="input_tel" type="tel" value="+998 9" required>
+                    </div>
+                   
+                    <div class="input-field">
+                        <label>Talab Qilinayotgan Fan</label>
+                        <input class="input_fan" type="text" placeholder="Fanni kiriting" required>
+                    </div> 
+                   
+                </div>
+                
+                <div class="buttons">
+                    
+                    <button type="submit" class="sumbit">
+                        <span class="btnText">Submit</span>t
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="form second">
+            <div class="details address">
+                <span class="title">Address Details</span>
+                <div class="fields">
+                    <div class="input-field">
+                        <label>Address Type</label>
+                        <input type="text" placeholder="Permanent or Temporary" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Nationality</label>
+                        <input type="text" placeholder="Enter nationality" required>
+                    </div>
+                    <div class="input-field">
+                        <label>State</label>
+                        <input type="text" placeholder="Enter your state" required>
+                    </div>
+                    <div class="input-field">
+                        <label>District</label>
+                        <input type="text" placeholder="Enter your district" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Block Number</label>
+                        <input type="number" placeholder="Enter block number" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Ward Number</label>
+                        <input type="number" placeholder="Enter ward number" required>
+                    </div>
+                </div>
+            </div>
+            <div class="details family">
+                <span class="title">Family Details</span>
+                <div class="fields">
+                    <div class="input-field">
+                        <label>Father Name</label>
+                        <input type="text" placeholder="Enter father name" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Mother Name</label>
+                        <input type="text" placeholder="Enter mother name" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Grandfather</label>
+                        <input type="text" placeholder="Enter grandfther name" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Spouse Name</label>
+                        <input type="text" placeholder="Enter spouse name" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Father in Law</label>
+                        <input type="text" placeholder="Father in law name" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Mother in Law</label>
+                        <input type="text" placeholder="Mother in law name" required>
+                    </div>
+                </div>
+        
+            </div> 
+        </div> -->
+    </form>
+    </section> 
+    <section class="select_student hidden">
+        <h1></h1>
+        <form action="">
+            <i class="fa-solid fa-xmark fa-xl"></i>
+            <select name="" id="">
+                <option value="">asdadf</option>
+                <option value="">asdadf</option>
+                <option value="">asdadf</option>
+                <option value="">asdadf</option>
+            </select>
+            <select name="" id="">
+                <option value="">sdas</option>
+                <option value="">sdas</option>
+                <option value="">sdas</option>
+            </select>
+            
+            <div class="form_input">
+                <input type="text" value="" placeholder="ism">
+                <input type="text"  placeholder="familya">
+                <!-- <input type="text"  placeholder="tel">
+                <input type="text"  placeholder="guruhi"> -->
+            </div>
+            <button>kiritish</button>
+        </form>
+        </section>
+        <section class="select_student hidden">
+            <h1></h1>
+            <form action="">
+                <i class="fa-solid fa-xmark fa-xl"></i>
+                <select name="" id="">
+                    <option value="">asdadf</option>
+                    <option value="">asdadf</option>
+                    <option value="">asdadf</option>
+                    <option value="">asdadf</option>
+                </select>
+                <select name="" id="">
+                    <option value="">sdas</option>
+                    <option value="">sdas</option>
+                    <option value="">sdas</option>
+                </select>
+                
+                <div class="form_input">
+                    <input type="text" value="" placeholder="ism">
+                    <input type="text"  placeholder="familya">
+                    <!-- <input type="text"  placeholder="tel">
+                    <input type="text"  placeholder="guruhi"> -->
+                </div>
+                <button>kiritish</button>
+            </form>
+            </section>
+        <script src="./admin_from.js"></script>
+    <script src="/table.js"></script>
+    <script src="/standart.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- root CSS -->
+    <link rel="stylesheet" href="root.css">
+    <!-- standart CSS -->
+    <link rel="stylesheet" href="standart.css">
+
+   <!-- table CSS -->
+    <link rel="stylesheet" href="table.css">
+</head>
+<body>
+
+    <nav class="navbar">
+		<div class="logo_item">
+		  <i class="fa-solid fa-bars" id="sidebarOpen"></i>
+		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		</div>
+		<div class="search_bar">
+			 <p>Ustozlar oynasi</p>
+		</div>
+		<div class="navbar_content">
+		  <i class="bi bi-grid"></i>
+		  <i class='bx' id="darkLight"></i>
+		  <i class='bx bx-bell' ></i>
+		  <img src="images/profile.jpg" alt="" class="profile" />
+		</div>
+	  </nav>
+	  <!-- sidebar -->
+	  <nav class="sidebar">
+		<div class="menu_content">
+		  <ul class="menu_items">
+			<div class="menu_title menu_dahsboard"></div>
+			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+			<!-- start -->
+			<li class="item">
+				<a href="./indexteacher.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-chart-line"></i>
+				  </span>
+				  <span class="navlink"> Dashboard</span>
+				</a>
+			  </li>
+	
+			  <li class="item">
+				<a href="./reja.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-layer-group"></i>                  </span>
+				  <span class="navlink"> O'quv Rejasi</span>
+				</a>
+			  </li>
+			  <li class="item">
+				<a href="./guruh.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-people-group"></i>                  </span>
+				  <span class="navlink"> Guruhlar</span>
+				</a>
+			  </li>
+			  <li class="item">
+				<a href="./nodelist.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-bookmark"></i>              </span>
+				  <span class="navlink"> Saqlamalar</span>
+				</a>
+			  </li>
+			  <li class="item">
+				<a href="#" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-notes-medical"></i>                  </span>
+				  <span class="navlink">Notion</span>
+				</a>
+			  </li>
+		  </ul>
+	
+		  <!-- Sidebar Open / Close -->
+		  <div class="bottom_content">
+			<div class="bottom expand_sidebar">
+			  <span> Expand</span>
+			  <i class="fa-solid fa-right-to-bracket"></i>
+			</div>
+			<div class="bottom collapse_sidebar">
+			  <span> Collapse</span>
+			  <i class="fa-solid fa-arrow-left"></i>
+			</div>
+		  </div>
+		</div>
+	  </nav>
+    <main class="table">
+        <section class="table__header">
+            <h1>O'zlashtirish</h1>
+            <div class="select">  
+              <i class="fa-solid fa-object-ungroup"></i>
+                <select name="" id="">
+                  <option disabled >Mavzuni tanlang</option>
+                  <option value="1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, nostrum.</option>
+                  <option value="2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, nostrum.</option>
+                  
+                  <option value=3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, nostrum.</option>
+                  <option value="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, nostrum.</option>
+                  
+                </select>
+           
+            </div>
+      
+            <div class="input-group">
+                <input type="search" placeholder="Search Data...">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="export__file">
+                <label for="export-file" class="export__file-btn" title="Export File"><i class="fa-solid fa-download"></i></label>
+                <input type="checkbox" id="export-file">
+                <div class="export__file-options">
+                    <label>Export As &nbsp; &#10140;</label>
+                    <label for="export-file" id="toPDF">PDF <img src="images/pdf.png" alt=""></label>
+                    <label for="export-file" id="toJSON">JSON <img src="images/json.png" alt=""></label>
+                    <label for="export-file" id="toCSV">CSV <img src="images/csv.png" alt=""></label>
+                    <label for="export-file" id="toEXCEL">EXCEL <img src="images/excel.png" alt=""></label>
+                </div>
+            </div>
+        </section>
+        <section class="table__body">
+            <table id="customers_table">
+                <thead>
+                    <tr>
+                        <th> Id <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Talaba <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Tug'ulgan sana <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Telefon raqami <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> bilim <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Davomat <span class="icon-arrow">&UpArrow;</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> 1 </td>
+                        <td> Chan Lee</td>
+                        <td> 2003.06.12</td>
+                        <td> +998 90 123 45 67 </td>
+                        <td>
+                            <p class="status alo">Alo</p>
+                        </td>
+                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
+                    </tr>
+                    <tr>
+                        <td> 2 </td>
+                        <td> eet Saru </td>
+                        <td> Kathmandu </td>
+                        <td> 27 Aug, 2023 </td>
+                        <td>
+                            <p class="status yaxshi">Yaxshi</p>
+                        </td>
+                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
+                    </tr>
+                    <tr>
+                        <td> 3</td>
+                        <td> Sonal Gharti </td>
+                        <td> Tokyo </td>
+                        <td> 14 Mar, 2023 </td>
+                        <td>
+                            <p class="status past">Past</p>
+                        </td>
+                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
+                    </tr>
+                    <tr>
+                        <td> 4</td>
+                        <td>son GC </td>
+                        <td> New Delhi </td>
+                        <td> 25 May, 2023 </td>
+                        <td>
+                            <p class="status alo">Alo</p>
+                        </td>
+                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
+                    </tr>
+                    <tr>
+                        <td> 5</td>
+                        <td> Sarita Limbu </td>
+                        <td> Paris </td>
+                        <td> 23 Apr, 2023 </td>
+                        <td>
+                            <p class="status    yomon"> yomon</p>
+                        </td>
+                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
+                    </tr>
+                    <tr>
+                        <td> 3</td>
+                        <td> Sonal Gharti </td>
+                        <td> Tokyo </td>
+                        <td> 14 Mar, 2023 </td>
+                        <td>
+                            <p class="status past">Past</p>
+                        </td>
+                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
+                    </tr>
+                    <tr>
+                        <td> 6</td>
+                        <td> Alex Gonley </td>
+                        <td> London </td>
+                        <td> 23 Apr, 2023 </td>
+                        <td>
+                            <p class="status yaxshi">Yaxshi</p>
+                        </td>
+                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
+                    </tr>
+                    <tr>
+                        <td> 3</td>
+                        <td> Sonal Gharti </td>
+                        <td> Tokyo </td>
+                        <td> 14 Mar, 2023 </td>
+                        <td>
+                            <p class="status past">Past</p>
+                        </td>
+                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
+                    </tr>
+                    <tr>
+                        <td> 3</td>
+                        <td> Sonal Gharti </td>
+                        <td> Tokyo </td>
+                        <td> 14 Mar, 2023 </td>
+                        <td>
+                            <p class="status past">Past</p>
+                        </td>
+                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
+                    </tr>
+                    <tr>
+                        <td> 7</td>
+                        <td>et Saru </td>
+                        <td> New York </td>
+                        <td> 20 May, 2023 </td>
+                        <td>
+                            <p class="status alo">Alo</p>
+                        </td>
+                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
+                    </tr>
+                    <tr>
+                        <td> 8</td>
+                        <td> Aayat Ali Khan </td>
+                        <td> Islamabad </td>
+                        <td> 30 Feb, 2023 </td>
+                        <td>
+                            <p class="status    yomon"> yomon</p>
+                        </td>
+                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
+                    </tr>
+                    <tr>
+                        <td> 9</td>
+                        <td> Alson GC </td>
+                        <td> Dhaka </td>
+                        <td> 22 Dec, 2023 </td>
+                        <td>
+                            <p class="status yaxshi">Yaxshi</p>
+                        
+                        </td>
+                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
+                    </tr>
+                    <tr>
+                        <td> 9</td>
+                        <td> Alson GC </td>
+                        <td> Dhaka </td>
+                        <td> 22 Dec, 2023 </td>
+                        <td>
+                            <p class="status yaxshi">Yaxshi</p>
+                        
+                        </td>
+                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
+                    </tr>
+                    <tr>
+                        <td> 9</td>
+                        <td> Alson GC </td>
+                        <td> Dhaka </td>
+                        <td> 22 Dec, 2023 </td>
+                        <td>
+                            <p class="status yaxshi">Yaxshi</p>
+                        
+                        </td>
+                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+            <div class="btn_submit"> <button> Kiritish</button> </div> 
+          </section>
+
+    </main>
+
+    <style>
+        tr td input{
+            width: 50px;
+        }
+    </style>
+    <script src="/table.js"></script>
+    <script src="/standart.js"></script>
+    
+</body>
+</html>

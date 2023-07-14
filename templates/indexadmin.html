@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard || NodirbekADU</title>
+    <!-- font CSS -->
+    <link rel="stylesheet" href= 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'  />
+    <!-- root CSS -->
+    <link rel="stylesheet" href="{% static 'root.css' %}">
+    <!-- standart CSS -->
+    <link rel="stylesheet" href="{% static 'standart.css' %}">
+    <link rel="stylesheet" href="{% static 'admmindashboard.css' %}">
+</head>
+<body>
+  <nav class="navbar">
+
+		  <i class="fa-solid fa-bars" id="sidebarOpen"></i>
+		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		</div>
+		<div class="search_bar">
+			 <p>Ustozlar oynasi</p>
+		</div>
+		<div class="navbar_content">
+		  <i class="bi bi-grid"></i>
+		  <i class='bx' id="darkLight"></i>
+		  <i class='bx bx-bell' ></i>
+		  <img src="images/profile.jpg" alt="" class="profile" />
+		</div>
+	  </nav>
+	  <!-- sidebar -->
+	  <nav class="sidebar">
+		<div class="menu_content">
+		  <ul class="menu_items">
+			<div class="menu_title menu_dahsboard"></div>
+			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+			<!-- start -->
+			<li class="item">
+				<a href="/asosiy/IndexAdmin" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-chart-line"></i>
+          
+				  </span>
+				  <span class="navlink"> Dashboard</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="/asosiy/kurslar" class="nav_link">
+            <span class="navlink_icon">
+           <i class="fa-solid fa-book-open-reader"></i>             </span>
+            <span class="navlink"> Kurslar</span>
+          </a>
+          </li>
+        <li class="item">
+          <a href="/asosiy/guruhlar" class="nav_link">
+            <span class="navlink_icon">
+            <i class="fa-solid fa-people-group"></i>                  </span>
+            <span class="navlink"> Guruhlar</span>
+          </a>
+          </li>
+			  <li class="item">
+				<a href="./talabgorTalabalar.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-brands fa-stack-overflow"></i>                </span>
+				  <span class="navlink">So'rov</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="./kutish.html" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-eye"></i>                 </span>
+            <span class="navlink">Kutayotganlar</span>
+          </a>
+        </li>
+			  <li class="item">
+          <a href="./sinov.html" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-spell-check"></i>               </span>
+            <span class="navlink">Sinovdagilar</span>
+          </a>
+        </li>
+			  <li class="item">
+				<a href="./asosiy_Talabalar.html" class="nav_link">
+				  <span class="navlink_icon">
+            <i class="fa-solid fa-people-group"></i>                  </span>
+				  <span class="navlink">Talabalar</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="./davomatadmin.html" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-bell-slash"></i>                </span>
+            <span class="navlink">Davomat</span>
+          </a>
+          </li>
+          <li class="item">
+            <a href="./hujjatlar.html" class="nav_link">
+              <span class="navlink_icon">
+                <i class="fa-solid fa-file-pdf"></i>                </span>
+              <span class="navlink">Hujjat</span>
+            </a>
+            </li>
+            <li class="item">
+              <a href="./teacher_table.html" class="nav_link">
+                <span class="navlink_icon">
+                  <i class="fa-solid fa-chalkboard-user"></i>                </span>
+                <span class="navlink">Teacher</span>
+              </a>
+              </li>
+              <li class="item">
+                <a href="./dars.html" class="nav_link">
+                  <span class="navlink_icon">
+                    <i class="fa-solid fa-graduation-cap"></i>               </span>
+                  <span class="navlink">Dars</span>
+                </a>
+                </li>
+                <li class="item">
+                  <a href="./dars.html" class="nav_link">
+                    <span class="navlink_icon">
+                      <i class="fa-solid fa-sack-dollar"></i>              </span>
+                    <span class="navlink">Moliya</span>
+                  </a>
+                  </li>
+		  </ul>
+	
+		  <!-- Sidebar Open / Close -->
+		  <div class="bottom_content">
+			<div class="bottom expand_sidebar">
+			  <span> Expand</span>
+			  <i class="fa-solid fa-right-to-bracket"></i>
+			</div>
+			<div class="bottom collapse_sidebar">
+			  <span> Collapse</span>
+			  <i class="fa-solid fa-arrow-left"></i>
+			</div>
+		  </div>
+		</div>
+	  </nav>
+<section class="big">
+  <section class="home-section">
+  
+    <div class="home-content">
+      <div class="overview-boxes">
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Ustozlar</div>
+            <div class="number">{{ustoz}}</div>
+            <div class="indicator">
+              <span class="text">2023.01.04</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-person-chalkboard fa-2xl"></i> 
+          </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Sinovdagi talabalar</div>
+            <div class="number">{{sinovdagi_talabalar}}</div>
+            <div class="indicator">
+              <span class="text">2023.01.04</span>
+            </div>
+          </div>
+          <i class="fa-regular fa-calendar-check fa-2xl"></i>
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Asosiy talabalar </div>
+            <div class="number">{{asosiy_talabalar}}</div>
+            <div class="indicator">
+              <span class="text">2023.01.04</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-user-graduate fa-2xl"></i> 
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic"> Talabgor talabalar</div>
+            <div class="number">{{talabgor_talabalar}}</div>
+            <div class="indicator">
+              <span class="text">2023.01.04</span>
+            </div>
+          </div>
+          <i class="fa-solid fa-school-circle-exclamation fa-2xl"></i>
+        </div>
+      </div>
+      <div class="sales-boxes">
+        <div class="recent-sales box">
+          <div class="title">Qarizdor talabalar</div>
+          <div class="sales-details">
+            <li>
+               <p>I.F.SH</p>
+               <p>Guruh</p>
+               <p>Qarizdorlik summasi</p>
+            </li>
+              <hr>
+            <li>
+              <p>Aliyev valijon </p>
+               <p>615-21</p>
+               <p>200 000</p>
+            </li>
+            <li>
+              <p>Aliyev valijon </p>
+               <p>615-21</p>
+               <p>200 000</p>
+            </li>
+            <li>
+              <p>Aliyev valijon </p>
+               <p>615-21</p>
+               <p>200 000</p>
+            </li>
+            <li>
+              <p>Aliyev valijon </p>
+               <p>615-21</p>
+               <p>200 000</p>
+            </li>
+            <li>
+              <p>Aliyev valijon </p>
+               <p>615-21</p>
+               <p>200 000</p>
+            </li>
+            <li>
+              <p>Aliyev valijon </p>
+               <p>615-21</p>
+               <p>200 000</p>
+            </li>
+            <li>
+              <p>Aliyev valijon</p>
+               <p>615-21</p>
+               <p>200 000</p>
+            </li>
+          </div>
+          <div class="button">
+            <a href="#">See All</a>
+          </div>
+        </div>
+        <div class="top-sales box">
+          <span class="hidden Reja_sum">124</span>
+          <span class="hidden qariz">   146 </span>
+          <span class="hidden Reja_sum"> 168</span>
+          <span class="hidden qariz">   190 </span>
+          <span class="hidden Reja_sum"> 210</span>
+      
+          <div class="title"> To'lovlar Sarhisobbi</div>
+          <div class="chart" id="summ">
+    
+              <div>
+                  <canvas id="lineChart"></canvas>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="sales-boxes second_line">
+        <div class="recent-sales box" id="second">
+          <div class="title">Talabgor talabalar</div>
+          <div class="sales-details">
+            <li>
+               <p>FISH</p>
+               <p>Telefon nomeri</p>
+               <p>Talab</p>
+               <p>So'rov qoldigan sanasi</p>
+            </li>
+              <hr>
+            {% for i in sorov %}
+            <li>
+              <p>{{i.ism}}  {{i.fam}}</p>
+              <p>{{i.tel}}</p>
+               <p>{{i.kurs_fk}}</p>
+               <p>{{i.sorov_qoldirilgan_vaqt}}</p>
+            </li>
+            {% endfor %}
+          </div>
+          <div class="button">
+            <a href="#">See All</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<script src="{% static '/standart.js' %}"></script>
+  
+ <style>
+ 
+ </style>
+<script src="{% static 'https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js' %}"></script>
+<script src="{% static 'admindashboard.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard || Nodiebek ADU </title>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+ 
+     <!-- root CSS -->
+     <link rel="stylesheet" href="../root.css">
+     <!-- standart CSS -->
+     <link rel="stylesheet" href="../standart.css">
+ 
+     <!-- CSS -->
+     <link rel="stylesheet" href="styleteacher.css" />
+      
+</head>
+<body>
+  <nav class="navbar">
+		<div class="logo_item">
+      <i class="fa-solid fa-bars" id="sidebarOpen"></i>
+		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		</div>
+		<div class="search_bar">
+			 <p>Ustozlar oynasi</p>
+		</div>
+		<div class="navbar_content">
+		  <i class="bi bi-grid"></i>
+		  <i class='bx' id="darkLight"></i>
+		  <i class='bx bx-bell' ></i>
+		  <img src="images/profile.jpg" alt="" class="profile" />
+		</div>
+	  </nav>
+	  <!-- sidebar -->
+	  <nav class="sidebar">
+		<div class="menu_content">
+		  <ul class="menu_items">
+			<div class="menu_title menu_dahsboard"></div>
+			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+			<!-- start -->
+			<li class="item">
+				<a href="./index.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-chart-line"></i>
+				  </span>
+				  <span class="navlink"> Dashboard</span>
+				</a>
+			  </li>
+	
+			  <li class="item">
+				<a href="./reja.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-layer-group"></i>                  </span>
+				  <span class="navlink"> O'quv Rejasi</span>
+				</a>
+			  </li>
+			  <li class="item">
+				<a href="./guruh.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-people-group"></i>                  </span>
+				  <span class="navlink"> Guruhlar</span>
+				</a>
+			  </li>
+			  <li class="item">
+				<a href="./nodelist.html" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-bookmark"></i>              </span>
+				  <span class="navlink"> Saqlamalar</span>
+				</a>
+			  </li>
+			  <li class="item">
+				<a href="#" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-notes-medical"></i>                  </span>
+				  <span class="navlink">Notion</span>
+				</a>
+			  </li>
+		  </ul>
+	
+		  <!-- Sidebar Open / Close -->
+		  <div class="bottom_content">
+			<div class="bottom expand_sidebar">
+			  <span> Expand</span>
+			  <i class="fa-solid fa-right-to-bracket"></i>
+			</div>
+			<div class="bottom collapse_sidebar">
+			  <span> Collapse</span>
+			  <i class="fa-solid fa-arrow-left"></i>
+			</div>
+		  </div>
+		</div>
+	  </nav>
+    <section> 
+        <h1 class="title"><i class="fa-solid fa-circle-info" style="color: #1a5fb4;"></i> Dashboard</h1>
+        <div class="info_header">
+            <div class="boxs">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <p>O'quvchilar </p>
+                <span class="box_nums">200</span>
+            </div>
+            <div class="boxs">
+                <i class="fa-solid fa-sack-dollar"></i>
+                <p>oylik haqqi</p>
+                <span class="box_nums">200</span>
+            </div>
+            <div class="boxs">
+                <i class="fa-solid fa-people-group"></i>
+                <p>guruhlar</p>
+                <span class="box_nums">200</span>
+            </div>
+        </div>
+
+    </section>
+   <section>
+    <div class="charts">
+      <div class="chart" id="teacher">
+        <span class="hidden oylik ">1200</span>
+        <span class="hidden talabaSoni">300</span>
+        <span class="hidden oylik">1400</span>
+        <span class="hidden talabaSoni">350</span>
+        <span class="hidden oylik">1600</span>
+        <span class="hidden talabaSoni">400</span>
+          <h2>O'qitvchining yillik diagramma tasviri</h2>
+          <div>
+              <canvas id="lineChart"></canvas>
+          </div>
+      </div>
+      <div class="chart doughnut-chart">
+        <span class="hidden alo_all">12</span>
+        <span class="hedden yaxshi_all">2 2</span>
+        <span class="hedden past_all">7</span>
+        <span class="hedden yomon_all">9</span>
+        <div>
+          <h2>Talabalar o'zlashtirish</h2>
+          <div>
+              <canvas id="doughnut"></canvas>
+          </div>
+      </div>
+  </div>
+  </section>
+
+   <section class='guruh_diagram'>
+
+    <div class="group_diagramm_box">
+      <div class="chart doughnut-chart">
+        <h2>616-guruh Talabalar o'zlashtirish</h2>
+        <span class="hidden alo">12</span>
+        <span class="hedden yaxshi">42</span>
+        <span class="hedden past">7</span>
+        <span class="hedden yomon">9</span>
+        <div>
+            <canvas class="doughnutBox"></canvas>
+        </div>
+    </div>
+    </div>
+    <div class="group_diagramm_box">
+      <div class="chart doughnut-chart">
+        <h2>616-guruh Talabalar o'zlashtirish</h2>
+        <span class="hidden alo">19</span>
+        <span class="hedden yaxshi">32</span>
+        <span class="hedden past">31</span>
+        <span class="hedden yomon">12</span>
+        <div>
+            <canvas class="doughnutBox"></canvas>
+        </div>
+    </div>
+    </div>
+      <div class="group_diagramm_box">
+        <div class="chart doughnut-chart">
+          <h2>616-guruh Talabalar o'zlashtirish</h2>
+          <span class="hidden alo">22</span>
+          <span class="hedden yaxshi">32</span>
+          <span class="hedden past">41</span>
+          <span class="hedden yomon">12</span>
+          <div>
+              <canvas class="doughnutBox"></canvas>
+          </div>
+      </div>
+      </div>
+      <div class="group_diagramm_box">
+        <div class="chart doughnut-chart">
+          <h2>617-guruh Talabalar o'zlashtirish</h2>
+          <span class="hidden alo">12</span>
+          <span class="hedden yaxshi">43</span>
+          <span class="hedden past">22</span>
+          <span class="hedden yomon">11</span>
+          <div>
+              <canvas class="doughnutBox"></canvas>
+          </div>
+      </div>
+      </div>
+
+   </section>
+<style>
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+
+<script src="./scriptteacher.js" > 
+</script>
+<script src="/standart.js"></script>
+</body>
+</html>
