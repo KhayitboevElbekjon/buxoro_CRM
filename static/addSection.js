@@ -1,18 +1,16 @@
 const addBox = document.querySelector(".add-box"),
-edit= document.querySelector(".edit"),
+note = document.querySelectorAll(".note"),
 popupBox = document.querySelector(".popup-box"),
 popupTitle = popupBox.querySelector("header p"),
 closeIcon = popupBox.querySelector("header i"),
 titleTag = popupBox.querySelector("input"),
+settings = document.querySelector(".settings"),
 
-ellipsis = document.querySelector(".fa-ellipsis"),
-settings = document.querySelector(".settings");
-
-havola =popupBox.querySelector(".havola")
+havola =popupBox.querySelector(".havola"),
 descTag = popupBox.querySelector("input"),
 
 addBtn = popupBox.querySelector("button");
-console.log(ellipsis,settings,edit) ;
+console.log(note) ;
 // const months = ["January", "February", "March", "April", "May", "June", "July",
 //               "August", "September", "October", "November", "December"];
 // const notes = JSON.parse(localStorage.getItem("notes") || "[]");
@@ -37,15 +35,30 @@ closeIcon.addEventListener("click", () => {
     titleTag.value = descTag.value = ""; 
     popupBox.classList.remove("show");
     document.querySelector("body").style.overflow = "auto";
+    
 });
 
-ellipsis.addEventListener("click",()=>{
-    settings.classList.add("show")
+
+note.forEach(box =>{
+
+  let elips =box.querySelector(".fa-ellipsis"),
+  edit= box.querySelector(".edit"),
+  settings = box.querySelector(".settings");
+
+    elips.addEventListener("click",()=>{
+        settings.classList.add("show")
+       
+    })
+    edit.addEventListener("click", ()=>{
+        addBox.click();
+        settings.classList.remove("show")
+    } )
 })
-edit.addEventListener("click", ()=>{
-    addBox.click();
-    settings.classList.remove("show")
-} )
+
+
+
+
+
 
 // function showNotes() {  
 //     if(!notes) return;

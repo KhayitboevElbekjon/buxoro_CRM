@@ -4,6 +4,8 @@ urlpatterns = [
     path('IndexAdmin/',IndexAdmin.as_view()),
     path('kurslar/',Kurslar.as_view()),
     path('kursdelete/<int:son>',KursDelete.as_view()),
-    path('guruhlar/',Guruhlar.as_view())
+    path('guruhlar/',Guruhlar.as_view()),
+    path('sorov/',Sorovlar.as_view()),
+    path('kutayotganlar/',Kutayotganlar.as_view()),
 
 ]

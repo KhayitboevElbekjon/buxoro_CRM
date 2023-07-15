@@ -3,6 +3,10 @@ from django.views import View
 from .models import *
 from django.contrib.auth import authenticate,login,logout
 
+
+def logautview(request):
+    logout(request)
+    return redirect('/adminlogin/')
 class AdminLogin(View):
     def post(self, request):
         loginn = request.POST.get('login')
@@ -54,4 +58,34 @@ class  KursDelete(View):
         return redirect('/adminlogin/')
 class Guruhlar(View):
     def get(self,request):
-        return render(request,'guruhadmin.html')
+        if request.user.is_authenticated:
+            data={
+                'kurs':Kurs.objects.all(),
+                'guruhlar':Guruh.objects.all()
+            }
+            return render(request,'guruhadmin.html',data)
+        return redirect('/adminlogin/')
+    def post(self,request):
+        if request.user.is_authenticated:
+            Guruh.objects.create(
+                kurs_fk=Kurs.objects.get(id=request.POST.get('kurs')),
+                guruh_nom=request.POST.get('nom'),
+                ochilgan_sana=request.POST.get('sana'),
+                davomiyligi=request.POST.get('davomiyligi')
+            )
+            return redirect('/asosiy/guruhlar/')
+        return redirect('/adminlogin/')
+
+class Sorovlar(View):
+    def get(self,request):
+        if request.user.is_authenticated:
+            data={
+                'sorovlar':Sorov.objects.all()
+            }
+            return render(request,'talabgorTalabalar.html',data)
+        return redirect('/adminlogin/')
+class Kutayotganlar(View):
+    def get(self,request):
+        if request.user.is_authenticated:
+            return render(request,'kutish.html')
+        return redirect('/adminlogin/')

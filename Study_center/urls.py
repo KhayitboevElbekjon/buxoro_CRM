@@ -8,5 +8,6 @@ urlpatterns = [
     path('asosiy/', include('asosiy.urls')),
     path('mentor/', include('mentor.urls')),
     path('adminlogin/',AdminLogin.as_view()),
+    path('logout/',logautview)
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
