@@ -19,9 +19,9 @@ Qarizdorlik=[],
       data: {
           labels: [1 ,2,3,4,5,6,7,8,9,10,11,12],
           datasets: [{
-              label: `Rejalashtrilgan to'luvlar summasi( 000 ga qisqartrilgan)`,
+              label: Rejalashtrilgan to'luvlar summasi( 000 ga qisqartrilgan),
               data: Reja_sums,
-             
+
               backgroundColor: [
                   'blue'
               ],
@@ -29,9 +29,9 @@ Qarizdorlik=[],
               borderWidth: 1
           },
           {
-              label: `Qarizdorliklar ( 000 ga qisqartrilgan)`,
+              label: Qarizdorliklar ( 000 ga qisqartrilgan),
               data: Qarizdorlik ,
-             
+
               backgroundColor: [
                   'red'
               ],
@@ -44,4 +44,3 @@ Qarizdorlik=[],
           responsive: true
       }
   });
-  

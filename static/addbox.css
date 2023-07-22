@@ -220,6 +220,10 @@
     resize: none;
     padding: 8px 15px;
   }
+  form select{
+  width:100%;
+  padding: 11px 15px;
+  }
   form button{
     width: 100%;
     height: 50px;
@@ -249,4 +253,7 @@
     }
   }
 
-  
+  a{
+  text-decoration: none;
+color:black;
+  }

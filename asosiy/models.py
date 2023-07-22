@@ -37,9 +37,10 @@ class Kutish(models.Model):
 
 
 class Sinov(models.Model):
-    sorov_fk = models.ForeignKey(Sorov, on_delete=models.CASCADE)
+    kutish_fk = models.ForeignKey(Kutish, on_delete=models.CASCADE,null=True,blank=True)
     kurs_fk = models.ForeignKey(Kurs, on_delete=models.CASCADE)
     guruh_fk = models.ForeignKey(Guruh, on_delete=models.CASCADE)
+    vaqt=models.DateField(null=True,blank=True)
     def __str__(self):
         return f'{self.kurs_fk} | {self.guruh_fk}'
 
@@ -91,6 +92,9 @@ class Darslar(models.Model):
     kurs_fk = models.ForeignKey(Kurs, on_delete=models.CASCADE)
     guruh_fk = models.ForeignKey(Guruh, on_delete=models.CASCADE)
     teacher_fk = models.ForeignKey(Teacher_table, on_delete=models.CASCADE)
+    hafta_kunlari=models.CharField(max_length=50,null=True,blank=True) #juft toq
+    dars_boshlanish_vaqti=models.CharField(max_length=100,null=True,blank=True)
+
     def __str__(self):
         return f"{self.guruh_fk} | {self.teacher_fk}"
 

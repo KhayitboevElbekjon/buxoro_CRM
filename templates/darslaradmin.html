@@ -115,7 +115,7 @@
               </a>
               </li>
               <li class="item">
-                <a href="/asosiy/dars" class="nav_link">
+                <a href="/asosiy/dars"  class="nav_link">
                   <span class="navlink_icon">
                     <i class="fa-solid fa-graduation-cap"></i>               </span>
                   <span class="navlink">Dars</span>
@@ -145,10 +145,9 @@
 	  </nav>
     <main class="table">
         <section class="table__header">
-            <h1>Kutayotgan talabalar</h1>
-
+            <h1> Darslar Jadvali</h1>
             <div class="add">
-                <i class="fa-solid fa-plus"></i>
+                <i class="fa-solid fa-plus"></i>  
             </div>
                 
             <div class="input-group">
@@ -171,30 +170,29 @@
             <table id="customers_table">
                 <thead>
                     <tr>
-                        <th> ism <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Familya <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Telefon raqami <span class="icon-arrow">&UpArrow;</span></th>
-<!--                        <th>telegram<span class="icon-arrow">&UpArrow;</span></th>-->
-<!--                        <th> qulay vaqti<span class="icon-arrow">&UpArrow;</span></th>-->
-                        <th>talabgorligi<span class="icon-arrow">&UpArrow;</span></th>
-<!--                        <th>O'qituvchi<span class="icon-arrow">&UpArrow;</span></th>-->
-                        <th>Batafsil...<span class="icon-arrow">&UpArrow;</span></th>
-
+                        <th> Kurs nomi <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Guruh nomi <span class="icon-arrow">&UpArrow;</span></th>
+                         <th> Guruh davomiyligi <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Mentor F.I.SH <span class="icon-arrow">&UpArrow;</span></th>
+                        <th>  Mentor telefon raqami<span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Darsning hafta kuniga nisbati <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Dars boshlanish vaqtlari <span class="icon-arrow">&UpArrow;</span></th>
+<!--                        <th> !!!! <span class="icon-arrow">&UpArrow;</span></th>-->
                     </tr>
                 </thead>
                 <tbody>
-                {% for i in kutayotganlar %}
+                {% for i in darslar %}
                     <tr>
-                        <td class="name"> {{i.sorov_fk.ism}} </td>
-                        <td class="fam"> {{i.sorov_fk.fam}}</td>
-                        <td class="tel"> {{i.sorov_fk.tel}} </td>
-<!--                        <td class="tel"> @asdf123 </td>-->
-<!--                        <td>  tushlikgacha</td>-->
+                        <td class="name"> {{i.kurs_fk.nom}} </td>
+                        <td class="fam"> {{i.guruh_fk.guruh_nom}} </td>
+                         <td>  {{i.guruh_fk.davomiyligi}} Oy </td>
+                        <td class="tel"> {{i.teacher_fk.ism}} {{i.teacher_fk.fam}}</td>
+                        <td class="tel"> {{i.teacher_fk.tel}} </td>
                         <td>
-                            <p>{{i.sorov_fk.kurs_fk}} </p>
+                            <p> {{i.hafta_kunlari}} </p>
                         </td>
-<!--                        <td>Alijon Valiyev</td>-->
-                        <td> {{i.batafsil}} </td>
+                        <td>{{i.dars_boshlanish_vaqti}} </td>
+<!--                        <td> !!!!</td>-->
                     </tr>
                     {% endfor %}
                     
@@ -209,69 +207,87 @@
             
         </div>
      </section>
-<!--    <section class="container hidden ">-->
-<!--        <i class="beack fa-solid fa-circle-left fa-xl"></i>-->
-<!--      <form action="#">-->
-<!--        <div class="form first">-->
-<!--            <div class="details personal">-->
-<!--                <span class="title">Personal Details</span>-->
-<!--                <div class="fields">-->
-<!--                    <div class="input-field ">-->
-<!--                        <label>Ism</label>-->
-<!--                        <input class="input_ism" type="text" placeholder="Ism" required>-->
-<!--                    </div>-->
-<!--                    <div class="input-field">-->
-<!--                        <label>Tugulgan sana</label>-->
-<!--                        <input class="input_yili" type="date"  value="2003-06-12" required>-->
-<!--                    </div>-->
-<!--                    <div class="input-field">-->
-<!--                        <label>Familya</label>-->
-<!--                        <input class="input_fam" type="text" placeholder="Familya" required>-->
-<!--                    </div>-->
-<!--                    <div class="input-field">-->
-<!--                        <label>Telefon raqami</label>-->
-<!--                        <input class="input_tel" type="tel" value="+998 9" required>-->
-<!--                    </div>-->
-<!--                   -->
-<!--                    <div class="input-field">-->
-<!--                        <label>Talab Qilinayotgan Fan</label>-->
-<!--                        <input class="input_fan" type="text" placeholder="Fanni kiriting" required>-->
-<!--                    </div> -->
-<!--                   -->
-<!--                </div>-->
-<!--                -->
-<!--                <div class="buttons">-->
-<!--                    -->
-<!--                    <button type="submit" class="sumbit">-->
-<!--                        <span class="btnText">Submit</span>t-->
-<!--                    </button>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    -->
-<!--    </form>-->
-<!--    </section> -->
+    <section class="container hidden ">
+        <i class="beack fa-solid fa-circle-left fa-xl"></i>
+
+      <form method="post">{{ csrf_token }}
+        <div class="form first">
+            <div class="details personal">
+                <span class="title">Personal Details</span>
+                <div class="fields">
+                    <div class="input-field ">
+                        <label>Ism</label>
+                        <input class="input_ism" type="text" placeholder="Ism" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Tugulgan sana</label>
+                        <input class="input_yili" type="date"  value="2003-06-12" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Familya</label>
+                        <input class="input_fam" type="text" placeholder="Familya" required>
+                    </div>
+                    <div class="input-field">
+                        <label>Telefon raqami</label>
+                        <input class="input_tel" type="tel" value="+998 9" required>
+                    </div>
+                   
+                    <div class="input-field">
+                        <label>Talab Qilinayotgan Fan</label>
+                        <input class="input_fan" type="text" placeholder="Fanni kiriting" required>
+                    </div> 
+                   
+                </div>
+                
+                <div class="buttons">
+                    
+                    <button type="submit" class="sumbit">
+                        <span class="btnText">Submit</span>t
+                    </button>
+                </div>
+            </div>
+        </div>
+    
+    </form>
+    </section>
     <section class="select_student hidden">
-        <h3>Kutish jadvaliga o'quvchini qo'shish</h3>
-        <form method="post">{% csrf_token %}
-            <i class="fa-solid fa-xmark fa-xl"></i>
-            <p>So'rov jadvalidan o'quvchini tanlang!</p>
-            <select name="sorov" >
-                {% for i in kutush %}
-                <option value="{{i.id}}">{{i.ism}} {{i.fam}} | {{i.kurs_fk}}</option>
+        <i class="fa-solid fa-xmark fa-xl"></i>
+
+        <h3>Darslarga mentorlarni biriktirish</h3><br>
+        <form method="post">  {% csrf_token %}
+<!--            <i class="fa-solid fa-xmark fa-xl"></i>-->
+            <label>Kursni tanlang...</label>
+            <select name="kurs" >
+                {% for i in kurs %}
+                <option value="{{i.id}}">{{i.nom}}</option>
                 {% endfor %}
             </select>
-            
-            <div class="form_input">
-                <input type="text" name="batafsil"  placeholder="Batafsil ...">
-                <!-- <input type="text"  placeholder="tel">
-                <input type="text"  placeholder="guruhi"> -->
-            </div>
+             <label>Guruhni tanlang...</label>
+            <select name="guruh" >
+                {% for i in guruh %}
+                <option value="{{i.id}}">{{i.guruh_nom}}</option>
+                {% endfor %}
+            </select>
+             <label>Mentorni tanlang...</label>
+            <select name="mentor" >
+                {% for i in mentor %}
+                <option value="{{i.id}}">{{i.ism}}</option>
+                {% endfor %}
+            </select>
+
+               <label>Darsning hafta kuniga nisbati<br> (Toq-Dush,Chor,Jum; Juft-Sesh,Pay,Shan):</label>
+              <select name="toq">
+                  <option>Toq</option>
+                  <option>Juft</option>
+              </select>
+            <label>Dars boshlanish hamda tugash vaqtlari
+            </label>
+            <input name="vaqt" type="text">
             <button>kiritish</button>
         </form>
         </section>
 
-    <script src="{% static './admin_from.js' %}"></script>
+    <script src="{% static '/admin_from.js' %}"></script>
     <script src="{% static '/table.js' %}"></script>
     <script src="{% static '/standart.js' %}"></script>
 </body>

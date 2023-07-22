@@ -2,6 +2,7 @@
 <!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="en">
 <head>
+    {% load static %}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>File Upload JavaScript with Progress Ba | CodingNepal</title>
@@ -10,9 +11,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <!-- root CSS -->
-  <link rel="stylesheet" href="../root.css">
+  <link rel="stylesheet" href="{% static 'root.css' %}">
   <!-- standart CSS -->
-  <link rel="stylesheet" href="../standart.css">
+  <link rel="stylesheet" href="{% static 'standart.css' %}">
+  <link rel="stylesheet" href="{% static 'hujjat11.css' %}">
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -42,7 +44,7 @@
 			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
 			<!-- start -->
 			<li class="item">
-				<a href="./indexadmin.html" class="nav_link">
+				<a href="/asosiy/IndexAdmin" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-chart-line"></i>
           
@@ -51,70 +53,70 @@
 				</a>
 			  </li>
         <li class="item">
-          <a href="./kurs.html" class="nav_link">
+          <a href="/asosiy/kurslar" class="nav_link">
             <span class="navlink_icon">
            <i class="fa-solid fa-book-open-reader"></i>             </span>
             <span class="navlink"> Kurslar</span>
           </a>
           </li>
         <li class="item">
-          <a href="./guruhadmin.html" class="nav_link">
+          <a href="/asosiy/guruhlar" class="nav_link">
             <span class="navlink_icon">
             <i class="fa-solid fa-people-group"></i>                  </span>
             <span class="navlink"> Guruhlar</span>
           </a>
           </li>
 			  <li class="item">
-				<a href="./talabgorTalabalar.html" class="nav_link">
+				<a href="/asosiy/sorov" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-brands fa-stack-overflow"></i>                </span>
 				  <span class="navlink">So'rov</span>
 				</a>
 			  </li>
         <li class="item">
-          <a href="./kutish.html" class="nav_link">
+          <a href="/asosiy/kutayotganlar" class="nav_link">
             <span class="navlink_icon">
               <i class="fa-solid fa-eye"></i>                 </span>
             <span class="navlink">Kutayotganlar</span>
           </a>
         </li>
 			  <li class="item">
-          <a href="./sinov.html" class="nav_link">
+          <a href="/asosiy/sinov" class="nav_link">
             <span class="navlink_icon">
               <i class="fa-solid fa-spell-check"></i>               </span>
             <span class="navlink">Sinovdagilar</span>
           </a>
         </li>
 			  <li class="item">
-				<a href="./asosiy_Talabalar.html" class="nav_link">
+				<a href="/asosiy/talabalar" class="nav_link">
 				  <span class="navlink_icon">
             <i class="fa-solid fa-people-group"></i>                  </span>
 				  <span class="navlink">Talabalar</span>
 				</a>
 			  </li>
         <li class="item">
-          <a href="./davomatadmin.html" class="nav_link">
+          <a href="/asosiy/davomat" class="nav_link">
             <span class="navlink_icon">
               <i class="fa-solid fa-bell-slash"></i>                </span>
             <span class="navlink">Davomat</span>
           </a>
           </li>
           <li class="item">
-            <a href="./hujjatlar.html" class="nav_link">
+            <a href="/asosiy/hujat" class="nav_link">
               <span class="navlink_icon">
                 <i class="fa-solid fa-file-pdf"></i>                </span>
               <span class="navlink">Hujjat</span>
             </a>
             </li>
             <li class="item">
-              <a href="./teacher_table.html" class="nav_link">
+              <a href="/asosiy/teacher"  class="nav_link">
                 <span class="navlink_icon">
                   <i class="fa-solid fa-chalkboard-user"></i>                </span>
                 <span class="navlink">Teacher</span>
               </a>
               </li>
               <li class="item">
-                <a href="./dars.html" class="nav_link">
+                <a href="/asosiy/dars" class="nav_link">
                   <span class="navlink_icon">
                     <i class="fa-solid fa-graduation-cap"></i>               </span>
                   <span class="navlink">Dars</span>
@@ -144,17 +146,17 @@
 	  </nav>
   <div class="wrapper">
     <header>Hujjatlarni Saqlang</header>
-    <form action="">
+    <form method="post"> {% csrf_token %}
 
-      <form action="#">
-        <input class="file-input" type="file" name="file" hidden>
+
+        <input class="file-input" type="file" name="file" >
         <i class="fas fa-cloud-upload-alt"></i>
         <p>Yuklang</p>
-      </form>
-      <input class="file_name" placeholder="fayl nomi" type="text">
+
+      <input class="file_name" name="nom" placeholder="fayl nomi" type="text">
       <button type="submit">Yuklash</button>
     </form>
-
+{% for i in hujat %}
     <section class="progress-area">
         <li class="row">
             <div class="content upload">
@@ -165,180 +167,13 @@
               </div>
             </div>
             <i class="fas fa-check"></i>
-          </li> 
+          </li>
     </section>
+       {% endfor %}
     <section class="uploaded-area"></section>
   </div>
-  <style>
-    /* Import Google font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  /* background: #6990F2; */
-}
-::selection{
-  color: #fff;
-  background: #6990F2;
-}
-.wrapper{
-  width: 430px;
-  background: #fff;
-  border-radius: 5px;
-  padding: 30px;
-  box-shadow: 7px 7px 12px rgba(0,0,0,0.05);
-}
-.wrapper header{
-  color: #6990F2;
-  font-size: 27px;
-  font-weight: 600;
-  text-align: center;
-}
-.wrapper button{
-  border: 1px  solid #6990F2;
-  padding: 10px;
-  font-weight: 600;
-  color: #fff;
-  border-radius: 10px;
-  background-color: #6990F2;
-  margin-bottom: 10px;
-  margin-left: 80%;
-}
-.wrapper button:hover{
-  transform: scale(0.9);
-}
-.file_name{
-  width: 100%;
-  margin-bottom: 10px; 
-  margin-top: 10px;
-  font-size: larger;
-  border: 1px solid #6990F2; 
-  border-radius: 3px;
-}
-.wrapper form{
-  height: 167px;
-  display: flex;
-  cursor: pointer;
-  margin-top: 30px ;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 5px;
-  border: 2px dashed #6990F2;
-}
-form :where(i, p){
-  color: #6990F2;
-}
-form i{
-  font-size: 50px;
-}
-form p{
-  margin-top: 15px;
-  font-size: 16px;
-}
 
-section .row{
-  margin-bottom: 10px;
-  background: #E9F0FF;
-  list-style: none;
-  padding: 15px 20px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-section .row i{
-  color: #6990F2;
-  font-size: 30px;
-}
-section .details span{
-  font-size: 14px;
-}
-.progress-area .row .content{
-  width: 100%;
-  margin-left: 15px;
-  display: flex;
-  justify-content: space-around;
-}
-.progress-area .details{
-  display: flex;
-  align-items: center;
-  margin-bottom: 7px;
-  justify-content: space-between;
-}
-.progress-area .content .progress-bar{
-  height: 6px;
-  width: 100%;
-  margin-bottom: 4px;
-  background: #fff;
-  border-radius: 30px;
-}
-.content .progress-bar .progress{
-  height: 100%;
-  width: 0%;
-  background: #6990F2;
-  border-radius: inherit;
-}
-.uploaded-area{
-  max-height: 232px;
-  overflow-y: scroll;
-}
-.uploaded-area.onprogress{
-  max-height: 150px;
-}
-.uploaded-area::-webkit-scrollbar{
-  width: 0px;
-}
-.uploaded-area .row .content{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.uploaded-area .row .details{
-  display: flex;
-  margin-left: 15px;
-  flex-direction: column;
-}
-.uploaded-area .row .details .size{
-  color: #404040;
-  font-size: 11px;
-}
-.uploaded-area i.fa-check{
-  font-size: 16px;
-}
-  </style>
 
-  <script >
-    const form = document.querySelector("form"),
-fileInput = document.querySelector(".file-input"),
-progressArea = document.querySelector(".progress-area"),
-uploadedArea = document.querySelector(".uploaded-area");
-
-form.addEventListener("click", () =>{
-  fileInput.click();
-});
-
-fileInput.onchange = ({target})=>{
-  let file = target.files[0];
-  if(file){
-    let fileName = file.name;
-    if(fileName.length >= 12){
-      let splitName = fileName.split('.');
-      fileName = splitName[0].substring(0, 13) + "... ." + splitName[1];
-    }
-alert("bag'i elbekni ishi")
-  }
-}
-
-  </script>
-<script src="/standart.js"></script>
+<script src="{% static '/standart.js' %}"></script>
 </body>
 </html>

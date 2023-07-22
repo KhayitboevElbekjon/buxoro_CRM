@@ -83,35 +83,35 @@
           </a>
         </li>
 			  <li class="item">
-				<a href="./asosiy_Talabalar.html" class="nav_link">
+				<a href="/asosiy/talabalar" class="nav_link">
 				  <span class="navlink_icon">
             <i class="fa-solid fa-people-group"></i>                  </span>
 				  <span class="navlink">Talabalar</span>
 				</a>
 			  </li>
         <li class="item">
-          <a href="./davomatadmin.html" class="nav_link">
+          <a href="/asosiy/davomat" class="nav_link">
             <span class="navlink_icon">
               <i class="fa-solid fa-bell-slash"></i>                </span>
             <span class="navlink">Davomat</span>
           </a>
           </li>
           <li class="item">
-            <a href="./hujjatlar.html" class="nav_link">
+            <a href="/asosiy/hujat" class="nav_link">
               <span class="navlink_icon">
                 <i class="fa-solid fa-file-pdf"></i>                </span>
               <span class="navlink">Hujjat</span>
             </a>
             </li>
             <li class="item">
-              <a href="./teacher_table.html" class="nav_link">
+              <a href="/asosiy/teacher" class="nav_link">
                 <span class="navlink_icon">
                   <i class="fa-solid fa-chalkboard-user"></i>                </span>
                 <span class="navlink">Teacher</span>
               </a>
               </li>
               <li class="item">
-                <a href="./dars.html" class="nav_link">
+                <a href="/asosiy/dars" class="nav_link">
                   <span class="navlink_icon">
                     <i class="fa-solid fa-graduation-cap"></i>               </span>
                   <span class="navlink">Dars</span>
@@ -152,7 +152,7 @@
 
         <form method="post"> {% csrf_token %}
              <label>Kurs Nomi:</label>
-            <select name="kurs" class="row title">
+            <select name="kurs" class="row">
               {% for i in kurs %}
                 <option value="{{i.id}}">{{i.nom}}</option>
               {% endfor %}
@@ -215,7 +215,7 @@
 				<i  class="fa-solid fa-ellipsis"></i>
 				<ul class="menu">
 					<li class="edit" ><i class="fa-solid fa-pen " ></i>Edit</li>
-					<li><i class="fa-solid fa-trash-can"></i>Delete</li>
+					<a href="/asosiy/guruhdelete/{{i.id}}"><li><i class="fa-solid fa-trash-can"></i>Delete</li></a>
 				</ul>
 			</div>
 		</div>

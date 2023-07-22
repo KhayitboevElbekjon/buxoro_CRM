@@ -56,7 +56,10 @@
       }
       .container{
     position: absolute;
+    left: 8.1%;
+    top: 220px;
     max-width: 900px;
+    justify-content: center ;
     width: 100%;
     border-radius: 6px;
     padding: 30px;
@@ -66,6 +69,7 @@
 }
 .container header{
     position: relative;
+
     font-size: 20px;
     font-weight: 600;
     color: #333;
@@ -162,7 +166,7 @@ form .fields .input-field{
     max-width: 200px;
     width: 100%;
     border: none;
-    outline: none;  
+    outline: none;
     color: #fff;
     border-radius: 5px;
     margin: 25px 0;
@@ -193,8 +197,8 @@ form .buttons button , .backBtn{
 }
 @media (max-width: 750px) {
     .container{
-        position: absolute;
-        top: 70px; 
+        top: 70px;
+        left: 0%;
     }
     .container form{
         overflow-y: scroll;

@@ -8,11 +8,11 @@
     <!--  font CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <!-- root CSS -->
-    <link rel="stylesheet" href="../root.css">
+    <link rel="stylesheet" href="{% static 'root.css' %}">
     <!-- standart CSS -->
-    <link rel="stylesheet" href="../standart.css">
+    <link rel="stylesheet" href="{% static 'standart.css' %}">
     <!--  Hard CSS -->
-    <link rel="stylesheet" href="talaba_profil.css">
+    <link rel="stylesheet" href="{% static 'talaba_profil.css' %}">
     
 </head>
 <body>
@@ -40,7 +40,7 @@
 			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
 			<!-- start -->
 			<li class="item">
-				<a href="./indexteacher.html" class="nav_link">
+				<a href="/asosiy/IndexAdmin" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-chart-line"></i>
 				  </span>
@@ -146,7 +146,7 @@
      </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 
-<script src="./talaba_profil.js"></script>
-<script src="/standart.js"></script>
+<script src="{% static './talaba_profil.js' %}"></script>
+<script src="{% static '/standart.js' %}"></script>
 </body>
 </html>

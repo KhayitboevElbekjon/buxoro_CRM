@@ -7,5 +7,12 @@ urlpatterns = [
     path('guruhlar/',Guruhlar.as_view()),
     path('sorov/',Sorovlar.as_view()),
     path('kutayotganlar/',Kutayotganlar.as_view()),
+    path('guruhdelete/<int:son>',GuruhDelete.as_view()),
+    path('sinov/',Sinovv.as_view()),
+    path('talabalar/',Talabalar.as_view()),
+    path('davomat/',DavomatAdmin.as_view()),
+    path('hujat/',Hujat.as_view()),
+    path('teacher/',Teacher.as_view()),
+    path('dars/',Dars.as_view()),
 
 ]

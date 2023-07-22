@@ -1,7 +1,7 @@
 from django.db import models
 # from asosiy.models import *
 
-from asosiy.models import Guruh,Asosiy_talabalar_safi
+from asosiy.models import Guruh,Asosiy_talabalar_safi,Teacher_table
 
 
 class Mavzu(models.Model):
@@ -17,8 +17,9 @@ class Davomat(models.Model):
     mavzu_fk=models.ForeignKey(Mavzu,on_delete=models.CASCADE)
     guruh_fk=models.ForeignKey(Guruh,on_delete=models.CASCADE)
     asosiy_talabalar_safi_fk=models.ForeignKey(Asosiy_talabalar_safi,on_delete=models.CASCADE)
-    darsga_qatnashdi=models.BooleanField(default=False)
-    vaqt=models.DateTimeField()
+    darsga_qatnashmadi=models.BooleanField(default=False)
+    vaqt=models.DateTimeField(auto_now_add=True)
+    teacher_fk=models.ForeignKey(Teacher_table,on_delete=models.CASCADE,null=True,blank=True)
     def __str__(self):
         return f"{self.asosiy_talabalar_safi_fk}"
 
