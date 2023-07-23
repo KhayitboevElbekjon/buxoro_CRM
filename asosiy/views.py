@@ -246,3 +246,33 @@ class Dars(View):
             )
             return redirect('/asosiy/dars/')
         return redirect('/adminlogin/')
+
+def SorovDelete(request,pk):
+    if request.user.is_authenticated:
+        Sorov.objects.get(id=pk).delete()
+        return redirect('/asosiy/sorov/')
+    return redirect('/adminlogin/')
+
+def KutushDelete(request,pk):
+    if request.user.is_authenticated:
+        Kutish.objects.get(id=pk).delete()
+        return redirect('/asosiy/kutayotganlar/')
+    return redirect('/adminlogin/')
+
+def SinovDelete(request,pk):
+    if request.user.is_authenticated:
+        Sinov.objects.get(id=pk).delete()
+        return redirect('/asosiy/sinov/')
+    return redirect('/adminlogin/')
+
+def TalabaDelete(request,pk):
+    if request.user.is_authenticated:
+        Asosiy_talabalar_safi.objects.get(id=pk).delete()
+        return redirect('/asosiy/talabalar/')
+    return redirect('/adminlogin/')
+
+def TeacherDelete(request,pk):
+    if request.user.is_authenticated:
+        Teacher_table.objects.get(id=pk).delete()
+        return redirect('/asosiy/teacher/')
+    return redirect('/adminlogin/')

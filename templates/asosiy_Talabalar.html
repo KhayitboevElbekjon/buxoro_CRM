@@ -172,7 +172,7 @@
                 <thead>
                     <tr>
             
-                        <th> rasm </th>
+<!--                        <th> rasm </th>-->
                         <th> ism <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Familya <span class="icon-arrow">&UpArrow;</span></th>
                         <th>  Telefon raqami <span class="icon-arrow">&UpArrow;</span></th>
@@ -182,13 +182,14 @@
                         <th>Kursi<span class="icon-arrow">&UpArrow;</span></th>
                         <th>Guruh<span class="icon-arrow">&UpArrow;</span></th>
                         <th>hissobi<span class="icon-arrow">&UpArrow;</span></th>
+                        <th>O'chirish</th>
                     </tr>
                 </thead>
                 <tbody>
                 {% for i in talaba %}
                     <tr>
                         
-                        <td class="name"> <img src="{{i.rasm.url}}" alt="" srcset=""> </td>
+
                         <td class="fam"> {{i.ism}}</td>
                         <td class="fam"> {{i.fam}}</td>
                         <td class="yili">{{i.tel_1}}</td>
@@ -200,6 +201,7 @@
                         </td>
                         <td> {{i.guruh_fk}}</td>
                         <td> 10 000</td>
+                        <td><a href="/asosiy/talabadelete/{{i.id}}"><img src="/media/user.png"></a> </td>
                     </tr>
                 {% endfor %}
         

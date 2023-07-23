@@ -14,5 +14,10 @@ urlpatterns = [
     path('hujat/',Hujat.as_view()),
     path('teacher/',Teacher.as_view()),
     path('dars/',Dars.as_view()),
+    path('sorovdelete/<int:pk>',SorovDelete),
+    path('kutushdelete/<int:pk>',KutushDelete),
+    path('sinovdelete/<int:pk>',SinovDelete),
+    path('talabadelete/<int:pk>',TalabaDelete),
+    path('teacherdelete/<int:pk>',TeacherDelete),
 
 ]

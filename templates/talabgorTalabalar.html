@@ -181,6 +181,7 @@
 <!--                        <th> qulay vaqti<span class="icon-arrow">&UpArrow;</span></th>-->
                         <th>talabgorligi<span class="icon-arrow">&UpArrow;</span></th>
                         <th>qoldirgan sanasi<span class="icon-arrow">&UpArrow;</span></th>
+                        <th>O'chirish</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -195,6 +196,7 @@
                             <p>{{i.kurs_fk}}</p>
                         </td>
                         <td> {{i.sorov_qoldirilgan_vaqt}}</td>
+                        <td><a href="/asosiy/sorovdelete/{{i.id}}"><img src="/media/user.png"></a> </td>
                     </tr>
                     {% endfor %}
 
