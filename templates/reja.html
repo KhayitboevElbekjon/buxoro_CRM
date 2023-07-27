@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	{% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,11 @@
     <!-- font CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <!-- root CSS -->
-    <link rel="stylesheet" href="../root.css">
+    <link rel="stylesheet" href="{% static 'root.css' %}">
     <!-- standart CSS -->
-    <link rel="stylesheet" href="../standart.css">
+    <link rel="stylesheet" href="{% static 'standart.css' %}">
     <!-- hard CSS  -->
-   <link rel="stylesheet" href="/addbox.css">
+   <link rel="stylesheet" href="{% static 'addbox.css' %}">
 </head>
 <body>
   <nav class="navbar">
@@ -38,7 +39,7 @@
 			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
 			<!-- start -->
 			<li class="item">
-				<a href="./indexteacher.html" class="nav_link">
+				<a href="/mentor/indexteacher" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-chart-line"></i>
 				  </span>
@@ -47,21 +48,21 @@
 			  </li>
 	
 			  <li class="item">
-				<a href="./reja.html" class="nav_link">
+				<a href="/mentor/reja" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-layer-group"></i>                  </span>
 				  <span class="navlink"> O'quv Rejasi</span>
 				</a>
 			  </li>
 			  <li class="item">
-				<a href="./guruh.html" class="nav_link">
+				<a href="/mentor/guruh" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-people-group"></i>                  </span>
 				  <span class="navlink"> Guruhlar</span>
 				</a>
 			  </li>
 			  <li class="item">
-				<a href="./nodelist.html" class="nav_link">
+				<a href="/mentor/saqlamalar" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-bookmark"></i>              </span>
 				  <span class="navlink"> Saqlamalar</span>
@@ -98,56 +99,64 @@
           <p></p>
           <i class="fa-solid fa-xmark"></i>
         </header>
-        <form action="#">
+
+        <form method="post">{% csrf_token %}
           <div class="row title">
-            <label>Mavzu:</label>
-            <input type="text" spellcheck="false">
+            <label>Mavzu nomi:</label>
+            <input type="text" name="nom" spellcheck="false">
           </div>
           <div class="row description">
             <label>Ta'rif</label>
-            <textarea spellcheck="false"></textarea>
+            <textarea spellcheck="false" name="tarif"></textarea>
           </div>
           <div class="row description">
             <label>Havola</label>
-            <input class="havola" type="text" spellcheck="false">
+            <input class="havola" name="link" type="text" spellcheck="false">
           </div>
           <button></button>
         </form>
+
       </div>
     </div>
   </div>
+
   <div class="wrapper">
     <li class="add-box">
       <div class="icon"><i class="fa-solid fa-plus"></i></div>
       <p >Yangi mavzu qo'shish</p>
     </li>
+
+	  {% for i in reja %}
 	<li class="note">
 		<div class="details">
-			<p>cccccccccc</p>
-			<span>ccccccccc</span>
-			<a href=''><i class="fa-solid fa-paperclip"></i></a>
+			<label>Mavzu nomi:</label>
+			<p>{{i.nom}}</p><br>
+			<label>Mavzu haqida Ta'rif:</label>
+			<span>{{i.description}}</span>
+			<label>Manzu uchun link:</label>
+			<a href='{{i.link}}'><i class="fa-solid fa-paperclip"></i></a>
 		</div>
 		<div class="bottom-content">
-			<span>5555</span>
+			<span>{{i.vaqt}}</span>
 			<div class="settings">
 				<i  class="fa-solid fa-ellipsis"></i>
 				<ul class="menu">
 					<li class="edit" ><i class="fa-solid fa-pen " ></i>Edit</li>
-					<li><i class="fa-solid fa-trash-can"></i>Delete</li>
+					<a href="/mentor/rejadelete/{{i.id}}"><li><i class="fa-solid fa-trash-can"></i>Delete</li></a>
 				</ul>
 			</div>
 		</div>
 	</li>
-	  
+	{% endfor %}
 </div>
 </section>
 
-<script src="/addSection.js"></script>
+<script src="{% static '/addSection.js' %}"></script>
 
 
 
 
 
-      <script src="/standart.js"></script>
+      <script src="{% static '/standart.js' %}"></script>
 </body>
 </html>

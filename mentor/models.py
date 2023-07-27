@@ -9,6 +9,8 @@ class Mavzu(models.Model):
     link=models.CharField(max_length=100000)
     description=models.TextField()
     vaqt=models.DateTimeField(auto_now_add=True)
+    teacher_fk = models.ForeignKey(Teacher_table, on_delete=models.CASCADE, null=True, blank=True)
+
     def __str__(self):
         return f"{self.nom}"
 
@@ -27,8 +29,10 @@ class Davomat(models.Model):
 class Konfrensiya(models.Model):
     batafsil=models.CharField(max_length=60)
     link=models.CharField(max_length=100000)
-    guruh=models.ManyToManyField(Guruh)
-    vaqt=models.DateTimeField()
+    guruh=models.ForeignKey(Guruh,on_delete=models.CASCADE,null=True,blank=True)
+    vaqt=models.DateField(null=True,blank=True)
+    soat=models.TextField(null=True,blank=True)
+    teacher_fk = models.ForeignKey(Teacher_table, on_delete=models.CASCADE, null=True, blank=True)
     def __str__(self):
         return f"{self.batafsil}"
 
@@ -46,5 +50,6 @@ class Baholash(models.Model):
     asosiy_talabalar_safi_fk=models.ForeignKey(Asosiy_talabalar_safi,on_delete=models.CASCADE)
     min_ball=models.SmallIntegerField()
     max_ball=models.SmallIntegerField()
+    teacher_fk = models.ForeignKey(Teacher_table, on_delete=models.CASCADE, null=True, blank=True)
     def __str__(self):
         return f"{self.asosiy_talabalar_safi_fk}"

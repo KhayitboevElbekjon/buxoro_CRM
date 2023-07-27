@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	{% load static %}
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +10,11 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
  
      <!-- root CSS -->
-     <link rel="stylesheet" href="../root.css">
+     <link rel="stylesheet" href="{% static 'root.css' %}">
      <!-- standart CSS -->
-     <link rel="stylesheet" href="../standart.css">
+     <link rel="stylesheet" href="{% static 'standart.css' %}">
 	 <!-- hard CSS -->
-	 <link rel="stylesheet" href="nodelist.css">
+	 <link rel="stylesheet" href="{% static 'nodelist.css' %}">
 </head>
 <body>
 	
@@ -41,7 +42,7 @@
 			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
 			<!-- start -->
 			<li class="item">
-				<a href="./indexteacher.html" class="nav_link">
+				<a href="/mentor/indexteacher" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-chart-line"></i>
 				  </span>
@@ -50,21 +51,21 @@
 			  </li>
 	
 			  <li class="item">
-				<a href="./reja.html" class="nav_link">
+				<a href="/mentor/reja" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-layer-group"></i>                  </span>
 				  <span class="navlink"> O'quv Rejasi</span>
 				</a>
 			  </li>
 			  <li class="item">
-				<a href="./guruh.html" class="nav_link">
+				<a href="/mentor/guruh" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-people-group"></i>                  </span>
 				  <span class="navlink"> Guruhlar</span>
 				</a>
 			  </li>
 			  <li class="item">
-				<a href="#" class="nav_link">
+				<a href="/mentor/saqlamalar" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-bookmark"></i>              </span>
 				  <span class="navlink"> Saqlamalar</span>
@@ -134,7 +135,7 @@
 			</main>
 			
 			</section>
-	<script src="./nodelist.js"></script>
-	<script src="/standart.js"></script>
+	<script src="{% static './nodelist.js' %}"></script>
+	<script src="{% static '/standart.js' %}"></script>
 </body>
 </html>

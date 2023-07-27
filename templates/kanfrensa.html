@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	{% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,11 @@
     <!-- font CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <!-- root CSS -->
-    <link rel="stylesheet" href="../root.css">
+    <link rel="stylesheet" href="{% static 'root.css' %}">
     <!-- standart CSS -->
-    <link rel="stylesheet" href="../standart.css">
+    <link rel="stylesheet" href="{% static 'standart.css' %}">
     <!-- hard CSS  -->
-   <link rel="stylesheet" href="/addbox.css">
+   <link rel="stylesheet" href="{% static 'addbox.css' %}">
 </head>
 <body>
   <nav class="navbar">
@@ -38,7 +39,7 @@
 			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
 			<!-- start -->
 			<li class="item">
-				<a href="./indexteacher.html" class="nav_link">
+				<a href="/mentor/indexteacher" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-chart-line"></i>
 				  </span>
@@ -47,21 +48,21 @@
 			  </li>
 	
 			  <li class="item">
-				<a href="./reja.html" class="nav_link">
+				<a href="/mentor/reja" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-layer-group"></i>                  </span>
 				  <span class="navlink"> O'quv Rejasi</span>
 				</a>
 			  </li>
 			  <li class="item">
-				<a href="./guruh.html" class="nav_link">
+				<a href="/mentor/guruh" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-people-group"></i>                  </span>
 				  <span class="navlink"> Guruhlar</span>
 				</a>
 			  </li>
 			  <li class="item">
-				<a href="./nodelist.html" class="nav_link">
+				<a href="/mentor/saqlamalar" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-bookmark"></i>              </span>
 				  <span class="navlink"> Saqlamalar</span>
@@ -98,56 +99,75 @@
           <p></p>
           <i class="fa-solid fa-xmark"></i>
         </header>
-        <form action="#">
-          <div class="row title">
-            <label>Kanfrensa Mavzus: </label>
-            <input type="text" spellcheck="false">
+
+
+        <form method="post">{% csrf_token %}
+
+			  <div class="row title">
+            <label>Kanfrensa haqida batafsil: </label>
+            <input type="text" spellcheck="false" name="batafsil">
           </div>
           <div class="row description">
             <label>Guruhlar</label>
             <textarea style="display: none;" ></textarea>
-            <select  spellcheck="false" name="" id=""class="select"   style="width: 100%; ">
-               <option value="" disabled>Guruhni tanlash</option>
-            <option selected value="1">615-21</option>
-            <option value="2">616-21</option>
+            <select  spellcheck="false" name="guruh" id=""class="select"   style="width: 100%; ">
+               <option  disabled>Guruhni tanlash</option>
+				{% for i in gr %}
+            <option selected value="{{i.id}}">{{i.guruh_fk.guruh_nom}}</option>
+				{% endfor %}
           </select> 
           </div>
+			       <div class="row description">
+
+            <label>Konfrensiya o'tkazilish kuni:</label>
+            <input name="kun" class="havola" type="date" spellcheck="false" required>
+          </div>
+			     <div class="row description">
+
+            <label>Konfrensiya o'tkazilish soati:</label>
+            <input name="soat" class="havola" type="text" spellcheck="false" required>
+          </div>
+
           <div class="row description">
             <label>Havola</label>
-            <input class="havola" type="text" spellcheck="false" required>
+            <input name="link" class="havola" type="text" spellcheck="false" required>
           </div>
           <button></button>
         </form>
+
       </div>
     </div>
   </div>
+
   <div class="wrapper">
     <li class="add-box">
       <div class="icon"><i class="fa-solid fa-plus"></i></div>
       <p >Yangi Kanfrensa qo'shish </p>
     </li>
+{% for i in mavzu %}
     <li class="note">
-      <div class="details">
-        <p>cccccccccc</p>
-        <span>ccccccccc</span>
-        <a href=''><i class="fa-solid fa-paperclip"></i></a>
+		<div class="details">
+        <p>{{i.batafsil}}</p>
+        <span>Guruh: {{i.guruh.guruh_nom}}</span>
+       <span> Link: <a  href='{{i.link}}'><i class="fa-solid fa-paperclip"></i></a> </span>
       </div>
       <div class="bottom-content">
-        <span>5555</span>
+        <span>Vaqti: {{i.vaqt}}, {{i.soat}} h</span>
         <div class="settings">
           <i  class="fa-solid fa-ellipsis"></i>
           <ul class="menu">
             <li class="edit" ><i class="fa-solid fa-pen"></i>Edit</li>
-            <li><i class="fa-solid fa-trash-can"></i>Delete</li>
-          </ul>	
+            <a href="/mentor/konfrensiyadelete/{{i.id}}"><li><i class="fa-solid fa-trash-can"></i>Delete</li></a>
+          </ul>
         </div>
       </div>
     </li>
+	  {% endfor %}
   </div>
   
 </section>
 
-<script src="/addSection.js">
+<script src="{% static '/addSection.js' %}">
 
 </script>
 
@@ -155,6 +175,6 @@
 
 
 
-      <script src="/standart.js"></script>
+      <script src="{% static '/standart.js' %}"></script>
 </body>
 </html>

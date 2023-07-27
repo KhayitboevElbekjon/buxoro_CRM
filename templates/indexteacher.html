@@ -42,7 +42,7 @@
 			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
 			<!-- start -->
 			<li class="item">
-				<a href="./index.html" class="nav_link">
+				<a href="/mentor/indexteacher" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-chart-line"></i>
 				  </span>
@@ -51,21 +51,21 @@
 			  </li>
 	
 			  <li class="item">
-				<a href="./reja.html" class="nav_link">
+				<a href="/mentor/reja" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-layer-group"></i>                  </span>
 				  <span class="navlink"> O'quv Rejasi</span>
 				</a>
 			  </li>
 			  <li class="item">
-				<a href="./guruh.html" class="nav_link">
+				<a href="/mentor/guruh"  class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-people-group"></i>                  </span>
 				  <span class="navlink"> Guruhlar</span>
 				</a>
 			  </li>
 			  <li class="item">
-				<a href="./nodelist.html" class="nav_link">
+				<a href="/mentor/saqlamalar" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-bookmark"></i>              </span>
 				  <span class="navlink"> Saqlamalar</span>
@@ -99,7 +99,7 @@
             <div class="boxs">
                 <i class="fa-solid fa-graduation-cap"></i>
                 <p>O'quvchilar </p>
-                <span class="box_nums">200</span>
+                <span class="box_nums">{{son}}</span>
             </div>
             <div class="boxs">
                 <i class="fa-solid fa-sack-dollar"></i>
@@ -109,7 +109,7 @@
             <div class="boxs">
                 <i class="fa-solid fa-people-group"></i>
                 <p>guruhlar</p>
-                <span class="box_nums">200</span>
+                <span class="box_nums">{{gr}}</span>
             </div>
         </div>
 
@@ -198,8 +198,8 @@
 </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 
-<script src="./scriptteacher.js" > 
+<script src="{% static './scriptteacher.js' %}" >
 </script>
-<script src="/standart.js"></script>
+<script src="{% static '/standart.js' %}"></script>
 </body>
 </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	{% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +10,11 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   
       <!-- root CSS -->
-      <link rel="stylesheet" href="../root.css">
+      <link rel="stylesheet" href="{% static 'root.css' %}">
       <!-- standart CSS -->
-      <link rel="stylesheet" href="../standart.css">
+      <link rel="stylesheet" href="{% static 'standart.css' %}">
         <!--  hard CSS -->
-       <link  rel="stylesheet" href="guruh.css">
+       <link  rel="stylesheet" href="{% static 'guruh.css' %}">
 </head>
 <body>
   <nav class="navbar">
@@ -39,7 +40,7 @@
 			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
 			<!-- start -->
 			<li class="item">
-				<a href="./indexteacher.html" class="nav_link">
+				<a href="/mentor/indexteacher" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-chart-line"></i>
 				  </span>
@@ -48,21 +49,21 @@
 			  </li>
 	
 			  <li class="item">
-				<a href="./reja.html" class="nav_link">
+				<a href="/mentor/reja" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-layer-group"></i>                  </span>
 				  <span class="navlink"> O'quv Rejasi</span>
 				</a>
 			  </li>
 			  <li class="item">
-				<a href="./guruh.html" class="nav_link">
+				<a href="/mentor/guruh" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-people-group"></i>                  </span>
 				  <span class="navlink"> Guruhlar</span>
 				</a>
 			  </li>
 			  <li class="item">
-				<a href="./nodelist.html" class="nav_link">
+				<a href="/mentor/saqlamalar" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-bookmark"></i>              </span>
 				  <span class="navlink"> Saqlamalar</span>
@@ -92,34 +93,35 @@
 	  </nav>
     <h1>Guruhlar</h1>
 
+	  {% for i in guruh %}
 <div class="accordion">
   <div class="accordion-item">
     <p class="icons_road_map">  
-      <a href="./davomat.html">  <i class="fa-regular fa-user"></i>         </a>
-      <a href="./uzlashtrish.html">  <i class="fa-solid fa-ranking-star"> </i></a>
-      <a href="./kanfrensa.html"> <i class="fa-solid fa-users-rectangle"></i></i></a>
+      <a href="/mentor/davomatt/{{i.guruh_fk.guruh_nom}}">  <i class="fa-regular fa-user"></i>         </a>
+      <a href="/mentor/uzlashtirish/{{i.guruh_fk.guruh_nom}}">  <i class="fa-solid fa-ranking-star"> </i></a>
+      <a href="/mentor/konfensiya"> <i class="fa-solid fa-users-rectangle"></i></i></a>
       </p>
       <hr>
     <div class="accordion-item-header">
-      <p>615-21 guruh </p>
+      <p>{{i.guruh_fk.guruh_nom}}</p>
     </div>
-    
     <div class="accordion-item-body">
       <div class="accordion-item-body-content">
         <ul style="padding-left: 1rem;">
-        <a href="./talaba_profil.html">  <li>Aliyev Vali Vohidjon og'ili</li> </a>
-        <a href="./talaba_profil.html">  <li>Aliyev Vali Vohidjon og'ili</li> </a>
-        <a href="./talaba_profil.html">  <li>Aliyev Vali Vohidjon og'ili</li> </a>
-        <a href="./talaba_profil.html">  <li>Aliyev Vali Vohidjon og'ili</li> </a>
-        <a href="./talaba_profil.html">  <li>Aliyev Vali Vohidjon og'ili</li> </a>
+			{% for j in talabalar %}
+			{% if j.guruh_fk.guruh_nom == i.guruh_fk.guruh_nom %}
+        <a href="/mentor/bitatalaba/{{j.id}}">  <li>{{j.ism}} {{j.fam}}</li> </a>
+			{% endif %}
+			{% endfor %}
         </ul>
       </div>
     </div>
   </div>
 </div>
-<script src="./guruh.js">
+    {% endfor %}
+<script src="{% static './guruh.js' %}">
 
 </script>
-<script src="/standart.js"></script>
+<script src="{% static '/standart.js' %}"></script>
 </body>
 </html>

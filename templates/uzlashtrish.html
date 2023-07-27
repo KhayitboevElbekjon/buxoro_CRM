@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <!-- root CSS -->
-    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="{% static 'root.css' %}">
     <!-- standart CSS -->
-    <link rel="stylesheet" href="standart.css">
+    <link rel="stylesheet" href="{% static 'standart.css' %}">
 
    <!-- table CSS -->
-    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="{% static 'table.css' %}">
 </head>
 <body>
 
@@ -41,7 +42,7 @@
 			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
 			<!-- start -->
 			<li class="item">
-				<a href="./indexteacher.html" class="nav_link">
+				<a href="/mentor/indexteacher" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-chart-line"></i>
 				  </span>
@@ -50,21 +51,21 @@
 			  </li>
 	
 			  <li class="item">
-				<a href="./reja.html" class="nav_link">
+				<a href="/mentor/reja" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-layer-group"></i>                  </span>
 				  <span class="navlink"> O'quv Rejasi</span>
 				</a>
 			  </li>
 			  <li class="item">
-				<a href="./guruh.html" class="nav_link">
+				<a href="/mentor/guruh" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-people-group"></i>                  </span>
 				  <span class="navlink"> Guruhlar</span>
 				</a>
 			  </li>
 			  <li class="item">
-				<a href="./nodelist.html" class="nav_link">
+				<a href="/mentor/saqlamalar" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-bookmark"></i>              </span>
 				  <span class="navlink"> Saqlamalar</span>
@@ -95,19 +96,7 @@
     <main class="table">
         <section class="table__header">
             <h1>O'zlashtirish</h1>
-            <div class="select">  
-              <i class="fa-solid fa-object-ungroup"></i>
-                <select name="" id="">
-                  <option disabled >Mavzuni tanlang</option>
-                  <option value="1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, nostrum.</option>
-                  <option value="2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, nostrum.</option>
-                  
-                  <option value=3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, nostrum.</option>
-                  <option value="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, nostrum.</option>
-                  
-                </select>
-           
-            </div>
+
       
             <div class="input-group">
                 <input type="search" placeholder="Search Data...">
@@ -126,8 +115,20 @@
             </div>
         </section>
         <section class="table__body">
+               <form>
             <table id="customers_table">
                 <thead>
+                <br>
+
+             <tr>
+                <select name="" >
+                    <option disabled>Mavzu tanlang...</option>
+                    {% for i in mavzu %}
+                  <option value="{{i.id}}">{{forloop.counter}}.{{i.nom}}</option>
+                 {% endfor %}
+                </select>
+                </tr>
+<br>
                     <tr>
                         <th> Id <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Talaba <span class="icon-arrow">&UpArrow;</span></th>
@@ -138,153 +139,23 @@
                     </tr>
                 </thead>
                 <tbody>
+                {% for i in talabalar %}
                     <tr>
-                        <td> 1 </td>
-                        <td> Chan Lee</td>
-                        <td> 2003.06.12</td>
-                        <td> +998 90 123 45 67 </td>
+                        <td> {{forloop.counter}} </td>
+                        <td> {{i.ism}} {{i.fam}}</td>
+                        <td> {{i.tugulgan_sana}}</td>
+                        <td>  {{i.tel_1}} </td>
                         <td>
                             <p class="status alo">Alo</p>
                         </td>
-                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
+                        <td> <input type="number" min="0" name="" > / <input type="number" min="0" name="" id=""> </td>
                     </tr>
-                    <tr>
-                        <td> 2 </td>
-                        <td> eet Saru </td>
-                        <td> Kathmandu </td>
-                        <td> 27 Aug, 2023 </td>
-                        <td>
-                            <p class="status yaxshi">Yaxshi</p>
-                        </td>
-                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
-                    </tr>
-                    <tr>
-                        <td> 3</td>
-                        <td> Sonal Gharti </td>
-                        <td> Tokyo </td>
-                        <td> 14 Mar, 2023 </td>
-                        <td>
-                            <p class="status past">Past</p>
-                        </td>
-                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
-                    </tr>
-                    <tr>
-                        <td> 4</td>
-                        <td>son GC </td>
-                        <td> New Delhi </td>
-                        <td> 25 May, 2023 </td>
-                        <td>
-                            <p class="status alo">Alo</p>
-                        </td>
-                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
-                    </tr>
-                    <tr>
-                        <td> 5</td>
-                        <td> Sarita Limbu </td>
-                        <td> Paris </td>
-                        <td> 23 Apr, 2023 </td>
-                        <td>
-                            <p class="status    yomon"> yomon</p>
-                        </td>
-                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
-                    </tr>
-                    <tr>
-                        <td> 3</td>
-                        <td> Sonal Gharti </td>
-                        <td> Tokyo </td>
-                        <td> 14 Mar, 2023 </td>
-                        <td>
-                            <p class="status past">Past</p>
-                        </td>
-                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
-                    </tr>
-                    <tr>
-                        <td> 6</td>
-                        <td> Alex Gonley </td>
-                        <td> London </td>
-                        <td> 23 Apr, 2023 </td>
-                        <td>
-                            <p class="status yaxshi">Yaxshi</p>
-                        </td>
-                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
-                    </tr>
-                    <tr>
-                        <td> 3</td>
-                        <td> Sonal Gharti </td>
-                        <td> Tokyo </td>
-                        <td> 14 Mar, 2023 </td>
-                        <td>
-                            <p class="status past">Past</p>
-                        </td>
-                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
-                    </tr>
-                    <tr>
-                        <td> 3</td>
-                        <td> Sonal Gharti </td>
-                        <td> Tokyo </td>
-                        <td> 14 Mar, 2023 </td>
-                        <td>
-                            <p class="status past">Past</p>
-                        </td>
-                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
-                    </tr>
-                    <tr>
-                        <td> 7</td>
-                        <td>et Saru </td>
-                        <td> New York </td>
-                        <td> 20 May, 2023 </td>
-                        <td>
-                            <p class="status alo">Alo</p>
-                        </td>
-                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
-                    </tr>
-                    <tr>
-                        <td> 8</td>
-                        <td> Aayat Ali Khan </td>
-                        <td> Islamabad </td>
-                        <td> 30 Feb, 2023 </td>
-                        <td>
-                            <p class="status    yomon"> yomon</p>
-                        </td>
-                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
-                    </tr>
-                    <tr>
-                        <td> 9</td>
-                        <td> Alson GC </td>
-                        <td> Dhaka </td>
-                        <td> 22 Dec, 2023 </td>
-                        <td>
-                            <p class="status yaxshi">Yaxshi</p>
-                        
-                        </td>
-                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
-                    </tr>
-                    <tr>
-                        <td> 9</td>
-                        <td> Alson GC </td>
-                        <td> Dhaka </td>
-                        <td> 22 Dec, 2023 </td>
-                        <td>
-                            <p class="status yaxshi">Yaxshi</p>
-                        
-                        </td>
-                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
-                    </tr>
-                    <tr>
-                        <td> 9</td>
-                        <td> Alson GC </td>
-                        <td> Dhaka </td>
-                        <td> 22 Dec, 2023 </td>
-                        <td>
-                            <p class="status yaxshi">Yaxshi</p>
-                        
-                        </td>
-                        <td> <input type="number" min="0" name="" id="">/ <input type="number" min="0" name="" id=""> </td>
-                    </tr>
+                {% endfor %}
                     
                 </tbody>
             </table>
-            <div class="btn_submit"> <button> Kiritish</button> </div> 
+            <div class="btn_submit"> <button type="submit"> Kiritish</button> </div>
+                   </form>
           </section>
 
     </main>
@@ -294,8 +165,8 @@
             width: 50px;
         }
     </style>
-    <script src="/table.js"></script>
-    <script src="/standart.js"></script>
+    <script src="{% static '/table.js' %}"></script>
+    <script src="{% static '/standart.js' %}"></script>
     
 </body>
 </html>

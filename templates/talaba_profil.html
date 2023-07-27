@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	{% load static %}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,7 +41,7 @@
 			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
 			<!-- start -->
 			<li class="item">
-				<a href="/asosiy/IndexAdmin" class="nav_link">
+				<a href="/mentor/indexteacher" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-chart-line"></i>
 				  </span>
@@ -49,21 +50,21 @@
 			  </li>
 	
 			  <li class="item">
-				<a href="./reja.html" class="nav_link">
+				<a href="/mentor/reja" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-layer-group"></i>                  </span>
 				  <span class="navlink"> O'quv Rejasi</span>
 				</a>
 			  </li>
 			  <li class="item">
-				<a href="./guruh.html" class="nav_link">
+				<a href="/mentor/guruh" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-people-group"></i>                  </span>
 				  <span class="navlink"> Guruhlar</span>
 				</a>
 			  </li>
 			  <li class="item">
-				<a href="#" class="nav_link">
+				<a href="/mentor/saqlamalar" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-bookmark"></i>              </span>
 				  <span class="navlink"> Saqlamalar</span>
@@ -94,36 +95,63 @@
     <div class="wrapper">
         <div class="card front-face">
          <div class="user_name_img">
-             <p>Turdaliyev Farxod</p>
-             <img src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80">
+             <p>{{bitatalaba.ism}} {{bitatalaba.fam}}</p>
+             <img src="{{bitatalaba.rasm.url}}">
          </div>
 <ul class="abouttalaba">
+
+
    <div>
 	   <p>Guruh:</p>
-	   <li class="">617-21</li>
+	   <li class="">{{bitatalaba.guruh_fk}}</li>
 	</div>
+
+
  <div class="">
 	 <p>O'qituvchisi:</p>
-	 <li class="">Aliyev Temur </li>
+	 <li class="">{{mentor}}</li>
 	</div>
+
+
 <div class="">
-	<p>Boshlagan vaqti:</p>
-    <li>      2023.10.03</li>
+	<p>Kurs Boshlagan vaqti:</p>
+    <li>{{bitatalaba.guruh_fk.ochilgan_sana}}</li>
 </div>
+
+
+
 <div class="">
 	<p>Qoldirgan dars soati:</p>
-    <li>5</li>
+    <li>{{qoldirilgan_darslar_soni}}</li>
 </div>
+
+
+
 <div class="">
 
-	<p>Talaba raqami:</p>
-    <li>+998901234567</li>
+	<p>Telefon raqami:</p>
+    <li>{{bitatalaba.tel_1}}</li>
 </div>
+
+
+
 	<div class="">
 
-		<p>Ota-onasi raqami:</p>
-		<li>+998901234567</li>
+		<p>Ota-onasining telefon raqami:</p>
+		<li>{{bitatalaba.tel_2}}</li>
 	</div>
+
+		<div class="">
+
+		<p>Tug'ulgan sanasi :</p>
+		<li>{{bitatalaba.tugulgan_sana}}</li>
+	</div>
+		<div class="">
+
+		<p>Tug'ulgan joyi :</p>
+		<li>{{bitatalaba.tugulgan_joy}}</li>
+	</div>
+
 
 </ul>
 
