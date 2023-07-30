@@ -120,18 +120,15 @@
 
             <form method="post"> {% csrf_token %}
             <table id="customers_table">
-                <thead>
-<br>
-
-             <tr>
-                <select name="mavzu" id="">
+                <thead><br>
+                <tr>
+                <select name="mavzu" >
                     <option disabled>Mavzu tanlang...</option>
                     {% for i in mavzu %}
                   <option value="{{i.id}}">{{forloop.counter}}.{{i.nom}}</option>
                  {% endfor %}
                 </select>
-                </tr>
-<br>
+                </tr><br>
                     <tr>
                         <th> Id <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Talaba <span class="icon-arrow">&UpArrow;</span></th>
@@ -149,12 +146,11 @@
                         <td> {{i.tugulgan_joy}} </td>
                         <td> {{i.tugulgan_sana}} </td>
                         <td>
-
                             <span class=" hidden qiymat">61</span>
 
                             <p class="status">Alo</p>
                         </td>
-                        <td> <input type="checkbox" name="davomat" > </td>
+                        <td> <input type="checkbox" name="davomat" value="{{i.id}}" > </td>
                     </tr>
                 {% endfor %}
                 </tbody>
