@@ -16,6 +16,4 @@ urlpatterns = [
     path('yangiliklar/', YangiliklarIndex.as_view()),
     path('imtihonlar/', Imtihonlarr.as_view())
 
-]
-if not settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
