@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-_j^3*t5@xzjp9&e^ceuefwqm0902je92z3%iq8ujpj)l+okt4@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '127.0.0.0', 'https://buxoro-crm.onrender.com', 'buxoro-crm.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '127.0.0.0', 'https://buxoro-crm.onrender.com', 'buxoro-crm.onrender.com', '44.226.145.213', '54.187.200.255', '34.213.214.55', '35.164.95.156', '44.230.95.183', '44.229.200.200']
 
 
 # Application definition
