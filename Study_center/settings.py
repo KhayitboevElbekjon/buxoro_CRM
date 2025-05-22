@@ -12,9 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-_j^3*t5@xzjp9&e^ceuefwqm0902je92z3%iq8ujpj)l+okt4@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '127.0.0.0']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '127.0.0.0', 'https://buxoro-crm.onrender.com', 'buxoro-crm.onrender.com']
 
 
 # Application definition
