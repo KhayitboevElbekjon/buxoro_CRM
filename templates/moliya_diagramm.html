@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moliya|| Nodiebek ADU </title>
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+ 
+     <!-- root CSS -->
+     <link rel="stylesheet" href="{% static 'root.css' %}">
+     <!-- standart CSS -->
+     <link rel="stylesheet" href="{% static 'standart.css' %}">
+ 
+     <!-- CSS -->
+     <link rel="stylesheet" href="{% static 'styleteacher.css' %}" />
+      
+</head>
+<body>
+    <nav class="navbar">
+		<div class="logo_item">
+      <i class="fa-solid fa-bars" id="sidebarOpen"></i>
+		  <img src="/media/mm2n.png" alt=""></i>NodirbekEDU
+		</div>
+		<div class="search_bar">
+			 <p>Admin oynasi</p>
+		</div>
+		<div class="navbar_content">
+		  <i class="bi bi-grid"></i>
+		  <i class='bx' id="darkLight"></i>
+		  <i class='bx bx-bell' ></i>
+		 <a href="/logout"><img src="/media/logout.png" alt="" class="profile" /></a>
+		</div>
+	  </nav>
+	  <!-- sidebar -->
+	  <nav class="sidebar">
+		<div class="menu_content">
+		  <ul class="menu_items">
+			<div class="menu_title menu_dahsboard"></div>
+			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+			<!-- start -->
+			<li class="item">
+				<a href="/asosiy/IndexAdmin" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-chart-line"></i>
+
+				  </span>
+				  <span class="navlink"> Dashboard</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="/asosiy/kurslar" class="nav_link">
+            <span class="navlink_icon">
+           <i class="fa-solid fa-book-open-reader"></i>             </span>
+            <span class="navlink"> Kurslar</span>
+          </a>
+          </li>
+        <li class="item">
+          <a href="/asosiy/guruhlar" class="nav_link">
+            <span class="navlink_icon">
+            <i class="fa-solid fa-people-group"></i>                  </span>
+            <span class="navlink"> Guruhlar</span>
+          </a>
+          </li>
+			  <li class="item">
+				<a href="/asosiy/sorov" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-brands fa-stack-overflow"></i>                </span>
+				  <span class="navlink">So'rov</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="/asosiy/kutayotganlar" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-eye"></i>                 </span>
+            <span class="navlink">Kutayotganlar</span>
+          </a>
+        </li>
+			  <li class="item">
+          <a href="/asosiy/sinov" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-spell-check"></i>               </span>
+            <span class="navlink">Sinovdagilar</span>
+          </a>
+        </li>
+			  <li class="item">
+				<a href="/asosiy/talabalar" class="nav_link">
+				  <span class="navlink_icon">
+            <i class="fa-solid fa-people-group"></i>                  </span>
+				  <span class="navlink">Talabalar</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="/asosiy/davomat" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-bell-slash"></i>                </span>
+            <span class="navlink">Davomat</span>
+          </a>
+          </li>
+          <li class="item">
+            <a href="/asosiy/hujat" class="nav_link">
+              <span class="navlink_icon">
+                <i class="fa-solid fa-file-pdf"></i>                </span>
+              <span class="navlink">Hujjat</span>
+            </a>
+            </li>
+            <li class="item">
+              <a href="/asosiy/teacher" class="nav_link">
+                <span class="navlink_icon">
+                  <i class="fa-solid fa-chalkboard-user"></i>                </span>
+                <span class="navlink">Teacher</span>
+              </a>
+              </li>
+              <li class="item">
+                <a href="/asosiy/dars" class="nav_link">
+                  <span class="navlink_icon">
+                    <i class="fa-solid fa-graduation-cap"></i>               </span>
+                  <span class="navlink">Dars</span>
+                </a>
+                </li>
+                <li class="item">
+                  <a href="/asosiy/moliya" class="nav_link">
+                    <span class="navlink_icon">
+                      <i class="fa-solid fa-sack-dollar"></i>              </span>
+                    <span class="navlink">Moliya</span>
+                  </a>
+                  </li>
+		  </ul>
+	
+		  <!-- Sidebar Open / Close -->
+		  <div class="bottom_content">
+			<div class="bottom expand_sidebar">
+			  <span> Expand</span>
+			  <i class="fa-solid fa-right-to-bracket"></i>
+			</div>
+			<div class="bottom collapse_sidebar">
+			  <span> Collapse</span>
+			  <i class="fa-solid fa-arrow-left"></i>
+			</div>
+		  </div>
+		</div>
+	  </nav>  
+
+
+    <section> 
+        
+    </section>
+   <section>
+    <div class="charts">
+      <div class="chart" id="teacher">
+        <span class="hidden chiqim ">1200</span>
+        <span class="hidden kirim">300</span>
+        <span class="hidden chiqim ">100</span>
+        <span class="hidden kirim">1200</span>
+        <span class="hidden chiqim ">1200</span>
+        <span class="hidden kirim">300</span>
+        <span class="hidden chiqim">1400</span>
+        <span class="hidden kirim">350</span>
+        <span class="hidden chiqim">1400</span>
+        <span class="hidden kirim">400</span>
+          <h2>Yillik kirim chiqim harajatlar </h2>
+          <div>
+              <canvas id="lineChart"></canvas>
+          </div>
+      </div> 
+      <div class="chart doughnut-chart">
+        <span class="hidden oylik_all">{{ oylik_sum }}</span>
+        <span class="hidden soliq_all">{{ soliq_sum }} </span>
+        <span class="hidden reklama_all">{{ reklama_sum }}</span>
+        <span class="hidden kamunal_all">{{ komunal_sum }}</span>
+        <span class="hidden ragbatlantirish_all">{{ ragbatlantirish_sum }}</span>
+        <span class="hidden boshqalar_all">{{ boshqalar_sum }}</span>
+        <div>
+          <h2>Umumiy chiqim</h2>
+          <div>
+              <canvas id="doughnut"></canvas>
+          </div>
+      </div>
+  </div>
+  </section>
+
+   <section class='guruh_diagram'>
+
+    <div class="group_diagramm_box">
+      <div class="chart doughnut-chart">
+        <h2>Oylik </h2>
+        <span class="hidden oylik">12</span>
+        <span class="hidden soliq">2 </span>
+        <span class="hidden reklama">7</span>
+        <span class="hidden kamunal">9</span>
+        <span class="hidden ragbatlantirish">9</span>
+        <span class="hidden boshqalar">9</span>
+        <div>
+            <canvas class="doughnutBox"></canvas>
+        </div>
+    </div>
+    </div>
+
+   </section>
+<style>
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+
+<script src="{% static 'moliyaDiagramm.js' %}" >
+</script>
+<script src="{% static 'standart.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boshsahifaga+ || Nodirbek ADU</title>
+    <!-- font CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- root CSS -->
+    <link rel="stylesheet" href="{% static 'root.css' %}">
+    <!-- standart CSS -->
+    <link rel="stylesheet" href="{% static 'standart.css' %}">
+    <!-- hard CSS  -->
+   <link rel="stylesheet" href="{% static 'addbox.css' %}">
+</head>
+<body>
+  
+<section class="mavzu">
+
+  <div class="popup-box">
+    <div class="popup">
+      <div class="content">
+        <header>
+          <p></p>
+          <i class="fa-solid fa-xmark"></i>
+        </header>
+
+        <form method="post">{% csrf_token %}
+          <div class="row title">
+            <label for=""> Yuqotidagi katta shriftli matn so'z(5-10)</label>
+            <input type="text" name="shirif_matn" placeholder="" value="" >
+          </div>
+          <div class="row description">
+            <label for=""> Joylashuv</label>
+            <input type="text" placeholder="Farg'ona viloyati,Qo'qon shaxar ..." name="joylashuv">
+          </div>  
+          <div class="row description">
+            <label for=""> Telefon Raqam</label>
+                <input type="text" placeholder="+998 99 *** ** **" name="tel">
+          </div>
+          <div class="row description">
+            <label for=""> Quyidagi matn</label>
+                <input type="text" placeholder="" name="quyi_matn">
+          </div>
+          <div class="row description">
+            <label for="">Biz haqimizdagi bo'limning matn qismi</label>
+                <textarea style="resize: none;" name="tarif" id="" cols="30" rows="3"></textarea>
+          </div>
+          <button>Kiritish</button>
+        </form>
+      </div>
+    </div>
+  </div>  
+  <div class="wrapper">
+    <li class="add-box">
+      <div class="icon"><i class="fa-solid fa-plus"></i></div>
+      <p >Sahifani to'ldiring</p>
+    </li>
+      {% for i in sahifa %}
+	<li class="note">
+		<div class="details">
+			<p> Shrift matn:</p>
+            <span>{{i.shirif_matn}}</span>
+            <p>Joylashuv:</p>
+		     <span>{{i.joylashuv}}</span>
+            <p>Telefon raqam:</p>
+             <span>{{i.tel}}</span>
+             <p>Quyidagi matn:</p>
+            <span>{{i.quyi_matn}}</span>
+             <p>Biz haqimizda</p>
+            <span>{{i.tarif}}</span>
+		</div>
+		<div class="bottom-content">
+			<span></span>
+			<div class="settings">
+				<i  class="fa-solid fa-ellipsis"></i>
+				<ul class="menu">
+					<li class="edit" ><i class="fa-solid fa-pen " ></i>Edit</li>
+					<a href="/asosiy/infoDel/{{i.id}}"><li><i class="fa-solid fa-trash-can"></i>Delete</li></a>
+				</ul>
+			</div>
+		</div>
+	</li>
+ {% endfor %}
+
+  
+</div>
+    <a href="/asosiy/IndexAdmin/">⬅️Orqaga</a>
+</section>
+
+<script src="{% static 'addSection.js' %}"></script>
+
+
+
+
+</body>
+</html>

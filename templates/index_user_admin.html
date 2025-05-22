@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard || NodirbekADU</title>
+    <!-- font CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- root CSS -->
+    <link rel="stylesheet" href="{% static 'root.css' %}">
+    <!-- standart CSS -->
+    <link rel="stylesheet" href="{% static 'standart.css' %}">
+    <link rel="stylesheet" href="{% static 'admmindashboard.css' %}">
+    <!-- footer CSS -->
+    <link rel="stylesheet" href="{% static 'footer.css' %}">
+</head>
+<body>
+  <nav class="navbar">
+
+		  <i class="fa-solid fa-bars" id="sidebarOpen"></i>
+		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		</div>
+		<div class="search_bar">
+			 <p>Ustozlar oynasi</p>
+		</div>
+		<div class="navbar_content">
+		  <i class="bi bi-grid"></i>
+		  <i class='bx' id="darkLight"></i>
+		  <i class='bx bx-bell' ></i>
+		  <img src="images/profile.jpg" alt="" class="profile" />
+		</div>
+	  </nav>
+	  <!-- sidebar -->
+	  <nav class="sidebar">
+		<div class="menu_content">
+		  <ul class="menu_items">
+			<div class="menu_title menu_dahsboard"></div>
+			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+			<!-- start -->
+						<li class="item">
+				<a href="/asosiy/IndexAdmin" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-chart-line"></i>
+
+				  </span>
+				  <span class="navlink"> Dashboard</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="/asosiy/kurslar" class="nav_link">
+            <span class="navlink_icon">
+           <i class="fa-solid fa-book-open-reader"></i>             </span>
+            <span class="navlink"> Kurslar</span>
+          </a>
+          </li>
+        <li class="item">
+          <a href="/asosiy/guruhlar" class="nav_link">
+            <span class="navlink_icon">
+            <i class="fa-solid fa-people-group"></i>                  </span>
+            <span class="navlink"> Guruhlar</span>
+          </a>
+          </li>
+			  <li class="item">
+				<a href="/asosiy/sorov" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-brands fa-stack-overflow"></i>                </span>
+				  <span class="navlink">So'rov</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="/asosiy/kutayotganlar" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-eye"></i>                 </span>
+            <span class="navlink">Kutayotganlar</span>
+          </a>
+        </li>
+			  <li class="item">
+          <a href="/asosiy/sinov" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-spell-check"></i>               </span>
+            <span class="navlink">Sinovdagilar</span>
+          </a>
+        </li>
+			  <li class="item">
+				<a href="/asosiy/talabalar" class="nav_link">
+				  <span class="navlink_icon">
+            <i class="fa-solid fa-people-group"></i>                  </span>
+				  <span class="navlink">Talabalar</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="/asosiy/davomat" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-bell-slash"></i>                </span>
+            <span class="navlink">Davomat</span>
+          </a>
+          </li>
+          <li class="item">
+            <a href="/asosiy/hujat" class="nav_link">
+              <span class="navlink_icon">
+                <i class="fa-solid fa-file-pdf"></i>                </span>
+              <span class="navlink">Hujjat</span>
+            </a>
+            </li>
+            <li class="item">
+              <a href="/asosiy/teacher" class="nav_link">
+                <span class="navlink_icon">
+                  <i class="fa-solid fa-chalkboard-user"></i>                </span>
+                <span class="navlink">Teacher</span>
+              </a>
+              </li>
+              <li class="item">
+                <a href="/asosiy/dars" class="nav_link">
+                  <span class="navlink_icon">
+                    <i class="fa-solid fa-graduation-cap"></i>               </span>
+                  <span class="navlink">Dars</span>
+                </a>
+                </li>
+                <li class="item">
+                  <a href="/asosiy/moliya" class="nav_link">
+                    <span class="navlink_icon">
+                      <i class="fa-solid fa-sack-dollar"></i>              </span>
+                    <span class="navlink">Moliya</span>
+                  </a>
+                  </li>
+		  </ul>
+
+		  <!-- Sidebar Open / Close -->
+		  <div class="bottom_content">
+			<div class="bottom expand_sidebar">
+			  <span> Expand</span>
+			  <i class="fa-solid fa-right-to-bracket"></i>
+			</div>
+			<div class="bottom collapse_sidebar">
+			  <span> Collapse</span>
+			  <i class="fa-solid fa-arrow-left"></i>
+			</div>
+		  </div>
+		</div>
+	  </nav>
+<section class="big">
+  <section class="home-section">
+
+    <div class="home-content">
+      <div class="overview-boxes">
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, facilis. Dolore, praesentium dicta eaque eos tempore repellendus doloribus temporibus nobis libero, architecto ipsa aperiam cupiditate molestiae at, autem odio ratione quam laboriosam optio provident dolorum a minima error veniam! Nulla voluptas architecto voluptates exercitationem eius, adipisci accusantium quam explicabo illo.t</p>
+      </div>
+      <div class="sales-boxes">
+
+
+
+<form method="post"> {% csrf_token %}
+        <div class="recent-sales box">
+          <div class="title">Faol O'qituvchilar</div>
+          <div class="sales-details">
+            <li>
+            <label for=""> O'qituvchi </label>
+           <select name="mentor" >
+               {% for i in mentor %}
+            <option value="{{i.id}}">{{i.ism}} {{i.fam}}</option>
+                {% endfor %}
+           </select>
+            </li>
+            <li>
+                <label for="">Ta'rif </label>
+               <textarea style="resize: none;" name="tarif"  cols="30" rows="3"></textarea>
+            </li>
+            <li>
+                <label for=""> Rasm</label>
+                <input type="file" name="file">
+            </li>
+
+          </div>
+          <div class="button">
+            <a href="">Kiritish</a>
+          </div>
+        </div>
+</form>
+<form>
+        <div class="recent-sales box">
+          <div class="title">Foydalanuvchi sahifasi</div>
+          <div class="sales-details">
+            <li>
+            <label for=""> Yuqotidagi katta shiriftli matn so'z(5-10)</label>
+            <input type="text" placeholder="" value="" maxlength="50">
+            </li>
+            <li>
+                <label for=""> Joylashuv</label>
+                <input type="text" placeholder="">
+            </li>
+            <li>
+                <label for=""> Telefon Raqaam</label>
+                <input type="text" placeholder="">
+            </li>
+            <li>
+                <label for=""> Quyidagi matn</label>
+                <input type="text" placeholder="">
+            </li>
+            <li>
+                <label for=""> O'quvchilar sonni</label>
+                <input type="number">
+            </li>
+            <li>
+                <label for=""> Kurslar sonni</label>
+                <input type="number">
+            </li>
+            <li>
+                <label for=""> O'quituvchilar sonni</label>
+                <input type="number">
+            </li>
+            <li>
+                <label for="">Biz haqidagi bo'limning text</label>
+                <textarea style="resize: none;" name="" id="" cols="30" rows="3"></textarea>
+              </li>
+          </div>
+          <div class="button">
+            <a href="#">Kiritish</a>
+          </div>
+        </div>
+</form>
+      </div>
+      <div class="sales-boxes second_line">
+        <div class="recent-sales box" id="second">
+          <div class="title">Natijali talabalarni qo'shish </div>
+          <div class="sales-details i">
+            <li>
+                <label for="">Isim </label>
+                <input type="text" placeholder="ismingizni kiriting">
+            </li>
+            <li>
+                <label for=""> Familya</label>
+                <input type="text" placeholder="Familyaingizni kiriting">
+            </li>
+            <li>
+                <label for="">Haqida </label>
+                <textarea style="resize: none;" name="" id="" cols="30" rows="3"></textarea>
+              </li>
+            <li>
+                <label for="">Telegram </label>
+                <input type="text" placeholder="telegram link kiriting">
+            </li>
+            <li>
+                <label for="">instagram  </label>
+                <input type="text" placeholder="instagram link kiriting">
+            </li>
+            <li>
+                <label for="">Sertifikat  </label>
+                <input type="file" placeholder="">
+            </li>
+            <li>
+                <label for="">Rasm  </label>
+                <input type="file">
+            </li>
+          </div>
+          <div class="button">
+            <a href="#">Kiritish </a>
+          </div>
+        </div>
+        <div class="recent-sales box" id="second">
+            <div class="title">Yangliklar </div>
+            <div class="sales-details i">
+              <li>
+                  <label for="">Nomi </label>
+                  <input type="text" placeholder="Yanglik nomi ">
+              </li>
+              <li>
+                  <label for=""> Ta'rif</label>
+                  <textarea style="resize: none;" name="" id="" cols="30" rows="3"></textarea>
+                </li>
+
+              <li>
+                  <label for="">Rasm  </label>
+                  <input type="file">
+              </li>
+            </div>
+            <div class="button">
+              <a href="#">Kiritish </a>
+            </div>
+          </div>
+          <div class="recent-sales box" id="second">
+            <div class="title">E'lonlar </div>
+            <div class="sales-details i">
+              <li>
+                  <label for="">Nomi </label>
+                  <input type="text" placeholder="Yanglik nomi ">
+              </li>
+              <li>
+                  <label for=""> Ta'rif</label>
+                  <textarea style="resize: none;" name="" id="" cols="30" rows="3"></textarea>
+                </li>
+                <li>
+                  <label for=""> Boshlanish Vaqti</label>
+                <div>  <input type="time" name="" id="">
+                  <input type="date" name="" id="">   </div>
+                </li>
+            </div>
+            <div class="button">
+              <a href="#">Kiritish </a>
+            </div>
+          </div>
+
+      </div>
+
+    </div>
+  </section>
+</section>
+<footer>
+  <footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+
+    </ul>
+    <p>&copy;2021 Nadine Coelho | All Rights Reserved</p>
+  </footer>
+</footer>
+
+
+<script src="{% static 'standart.js' %}"></script>
+
+ <style>
+
+ </style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+<script src="{% static 'admindashboard.js' %}"></script>
+</body>
+</html>

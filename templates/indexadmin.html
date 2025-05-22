@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard || NodirbekADU</title>
+  <title>Dashboard || NodirbekEDU</title>
     <!-- font CSS -->
     <link rel="stylesheet" href= 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'  />
     <!-- root CSS -->
@@ -16,18 +16,18 @@
 </head>
 <body>
   <nav class="navbar">
-
-		  <i class="fa-solid fa-bars" id="sidebarOpen"></i>
-		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		<div class="logo_item">
+      <i class="fa-solid fa-bars" id="sidebarOpen"></i>
+		  <img src="/media/mm2n.png" alt=""></i>NodirbekADU
 		</div>
 		<div class="search_bar">
-			 <p>Ustozlar oynasi</p>
+			 <p>Admin oynasi</p>
 		</div>
 		<div class="navbar_content">
 		  <i class="bi bi-grid"></i>
 		  <i class='bx' id="darkLight"></i>
 		  <i class='bx bx-bell' ></i>
-		  <img src="images/profile.jpg" alt="" class="profile" />
+				  <a href="/logout"><img src="/media/logout.png" alt="" class="profile" /></a>
 		</div>
 	  </nav>
 	  <!-- sidebar -->
@@ -85,7 +85,7 @@
 				<a href="/asosiy/talabalar" class="nav_link">
 				  <span class="navlink_icon">
             <i class="fa-solid fa-people-group"></i>                  </span>
-				  <span class="navlink">Talabalar</span>
+				  <span class="navlink">O'quvchilar</span>
 				</a>
 			  </li>
         <li class="item">
@@ -117,7 +117,7 @@
                 </a>
                 </li>
                 <li class="item">
-                  <a href="./dars.html" class="nav_link">
+                  <a href="/asosiy/moliya" class="nav_link">
                     <span class="navlink_icon">
                       <i class="fa-solid fa-sack-dollar"></i>              </span>
                     <span class="navlink">Moliya</span>
@@ -140,7 +140,7 @@
 	  </nav>
 <section class="big">
   <section class="home-section">
-  
+
     <div class="home-content">
       <div class="overview-boxes">
         <div class="box">
@@ -149,13 +149,14 @@
             <div class="number">{{ustoz}}</div>
             <div class="indicator">
               <span class="text">2023.01.04</span>
+
             </div>
           </div>
-          <i class="fa-solid fa-person-chalkboard fa-2xl"></i> 
+          <i class="fa-solid fa-person-chalkboard fa-2xl"></i>
           </div>
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">Sinovdagi talabalar</div>
+            <div class="box-topic">Sinovdagi o'quvchilar</div>
             <div class="number">{{sinovdagi_talabalar}}</div>
             <div class="indicator">
               <span class="text">2023.01.04</span>
@@ -165,7 +166,7 @@
         </div>
         <div class="box">
           <div class="right-side">
-            <div class="box-topic">Asosiy talabalar </div>
+            <div class="box-topic">Asosiy o'quvchilar </div>
             <div class="number">{{asosiy_talabalar}}</div>
             <div class="indicator">
               <span class="text">2023.01.04</span>
@@ -175,7 +176,7 @@
         </div>
         <div class="box">
           <div class="right-side">
-            <div class="box-topic"> Talabgor talabalar</div>
+            <div class="box-topic"> Talabgor o'quvchilar</div>
             <div class="number">{{talabgor_talabalar}}</div>
             <div class="indicator">
               <span class="text">2023.01.04</span>
@@ -186,64 +187,86 @@
       </div>
       <div class="sales-boxes">
         <div class="recent-sales box">
-          <div class="title">Qarizdor talabalar</div>
+          <div class="title">Qarzdor o'quvchilar</div>
           <div class="sales-details">
             <li>
-               <p>I.F.SH</p>
+               <p>F.I.SH</p>
                <p>Guruh</p>
-               <p>Qarizdorlik summasi</p>
+               <p>Qarzdorlik summasi</p>
             </li>
               <hr>
+              {% for i in qarizdorlar %}
             <li>
-              <p>Aliyev valijon </p>
-               <p>615-21</p>
-               <p>200 000</p>
+              <p>{{i.asosiy_talabalar_safi_fk.ism}} {{i.asosiy_talabalar_safi_fk.fam}}</p>
+               <p>{{i.asosiy_talabalar_safi_fk.guruh_fk}}</p>
+               <p>{{i.umumiy_summa}} So'm</p>
             </li>
-            <li>
-              <p>Aliyev valijon </p>
-               <p>615-21</p>
-               <p>200 000</p>
-            </li>
-            <li>
-              <p>Aliyev valijon </p>
-               <p>615-21</p>
-               <p>200 000</p>
-            </li>
-            <li>
-              <p>Aliyev valijon </p>
-               <p>615-21</p>
-               <p>200 000</p>
-            </li>
-            <li>
-              <p>Aliyev valijon </p>
-               <p>615-21</p>
-               <p>200 000</p>
-            </li>
-            <li>
-              <p>Aliyev valijon </p>
-               <p>615-21</p>
-               <p>200 000</p>
-            </li>
-            <li>
-              <p>Aliyev valijon</p>
-               <p>615-21</p>
-               <p>200 000</p>
-            </li>
+              {% endfor %}
           </div>
           <div class="button">
-            <a href="#">See All</a>
+            <a href="/asosiy/qarizdorlarJadvali">See All</a>
           </div>
         </div>
         <div class="top-sales box">
-          <span class="hidden Reja_sum">124</span>
-          <span class="hidden qariz">   146 </span>
-          <span class="hidden Reja_sum"> 168</span>
-          <span class="hidden qariz">   190 </span>
-          <span class="hidden Reja_sum"> 210</span>
-      
-          <div class="title"> To'lovlar Sarhisobbi</div>
+
+          <div class="title"> Saytni sozlash </div>
           <div class="chart" id="summ">
-    
+              <br>
+              <hr>
+              <br>
+              <p>Ushbu bo'limda dasturni foydalanuvchilarga ko'rinadigan qismida joylashgan:"Bosh menyu",
+              "Yangiliklar","Darslar","Imtihon" shu kabi bo'limlarni sozlashingiz mumkun!</p>
+
+
+           <div class="site_icons">
+               <ul class="iconses">
+                   <a href="/asosiy/foydalanuvchiSahifasi">
+               <li>
+
+                   <i title="Info" class="fa-solid fa-circle-info"></i>
+                   <p>Info  </p>
+               </li>
+                       </a>
+
+
+
+                   <a href="/asosiy/reklamamentor"> <li>
+                       <i class="fa-solid fa-person-chalkboard"></i>
+                       <p>Teacher  </p>
+                   </li>
+                       </a>
+
+
+
+                    <a href="/asosiy/reklamaoquvchilar/">
+                   <li>
+                       <i class="fa-solid fa-user-graduate"></i>
+                       <p>Iqtidorli o'quvchilar  </p>
+                   </li>
+                         </a>
+
+
+                    <a href="/asosiy/yangiliklarSayt">
+                   <li>
+                       <i class="fa-solid fa-bullhorn"></i>
+                       <p>yangiliklar  </p>
+                   </li>
+                        </a>
+
+
+
+                   <a href="/asosiy/elonlarSayt">
+                   <li>
+                       <i class="fa-solid fa-newspaper"></i>
+                       <p>E'lonlar  </p>
+                   </li>
+                        </a>
+
+               </ul>
+               <a href="/">Web saytga qaytish ↩️</a>
+           </div>
+
+
               <div>
                   <canvas id="lineChart"></canvas>
               </div>
@@ -252,12 +275,12 @@
       </div>
       <div class="sales-boxes second_line">
         <div class="recent-sales box" id="second">
-          <div class="title">Talabgor talabalar</div>
+          <div class="title">Talabgor o'quvchilar</div>
           <div class="sales-details">
             <li>
-               <p>FISH</p>
+               <p>F.I.SH</p>
                <p>Telefon nomeri</p>
-               <p>Talab</p>
+               <p>Yo'nalish</p>
                <p>So'rov qoldigan sanasi</p>
             </li>
               <hr>
@@ -276,6 +299,7 @@
         </div>
       </div>
     </div>
+
   </section>
 </section>
 

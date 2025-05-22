@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+      {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Oylik Taqsimoti</title>
+    <link rel="stylesheet" href="{% static 'moliya_form.css' %}">
+   </head>
+<body>
+  <div class="wrapper">
+    <h2> O'qituvchini oylik taqsimoti</h2>
+
+
+    <form method="post"> {% csrf_token %}
+      <div class="input-box">
+          <p>O'qituvchini tanlang...</p>
+            <select name="oylik" >
+                {% for i in taqsimot %}
+                <option value="{{i.id}}">{{i.ism}}</option>
+                {% endfor %}
+            </select>
+      </div>
+        <br>
+      <div class="input-box">
+          <p>Oy nomini tanlang...</p>
+        <select name="oy">
+                <option value="Yanvar">Yanvar</option>
+                <option value="Fevral">Fevral</option>
+                <option value="Mart">Mart</option>
+                <option value="Aprel">Aprel</option>
+                <option value="May">May</option>
+                <option value="Iyun">Iyun</option>
+                <option value="Iyul">Iyul</option>
+                <option value="Avgust">Avgust</option>
+                <option value="Sentyabr">Sentyabr</option>
+                <option value="Oktyabr">Oktyabr</option>
+                <option value="Noyabr">Noyabr</option>
+                <option value="Dekabr">Dekabr</option>
+        </select>
+      </div>
+        <br>
+      <div class="input-box">
+        <input name="summa" type="number" placeholder="To'liv qismi" required min="0">
+      </div>
+
+      <div class="input-box button">
+        <input type="Submit" value="Belgilsh">
+      </div>
+      <div class="text">
+        <h3> <a href="/asosiy/moliya/"> Asosiy menyuga qaytish</a> ||  <a href="/asosiy/oylikChiqim">Oylik jadvali</a></h3>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

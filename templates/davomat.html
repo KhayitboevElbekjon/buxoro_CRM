@@ -21,7 +21,7 @@
   <nav class="navbar">
 		<div class="logo_item">
       <i class="fa-solid fa-bars" id="sidebarOpen"></i>
-		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		  <img src="/media/mm2n.png" alt=""></i>NodirbekEDU
 		</div>
 		<div class="search_bar">
 			 <p>Ustozlar oynasi</p>
@@ -30,7 +30,7 @@
 		  <i class="bi bi-grid"></i>
 		  <i class='bx' id="darkLight"></i>
 		  <i class='bx bx-bell' ></i>
-		  <img src="images/profile.jpg" alt="" class="profile" />
+			  <a href="/mentor/logaut/"><img src="/media/logout.png" alt="" class="profile" /></a>
 		</div>
 	  </nav>
 	  <!-- sidebar -->
@@ -131,7 +131,7 @@
                 </tr><br>
                     <tr>
                         <th> Id <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Talaba <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> O'quvchi <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Tug'ulgan Joyi <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Tug'ulgan sanasi <span class="icon-arrow">&UpArrow;</span></th>
                         <th> bilim <span class="icon-arrow">&UpArrow;</span></th>
@@ -146,10 +146,15 @@
                         <td> {{i.tugulgan_joy}} </td>
                         <td> {{i.tugulgan_sana}} </td>
                         <td>
-                            <span class=" hidden qiymat">61</span>
-
+                        {% for id, baho in uzlashtirish.items %}
+                        {% if id == i.id %}
+                            <span class=" hidden qiymat">{{baho}}</span>
+                            {% endif %}
+                            {% endfor %}
                             <p class="status">Alo</p>
+
                         </td>
+
                         <td> <input type="checkbox" name="davomat" value="{{i.id}}" > </td>
                     </tr>
                 {% endfor %}

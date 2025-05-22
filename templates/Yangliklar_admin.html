@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yangliklar+ || Nodirbek ADU</title>
+    <!-- font CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- root CSS -->
+    <link rel="stylesheet" href="{% static 'root.css' %}">
+    <!-- standart CSS -->
+    <link rel="stylesheet" href="{% static 'standart.css' %}">
+    <!-- hard CSS  -->
+   <link rel="stylesheet" href="{% static 'addbox.css' %}">
+</head>
+<body>
+  
+<section class="mavzu">
+
+  <div class="popup-box">
+    <div class="popup">
+      <div class="content">
+        <header>
+          <p></p>
+          <i class="fa-solid fa-xmark"></i>
+        </header>
+
+
+        <form method="post" enctype="multipart/form-data">{% csrf_token %}
+          <div class="row title">
+            <label for="">Nomi </label>
+            <input type="text" name="nom" placeholder="Yanglik nomi ">
+          </div>
+          <div class="row description">
+            <label for=""> Ta'rif</label>
+            <textarea style="resize: none;" name="tarif" cols="30" rows="3"></textarea>
+          </div>  
+          <div class="row description">
+            <label for=""> Rasm </label>
+            <input type="file" name="rasm" id="">
+           </div>
+         
+          <button>Kiritish</button>
+        </form>
+      </div>
+    </div>
+  </div>  
+  <div class="wrapper">
+    <li class="add-box">
+      <div class="icon"><i class="fa-solid fa-plus"></i></div>
+      <p >Yangiliklar kiritish </p>
+    </li>
+      {% for i in yangiliklar %}
+	<li class="note">
+		<div class="details">
+            <img src="{{ i.rasm.url }}" style="width: 70px; height: 73px; border-radius: 70%;" />
+			<p> {{i.nom}}</p>
+		     <span>{{i.text}}</span>
+
+		</div>
+		<div class="bottom-content">
+			<span>{{i.vaqt}}</span>
+			<div class="settings">
+				<i  class="fa-solid fa-ellipsis"></i>
+				<ul class="menu">
+					<li class="edit" ><i class="fa-solid fa-pen " ></i>Edit</li>
+					<a href="/asosiy/yangiliklarSaytDel/{{i.id}}"><li><i class="fa-solid fa-trash-can"></i>Delete</li></a>
+				</ul>
+			</div>
+		</div>
+	</li>
+ 
+{% endfor %}
+  
+</div>
+    <a href="/asosiy/IndexAdmin/">⬅️Orqaga</a>
+</section>
+
+<script src="{% static 'addSection.js' %}"></script>
+
+
+
+
+</body>
+</html>

@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html langhujjat="en">
 <head>
 	{% load static %}
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Saqlanmalar</title>
-  
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
- 
-     <!-- root CSS -->
-     <link rel="stylesheet" href="{% static 'root.css' %}">
-     <!-- standart CSS -->
-     <link rel="stylesheet" href="{% static 'standart.css' %}">
-	 <!-- hard CSS -->
-	 <link rel="stylesheet" href="{% static 'nodelist.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurslar || Nodirbek EDU</title>
+    <!-- font CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- root CSS -->
+    <link rel="stylesheet" href="{% static 'root.css' %}">
+    <!-- standart CSS -->
+    <link rel="stylesheet" href="{% static 'standart.css' %}">
+    <!-- hard CSS  -->
+   <link rel="stylesheet" href="{% static 'addbox.css' %}">
 </head>
 <body>
 	
@@ -22,7 +21,7 @@
 	<nav class="navbar">
 		<div class="logo_item">
 			<i class="fa-solid fa-bars" id="sidebarOpen"></i>
-		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		  <img src="/media/mm2n.png" alt=""></i>NodirbekEDU
 		</div>
 		<div class="search_bar">
 			 <p>Ustozlar oynasi</p>
@@ -31,7 +30,7 @@
 		  <i class="bi bi-grid"></i>
 		  <i class='bx' id="darkLight"></i>
 		  <i class='bx bx-bell' ></i>
-		  <img src="images/profile.jpg" alt="" class="profile" />
+			  <a href="/mentor/logaut/"><img src="/media/logout.png" alt="" class="profile" /></a>
 		</div>
 	  </nav>
 	  <!-- sidebar -->
@@ -81,61 +80,82 @@
 		  </ul>
 	
 		  <!-- Sidebar Open / Close -->
-		  <div class="bottom_content">
-			<div class="bottom expand_sidebar">
-			  <span> Expand</span>
-			  <i class="fa-solid fa-right-to-bracket"></i>
-			</div>
-			<div class="bottom collapse_sidebar">
-			  <span> Collapse</span>
-			  <i class="fa-solid fa-arrow-left"></i>
-			</div>
-		  </div>
-		</div>
-	  </nav>
-	  <section class="big_box">
+		 <div class="bottom_content">
+      <div class="bottom expand_sidebar">
+        <span> Expand</span>
+        <i class="fa-solid fa-right-to-bracket"></i>
+      </div>
+      <div class="bottom collapse_sidebar">
+        <span> Collapse</span>
+        <i class="fa-solid fa-arrow-left"></i>
+      </div>
+      </div>
+    </div>
+    </nav>
+<section class="mavzu">
+	<div class="popup-box">
+    <div class="popup">
+      <div class="content">
+        <header>
+          <p></p>
+          <i class="fa-solid fa-xmark"></i>
+        </header>
 
-		  <header>
-			  
-			  <form id="new-task-form">
-				  <input 
-				  type="text" 
-				  name="new-task-input" 
-				  id="new-task-input" 
-				  placeholder="Yangi Saqlama qo'shing " />
-				  <input 
-				  type="submit"
-				  id="new-task-submit" 
-				  value="Qo'shing" />
-				</form>
-			</header>
-			<main>
-				<section class="task-list">
-					<h2>Saqlanganlar</h2>
-					
-					<div id="tasks">
-						
-						<div class="task">
-							<div class="content">
-								<input 
-								type="text" 
-								class="text" 
-								value="A new task"
-								readonly>
-								<p class="time">07.01.2023</p>
-							</div>
-							<div class="actions">
-								<button class="edit">Edit</button>
-								<button class="delete">Delete</button>
-							</div>
-						</div>
-						
-					</div>
-				</section>
-			</main>
-			
-			</section>
-	<script src="{% static './nodelist.js' %}"></script>
-	<script src="{% static '/standart.js' %}"></script>
+
+        <form method="post">{% csrf_token %}
+          <div class="row title">
+            <label>Saqlama:</label>
+            <textarea name="eslatma" id="" cols="30" rows="10"></textarea>
+          </div>
+<!--          <div class="row title">-->
+<!--            <label>-&#45;&#45; -&#45;&#45; -&#45;&#45;</label>-->
+<!--      <input type="text" disabled>-->
+<!--          </div>-->
+
+          <button class="input_btn">Kiritish</button>
+<!--          <button class="edit_btn">O'zgartish</button>-->
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="wrapper">
+    <li class="add-box">
+      <div class="icon"><i class="fa-solid fa-plus"></i></div>
+      <p >Saqlama qo'shish</p>
+    </li>
+{% for i in eslatma %}
+  <li class="note">
+    <div class="details">
+         <p>Saqlamalar:</p>
+		<span>{{ i.eslatma }}</span>
+             <!-- <span>1-chifan</span> -->
+    </div>
+    <div class="bottom-content">
+      <span>{{i.vaqt}}</span>
+      <div class="settings">
+        <i  class="fa-solid fa-ellipsis"></i>
+        <ul class="menu">
+          <li class="edit" ><i class="fa-solid fa-pen " ></i>Edit</li>
+          <a href="/mentor/saqlamalardelete/{{i.id}}"><li><i class="fa-solid fa-trash-can"></i>Delete</li></a>
+        </ul>
+      </div>
+    </div>
+	  {% endfor %}
+  </li>
+
+</div>
+</section>
+
+	<script src="{% static '/addSection.js' %}">
+
+</script>
+
+
+
+
+
+      <script src="{% static '/standart.js' %}"></script>
 </body>
 </html>

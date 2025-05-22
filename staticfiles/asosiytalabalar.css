@@ -1,0 +1,23 @@
+.oxirgi{
+    padding-right: 100px;
+}
+.studen_action{
+    display: flex;
+    justify-content: end;
+    padding-right: 40px;
+}
+.studen_action i{
+    font-size:28px;
+    color: #265df2;
+}
+
+.studen_action i:hover{
+    transform: scale(1.2);
+}
+.info{
+    display: flex;
+    justify-content: space-between;
+}
+.status{
+color: #333;
+} 

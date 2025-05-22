@@ -23,16 +23,16 @@
   <nav class="navbar">
 		<div class="logo_item">
       <i class="fa-solid fa-bars" id="sidebarOpen"></i>
-		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		  <img src="/media/mm2n.png" alt=""></i>NodirbekEDU
 		</div>
 		<div class="search_bar">
-			 <p>Ustozlar oynasi</p>
+			 <p>Admin oynasi</p>
 		</div>
 		<div class="navbar_content">
 		  <i class="bi bi-grid"></i>
 		  <i class='bx' id="darkLight"></i>
 		  <i class='bx bx-bell' ></i>
-		  <img src="images/profile.jpg" alt="" class="profile" />
+		  <a href="/logout"><img src="/media/logout.png" alt="" class="profile" /></a>
 		</div>
 	  </nav>
 	  <!-- sidebar -->
@@ -90,7 +90,7 @@
 				<a href="/asosiy/talabalar" class="nav_link">
 				  <span class="navlink_icon">
             <i class="fa-solid fa-people-group"></i>                  </span>
-				  <span class="navlink">Talabalar</span>
+				  <span class="navlink">O'quvchilar</span>
 				</a>
 			  </li>
         <li class="item">
@@ -122,7 +122,7 @@
                 </a>
                 </li>
                 <li class="item">
-                  <a href="./dars.html" class="nav_link">
+                  <a href="/asosiy/moliya" class="nav_link">
                     <span class="navlink_icon">
                       <i class="fa-solid fa-sack-dollar"></i>              </span>
                     <span class="navlink">Moliya</span>
@@ -147,7 +147,7 @@
 	  </nav>
     <main class="table">
         <section class="table__header">
-            <h1>Talabgor talabalar</h1>
+            <h1>Talabgor o'quvchilar</h1>
             <div class="add">
                 <i class="fa-solid fa-plus"></i>
             </div>
@@ -320,29 +320,25 @@
         <br>
         <form method="post">{% csrf_token %}
 <!--            <i class="fa-solid fa-xmark fa-xl"></i>-->
-            <label>O'qimoqchi bo'lgan kursni kiriting...</label>
+            <label>O'qimoqchi bo'lgan kursni kiriting:</label>
             <select name="kurs" >
                 {% for i in kurs %}
                 <option value="{{i.id}}">{{i.nom}}</option>
                 {% endfor %}
             </select>
-<!--            <select name="" >-->
-<!--                <option value="">sdas</option>-->
-<!--                <option value="">sdas</option>-->
-<!--                <option value="">sdas</option>-->
-<!--            </select>-->
-
             <div class="form_input">
-                <label>Ism</label>
+
+                <label>Ism:</label>
+
                 <input type="text" name="ism" >
-                <label>Familiya</label>
+                <label>Familiya:</label>
                 <input type="text" name="fam" >
-                <label>Telefon nomer</label>
+                <label>Telefon nomer:</label>
                 <input type="text" name="tel" >
                 <!-- <input type="text"  placeholder="tel">
                 <input type="text"  placeholder="guruhi"> -->
             </div>
-            <button>kiritish</button>
+            <button>Kiritish</button>
         </form>
         </section>
 

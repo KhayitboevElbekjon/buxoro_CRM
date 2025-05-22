@@ -22,7 +22,7 @@
   <nav class="navbar">
 		<div class="logo_item">
       <i class="fa-solid fa-bars" id="sidebarOpen"></i>
-		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		  <img src="/media/mm2n.png" alt=""></i>NodirbekEDU
 		</div>
 		<div class="search_bar">
 			 <p>Ustozlar oynasi</p>
@@ -31,7 +31,8 @@
 		  <i class="bi bi-grid"></i>
 		  <i class='bx' id="darkLight"></i>
 		  <i class='bx bx-bell' ></i>
-		  <img src="images/profile.jpg" alt="" class="profile" />
+		  <a href="/mentor/logaut/"><img src="/media/logout.png" alt="" class="profile" /></a>
+
 		</div>
 	  </nav>
 	  <!-- sidebar -->
@@ -98,17 +99,17 @@
         <div class="info_header">
             <div class="boxs">
                 <i class="fa-solid fa-graduation-cap"></i>
-                <p>O'quvchilar </p>
+                <p>O'quvchilar</p>
                 <span class="box_nums">{{son}}</span>
             </div>
             <div class="boxs">
                 <i class="fa-solid fa-sack-dollar"></i>
-                <p>oylik haqqi</p>
+                <p>Oylik ish haqi</p>
                 <span class="box_nums">200</span>
             </div>
             <div class="boxs">
                 <i class="fa-solid fa-people-group"></i>
-                <p>guruhlar</p>
+                <p>Guruhlar</p>
                 <span class="box_nums">{{gr}}</span>
             </div>
         </div>
@@ -116,82 +117,53 @@
     </section>
    <section>
     <div class="charts">
+
+
       <div class="chart" id="teacher">
-        <span class="hidden oylik ">1200</span>
-        <span class="hidden talabaSoni">300</span>
+        <span class="hidden oylik ">0</span>
+        <span class="hidden talabaSoni">0</span>
         <span class="hidden oylik">1400</span>
         <span class="hidden talabaSoni">350</span>
         <span class="hidden oylik">1600</span>
-        <span class="hidden talabaSoni">400</span>
-          <h2>O'qitvchining yillik diagramma tasviri</h2>
+        <span class="hidden talabaSoni">{{son}}</span>
+          <h2>O'qituvchining yillik diagramma tasviri</h2>
           <div>
               <canvas id="lineChart"></canvas>
           </div>
       </div>
+
+
+
       <div class="chart doughnut-chart">
-        <span class="hidden alo_all">12</span>
-        <span class="hedden yaxshi_all">2 2</span>
-        <span class="hedden past_all">7</span>
-        <span class="hedden yomon_all">9</span>
+        <span class="hidden alo_all">{{alo_sum}}</span>
+        <span class="hedden yaxshi_all">{{yaxshi_sum}}</span>
+        <span class="hedden past_all">{{pas_sum}}</span>
+        <span class="hedden yomon_all">{{yomon_sum}}</span>
         <div>
-          <h2>Talabalar o'zlashtirish</h2>
+          <h2>{{ teacher }}ga tegishli barcha<br> o'quvchilarni o'zlashtirish</h2>
           <div>
               <canvas id="doughnut"></canvas>
           </div>
       </div>
   </div>
+
   </section>
-
    <section class='guruh_diagram'>
+{% for i in guruhlar_soni %}
+    <div class="group_diagramm_box">
+        <div class="chart doughnut-chart">
+            <h2>"" guruh  o'quvchilarni o'zlashtirish</h2>
+            <span class="hidden alo"></span>
+            <span class="hidden yaxshi"></span>
+            <span class="hidden past"></span>
+            <span class="hidden yomon"></span>
+            <div>
+                <canvas class="doughnutBox"></canvas>
+            </div>
+        </div>
+    </div>
+{% endfor %}
 
-    <div class="group_diagramm_box">
-      <div class="chart doughnut-chart">
-        <h2>616-guruh Talabalar o'zlashtirish</h2>
-        <span class="hidden alo">12</span>
-        <span class="hedden yaxshi">42</span>
-        <span class="hedden past">7</span>
-        <span class="hedden yomon">9</span>
-        <div>
-            <canvas class="doughnutBox"></canvas>
-        </div>
-    </div>
-    </div>
-    <div class="group_diagramm_box">
-      <div class="chart doughnut-chart">
-        <h2>616-guruh Talabalar o'zlashtirish</h2>
-        <span class="hidden alo">19</span>
-        <span class="hedden yaxshi">32</span>
-        <span class="hedden past">31</span>
-        <span class="hedden yomon">12</span>
-        <div>
-            <canvas class="doughnutBox"></canvas>
-        </div>
-    </div>
-    </div>
-      <div class="group_diagramm_box">
-        <div class="chart doughnut-chart">
-          <h2>616-guruh Talabalar o'zlashtirish</h2>
-          <span class="hidden alo">22</span>
-          <span class="hedden yaxshi">32</span>
-          <span class="hedden past">41</span>
-          <span class="hedden yomon">12</span>
-          <div>
-              <canvas class="doughnutBox"></canvas>
-          </div>
-      </div>
-      </div>
-      <div class="group_diagramm_box">
-        <div class="chart doughnut-chart">
-          <h2>617-guruh Talabalar o'zlashtirish</h2>
-          <span class="hidden alo">12</span>
-          <span class="hedden yaxshi">43</span>
-          <span class="hedden past">22</span>
-          <span class="hedden yomon">11</span>
-          <div>
-              <canvas class="doughnutBox"></canvas>
-          </div>
-      </div>
-      </div>
 
    </section>
 <style>

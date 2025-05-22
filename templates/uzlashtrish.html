@@ -14,7 +14,7 @@
     <!-- standart CSS -->
     <link rel="stylesheet" href="{% static 'standart.css' %}">
 
-   <!-- table CSS -->
+
     <link rel="stylesheet" href="{% static 'table.css' %}">
 </head>
 <body>
@@ -22,7 +22,7 @@
     <nav class="navbar">
 		<div class="logo_item">
 		  <i class="fa-solid fa-bars" id="sidebarOpen"></i>
-		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		  <img src="/media/mm2n.png" alt=""></i>NodirbekEDU
 		</div>
 		<div class="search_bar">
 			 <p>Ustozlar oynasi</p>
@@ -31,7 +31,7 @@
 		  <i class="bi bi-grid"></i>
 		  <i class='bx' id="darkLight"></i>
 		  <i class='bx bx-bell' ></i>
-		  <img src="images/profile.jpg" alt="" class="profile" />
+		 		  <a href="/mentor/logaut/"><img src="/media/logout.png" alt="" class="profile" /></a>
 		</div>
 	  </nav>
 	  <!-- sidebar -->
@@ -129,13 +129,20 @@
                   <option value="{{i.id}}">{{forloop.counter}}.{{i.nom}}</option>
                  {% endfor %}
                 </select>
-                </tr>
 
-                <input  type="number" min="0" name="umumiy_ball" >
+
+                 <div class="header_maxInput">
+                  <p>Umumiy ball:</p>
+                   <input  type="number" min="0" name="umumiy_ball"  >
+                </div>
+
+
+
+                </tr>
 <br>
                     <tr>
                         <th> Id <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Talaba <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> O'quvchi <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Tug'ulgan sana <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Telefon raqami <span class="icon-arrow">&UpArrow;</span></th>
                         <th> bilim <span class="icon-arrow">&UpArrow;</span></th>
@@ -149,8 +156,15 @@
                         <td> {{i.ism}} {{i.fam}}</td>
                         <td> {{i.tugulgan_sana}}</td>
                         <td>  {{i.tel_1}} </td>
-                        <td>
-                            <p class="status alo">Alo</p>
+
+                              <td>
+                        {% for id, baho in uzlashtirish.items %}
+                        {% if id == i.id %}
+                            <span class=" hidden qiymat">{{baho}}</span>
+                            {% endif %}
+                            {% endfor %}
+                            <p class="status">Alo</p>
+
                         </td>
                         <td> <input type="number" min="0" name="min_{{ i.id }}" > </td>
                     </tr>
@@ -171,6 +185,7 @@
     </style>
     <script src="{% static '/table.js' %}"></script>
     <script src="{% static '/standart.js' %}"></script>
-    
+    <script src="{% static '/getgraudent.js' %}"></script>
+
 </body>
 </html>

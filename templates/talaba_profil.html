@@ -40,7 +40,7 @@
 			<div class="menu_title menu_dahsboard"></div>
 			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
 			<!-- start -->
-			<li class="item">
+				<li class="item">
 				<a href="/mentor/indexteacher" class="nav_link">
 				  <span class="navlink_icon">
 					<i class="fa-solid fa-chart-line"></i>
@@ -48,7 +48,7 @@
 				  <span class="navlink"> Dashboard</span>
 				</a>
 			  </li>
-	
+
 			  <li class="item">
 				<a href="/mentor/reja" class="nav_link">
 				  <span class="navlink_icon">
@@ -78,6 +78,7 @@
 				</a>
 			  </li>
 		  </ul>
+
 	
 		  <!-- Sidebar Open / Close -->
 		  <div class="bottom_content">
@@ -94,75 +95,48 @@
 	  </nav>
     <div class="wrapper">
         <div class="card front-face">
-         <div class="user_name_img">
-             <p>{{bitatalaba.ism}} {{bitatalaba.fam}}</p>
-             <img src="{{bitatalaba.rasm.url}}">
+			<img src="{{bitatalaba.rasm.url}}">
+			<div class="user_name_img">
+			 <p>{{bitatalaba.ism}} {{bitatalaba.fam}}</p>
          </div>
 <ul class="abouttalaba">
-
-
    <div>
 	   <p>Guruh:</p>
 	   <li class="">{{bitatalaba.guruh_fk}}</li>
 	</div>
-
-
  <div class="">
 	 <p>O'qituvchisi:</p>
-	 <li class="">{{mentor}}</li>
+	 <li class="">{{mentor.ism}} {{mentor.fam}}</li>
 	</div>
-
-
 <div class="">
-	<p>Kurs Boshlagan vaqti:</p>
-    <li>{{bitatalaba.guruh_fk.ochilgan_sana}}</li>
+	<p>Boshlagan vaqti:</p>
+    <li>      {{bitatalaba.guruh_fk.ochilgan_sana}}</li>
 </div>
-
-
-
-<div class="">
-	<p>Qoldirgan dars soati:</p>
-    <li>{{qoldirilgan_darslar_soni}}</li>
-</div>
-
-
-
+<!--<div class="">-->
+<!--	<p>Qoldirgan dars soati:</p>-->
+<!--    <li>{{davomat}}</li>-->
+<!--</div>-->
 <div class="">
 
-	<p>Telefon raqami:</p>
+	<p>O'quvchi raqami:</p>
     <li>{{bitatalaba.tel_1}}</li>
 </div>
-
-
-
 	<div class="">
 
-		<p>Ota-onasining telefon raqami:</p>
+		<p>Ota-onasi raqami:</p>
 		<li>{{bitatalaba.tel_2}}</li>
 	</div>
-
-		<div class="">
-
-		<p>Tug'ulgan sanasi :</p>
-		<li>{{bitatalaba.tugulgan_sana}}</li>
-	</div>
-		<div class="">
-
-		<p>Tug'ulgan joyi :</p>
-		<li>{{bitatalaba.tugulgan_joy}}</li>
-	</div>
-
 
 </ul>
 
         </div>
         <div class="card back-face">
-          <span class="alo">4</span>
-          <span class="yaxshi">10</span>
-          <span class="past">5</span>
-          <span class="yomon">2</span>
+          <span class="alo">{{alo}}</span>
+          <span class="yaxshi">{{yaxshi}}</span>
+          <span class="past">{{pas}}</span>
+          <span class="yomon">{{yomon}}</span>
           <div class="chart doughnut-chart">
-            <p>Talaba mavzularni o'zlashtirish</p>
+            <p>O'quvchi mavzularni o'zlashtirish</p>
             <div>
                 <canvas id="doughnut"></canvas>
             </div>
@@ -174,7 +148,7 @@
      </style>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 
-<script src="{% static './talaba_profil.js' %}"></script>
-<script src="{% static '/standart.js' %}"></script>
+<script src="{% static 'talaba_profil.js' %}"></script>
+<script src="{% static 'standart.js' %}"></script>
 </body>
 </html>

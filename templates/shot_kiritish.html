@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+       <link rel="stylesheet" href="{% static 'shot_kirim.css' %}">
+    <!-- table CSS -->
+     <link rel="stylesheet" href="{% static '/table.css' %}">
+</head>
+<body>
+    
+    <div class="container">
+        <h4><a href="/asosiy/talabalar/">⬅️ Chiqish</a> </h4><br>
+        <header><span>{{talaba.ism}} {{talaba.fam}}</span>ning Moiya bo'limi</header> <br>
+        <h3>Umumiy Summa: {{Umumiy_summa.umumiy_summa}} So'm</h3>
+        <form method="post"> {% csrf_token %}
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title"> Ma'lumotlar Bo'limi </span>
+                    <div class="fields">
+                        <div class="input-field ">
+                            <label>To'lov qilayotgan shaxs</label>
+                            <input type="text" placeholder="F.I.SH" name="shaxs" required>
+                        </div>
+                        <div class="input-field">
+                            <label>To'lov miqdori</label>
+                            <input type="number" min="0" name="summa" required>
+                        </div>
+                        <div class="input-field">
+                            <label>To'lov qilayotgan shaxs telefon nomeri</label>
+                            <input  type="text" placeholder="+998" required name="tel">
+                        </div>
+
+                    </div>
+                    <div style="display:flex; justify-content:space-between">
+                    <button class="nextBtn">
+                        <span class="btnText">Kiritish</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+
+
+
+
+
+                    </div>
+                </div> 
+            </div>
+            <div class="form second">
+               
+            </div>
+        </form>
+        <p>To'lov tarixi</p>
+        <section class="table__body">
+            <table  id="hissob_tb">
+                <thead>
+                    <tr>
+            
+                        <th> F.I.SH </th>
+                        <th>  Telefon raqami </th>
+                        <th>Miqdori</th>
+                        <th>sanasi</th>
+                        <th>To'lov qilgan shaxs</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                   {% for i in shot_tarixi %}
+                    <tr>
+                        
+                        <td class="fam"> {{i.asosiy_talabalar_safi_fk.ism}} {{i.asosiy_talabalar_safi_fk.fam}}</td>
+                        <td class="yili">{{i.asosiy_talabalar_safi_fk.tel_1}}</td>
+                        <td class="tel"> {{i.summa}} </td>
+                        <td class="oxirgi"> {{i.vaqt}}</td>
+                        <td class="oxirgi"> {{i.tolov_qilgan_shaxs}}</td>
+
+                    </tr>
+                   {% endfor %}
+                    
+                </tbody>
+            </table>
+    </div>
+
+</body>
+</html>

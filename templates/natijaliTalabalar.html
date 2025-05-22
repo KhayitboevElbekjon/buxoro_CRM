@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natija+ || Nodirbek ADU</title>
+    <!-- font CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- root CSS -->
+    <link rel="stylesheet" href="{% static 'root.css' %}">
+    <!-- standart CSS -->
+    <link rel="stylesheet" href="{% static 'standart.css' %}">
+    <!-- hard CSS  -->
+   <link rel="stylesheet" href="{% static 'addbox.css' %}">
+</head>
+<body>
+  
+<section class="mavzu">
+
+  <div class="popup-box">
+    <div class="popup">
+      <div class="content">
+        <header>
+          <p></p>
+          <i class="fa-solid fa-xmark"></i>
+        </header>
+        <form method="post" enctype="multipart/form-data"> {% csrf_token %}
+          <div class="row title">
+            <label for="">Ism </label>
+            <input name="ism" type="text" placeholder="Ism">
+          </div>
+            <div class="row title">
+            <label for="">Familiya </label>
+            <input name="fam" type="text" placeholder="Familiya">
+          </div>
+          <div class="row description">
+            <label for="">Ta'rif </label>
+            <textarea style="resize: none;" name="tarif" id="" cols="30" rows="3"></textarea>
+          </div>
+
+          <div class="row description">
+            <label for="">Telegram </label>
+                <input name="tg" type="text" placeholder="Telegram link kiriting">
+          </div>
+
+          <div class="row description">
+            <label for="">Instagram  </label>
+            <input type="text" name="ins" placeholder="Instagram link kiriting">
+          </div>
+            <div class="row description">
+            <label for="">Facebook  </label>
+            <input type="text" name="fb" placeholder="Facebook link kiriting">
+          </div>
+            <div class="row description">
+            <label for="">YouTube  </label>
+            <input type="text" name="yt" placeholder="YouTube link kiriting">
+          </div>
+          <div class="row description">
+            <label for=""> Rasm</label>
+                <input type="file" name="rasm" >
+          </div>
+          <div class="row description">
+            <label for=""> Sertifikat</label>
+                <input type="file" name="ser" >
+          </div>
+          <button>Kiritish</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="wrapper">
+    <li class="add-box">
+      <div class="icon"><i class="fa-solid fa-plus"></i></div>
+      <p >Iqtidorli talaba qo'shish</p>
+    </li>
+      {% for i in alooquvchi %}
+	<li class="note">
+		<div class="details">
+             <img src="{{ i.rasm.url }}" style="width: 70px; height: 73px; border-radius: 70%;" />
+			<p>{{i.ism}} {{i.fam}} </p>
+		     <span>{{i.tarif}}</span>
+            <br>
+             <span>Telegram: {{i.telegram}}</span>
+            <br>
+             <span>Instagram: {{i.instagram}}</span>
+                        <br>
+             <span>Facebook: {{i.facebook}}</span>
+                        <br>
+             <span>YouTube: {{i.youtube}}</span>
+
+
+		</div>
+		<div class="bottom-content">
+
+			<div class="settings">
+				<i  class="fa-solid fa-ellipsis"></i>
+				<ul class="menu">
+					<li class="edit" ><i class="fa-solid fa-pen " ></i>Edit</li>
+					<a href="/asosiy/reklamaoquvchiDel/{{i.id}}"><li><i class="fa-solid fa-trash-can"></i>Delete</li></a>
+				</ul>
+			</div>
+		</div>
+	</li>
+
+{% endfor %}
+  
+</div>
+      <a href="/asosiy/IndexAdmin/">⬅️Orqaga</a>
+</section>
+
+<script src="{% static 'addSection.js' %}"></script>
+
+
+
+
+</body>
+</html>

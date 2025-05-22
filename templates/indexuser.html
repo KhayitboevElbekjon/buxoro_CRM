@@ -2,23 +2,24 @@
 <!-- Coding by CodingLab | www.codinglabweb.com-->
 <html lang="en">
   <head>
+      {% load static %}
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EDUcation</title>
 
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="swiper-bundle.min.css">
+    <link rel="stylesheet" href="{% static 'swiper-bundle.min.css' %}">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="styleuser.css" />
+    <link rel="stylesheet" href="{% static 'styleuser.css' %}" />
      
     <!-- root CSS -->
-    <link rel="stylesheet" href="root.css">
+    <link rel="stylesheet" href="{% static 'root.css' %}">
     <!-- standart CSS --> 
-    <link rel="stylesheet" href="standart.css">
+    <link rel="stylesheet" href="{% static 'standart.css' %}">
     <!-- Boxicons CSS -->
     <link
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
@@ -30,17 +31,16 @@
 <nav class="navbar">
    <div class="logo_item">
     <i class="fa-solid fa-bars" id="sidebarOpen"></i>
-     <img src="./images/mm2n.png" alt=""></i>
+     <img src="./media/mm2n.png" alt=""></i>
+       <p>Nodirbek EDU</p>
    </div>
-   <div class="center_bar">
-     <p>Uy</p>
-   </div>
+
    <div class="navbar_content">
      <i class="bi bi-grid"></i>
      <i class='bx' id="darkLight"></i>
      <!-- <i class='bx bx-bell' ></i> -->
-     <a href="../form/index.html"><i class="fa-solid fa-right-to-bracket"></i></a>
-     <img src="./images/img1.jpg" alt="" class="profile" />
+<!--     <a href="../form/index.html"><i class="fa-solid fa-right-to-bracket"></i></a>-->
+<!--     <img src="./media/img1.jpg" alt="" class="profile" />-->
    </div>
  </nav>
  
@@ -60,7 +60,7 @@
            <i class="bx bx-chevron-right arrow-left"></i>
          </div>
          <ul class="menu_items submenu">
-           <a href="#" class="nav_link sublink">Bosh minyu</a>
+           <a href="" class="nav_link sublink">Bosh menyu</a>
            <a href="#about" class="nav_link sublink">Biz haqimizda</a>
            <a href="#uqituvchilar" class="nav_link sublink">O'qituvchilar</a>
            <a href="#natijalar" class="nav_link sublink">Natijalar</a>
@@ -68,21 +68,7 @@
          </ul>
        </li>
    
-       <!-- <li class="item">
-         <div href="#" class="nav_link submenu_item">
-           <span class="navlink_icon">
-             <i class="bx bx-grid-alt"></i>
-           </span>
-           <span class="navlink">Kusrslar haqida</span>
-           <i class="bx bx-chevron-right arrow-left"></i>
-         </div>
-         <ul class="menu_items submenu">
-           <a href="#" class="nav_link sublink">Tibbiyot</a>
-           <a href="#" class="nav_link sublink">Texnika</a>
-           <a href="#" class="nav_link sublink">Ijtiomiy</a>
-           <a href="#" class="nav_link sublink">Maxsus Kurslar</a>
-         </ul>
-       </li> -->
+
    
      </ul>
      <ul class="menu_items">
@@ -90,61 +76,46 @@
     
        
        <li class="item">
-         <a href="/av/news/index.html" class="nav_link">
+         <a href="/yangiliklar" class="nav_link">
            <span class="navlink_icon">
              <i class="bx bxs-magic-wand"></i>
            </span>
-           <span class="navlink">Yangliklar</span>
+           <span class="navlink">Yangiliklar</span>
          </a>
        </li>
       
+
        <li class="item">
-         <a href="#" class="nav_link">
-           <span class="navlink_icon">
-            <i class="fa-solid fa-person-chalkboard"></i>
-           </span>
-           <span class="navlink">Darslar</span>
-         </a>
-       </li>
-       <li class="item">
-         <a href="#" class="nav_link">
+         <a href="/imtihonlar" class="nav_link">
            <span class="navlink_icon">
              <i class="bx bx-filter"></i>
            </span>
-           <span class="navlink">Imitxon</span>
+           <span class="navlink">E'lonlar</span>
          </a>
        </li>
       
      </ul>
      <ul class="menu_items">
-       <div class="menu_title menu_setting"></div>
+
        <li class="item">
-         <a href="#" class="nav_link">
-           <span class="navlink_icon">
-             <i class="bx bx-flag"></i>
-           </span>
-           <span class="navlink">Natijalar</span>
-         </a>
-       </li>
-       <li class="item">
-         <a href="../form/index.html" class="nav_link">
+         <a href="/sorovJonatish" class="nav_link">
            <span class="navlink_icon">
              <i class="bx bx-medal"></i>
            </span>
            <span href="" class="navlink">Kursga yozilish</span>
          </a>
        </li>
-    
+
        <li class="item">
          <a href="#" class="nav_link">
            <span class="navlink_icon">
              <i class="bx bx-layer"></i>
            </span>
-           <span class="navlink">takliflar</span>
+           <span class="navlink">Takliflar</span>
          </a>
        </li>
      </ul>
-    
+
      <div class="bottom_content">
        <div class="bottom expand_sidebar">
          <span> Expand</span>
@@ -157,21 +128,23 @@
      </div>
    </div>
  </nav>
- 
+
+
+ {% for i in info %}
 
 <section class="section_1" id="home">
   
   <div class="section_1_l">
-  <h1 class="header_text">Eng yaxshi investitsiya - bilimga tikilgan investitsiyadir!</h1>
+  <h1 class="header_text">{{i.shirif_matn}}</h1>
   <div class="header_info">
 
-      <div id="header_content">
+      <div >
           <i class="fa-solid fa-location-dot"></i>
-          <p> Buxoro. Buxoro . Buxoro </p>
+          <p> {{i.joylashuv}}</p>
       </div>
-      <div id="header_content">
+      <div >
           <i class="fa-solid fa-headset"></i>
-          <p> +9988 90 123 45 67</p>
+          <p>{{i.tel}}</p>
       </div>
 
   </div>
@@ -185,14 +158,14 @@
           <span class="time_min"></span>:
           <span class="time_second"></span>
       </div>
-       <a href="../form/index.html"> <div class="btn_begin login_bnt">vaqtni boy bermang</div></a>
-     <a href="../form/index.html"> <i class="fa-solid fa-shield-halved"></i></a>
-      <span class="">ishonchli va ta'lim kafolati</span>
+       <a href="/"> <div class="btn_begin login_bnt">Vaqtni boy bermang!</div></a>
+     <a href="/allLoginPage"> <i class="fa-solid fa-shield-halved"></i></a>
+      <span class="">{{i.quyi_matn}}</span>
   </div>
 
   </div>
   <div class="section_1_r">
-       <img src="./images/header_right.png" alt="">
+       <img src="./media/header_right.png" alt="">
   </div>
   
   </section>
@@ -208,7 +181,7 @@
 
     
     
-    <iframe  src="https://www.youtube.com/embed/MU2_9QmgZA8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>      
+    <iframe  src="https://youtu.be/ufRSBqkP99Q?si=PvI-is_O9SDMwBEN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
  </section >
   <div class="section_title"  id="about">
     <h1 class="section_title"> Biz haqimizda</h1>
@@ -217,9 +190,10 @@
  <section class="about">
   <div class="box_about">
       <div class="about_text">
-          <h1>Lorem ipsum dolor sit amet, consectetur adipisicing ta odit. Velit neque modi in optio atq</h1>
-          <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis expedita ullam illo. Laborum ut perferendis optio, Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, saepe! Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, odio! Illum, quaerat. consequatur eligendi dolorum quae neque illo harum voluptate, ducimus debitis dignissimos aspernatur molestias delectus nostrum repudiandae. Asperiores laudantium doloremque eaque exercitationem dolorum! Natus, earum!</p>
+          <h1>O'quv markaz haqida!</h1>
+          <p>{{i.tarif}}</p>
       </div>
+      {% endfor %}
       <div class="about_location">
           <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.878789949565!2d64.68343989980144!3d40.04659780183209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f5069d528dc1d29%3A0x2585b35da4fa720e!2sNodirbek%20Ismoilov%20o&#39;quv%20markazi!5e1!3m2!1sen!2s!4v1685636936051!5m2!1sen!2s"   style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
@@ -227,18 +201,18 @@
    <div class="about_with_num">
      <div class="nums">
       <i class="fa-solid fa-graduation-cap"></i>
-      <span class="num">1000+</span>
-      <p class="num_text">o'quvchilar</p>
+      <span class="num">{{talabalar}}+</span>
+      <p class="num_text">O'quvchilar</p>
      </div>
      <div class="nums">
       <i class="fa-solid fa-book-open-reader"></i>
-      <span class="num">9+</span>
-      <p class="num_text">kurslar</p>
+      <span class="num">{{kurslar}}+</span>
+      <p class="num_text">Kurslar</p>
      </div>
      <div class="nums">
       <i class="fa-solid fa-person-chalkboard"></i>
-      <span class="num">6+</span>
-      <p class="num_text"> o'qituvchilar</p>
+      <span class="num">{{mentor}}+</span>
+      <p class="num_text"> O'qituvchilar</p>
      </div>
   </div> 
 </section>
@@ -247,123 +221,63 @@
 
    </div>
     <section class="container" >
-    
+
       <div class="testimonial mySwiper">
         <div class="testi-content swiper-wrapper">
-    
+            {% for i in mentorreklama %}
           <div class="slide swiper-slide">
-            <img src="images/img1.jpg" alt="" class="image" />
+            <img src="{{i.rasm.url}}" alt="" class="image" />
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-              saepe provident dolorem a quaerat quo error facere nihil deleniti
-              eligendi ipsum adipisci, fugit, architecto amet asperiores
-              doloremque deserunt eum nemo.
+              {{i.tarif}}
             </p>
 
             <i class="bx bxs-quote-alt-left quote-icon"></i>
 
             <div class="details">
-              <span class="name">Marnie Lotter</span>
-              <span class="job">Web Developer</span>
+              <span class="name">{{i.teacher_fk.ism}} {{i.teacher_fk.fam}}</span>
+              <span class="job">{{i.soha}}</span>
             </div>
           </div>
-          <div class="slide swiper-slide">
-            <img src="images/img3.jpg" alt="" class="image" />
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam,
-              saepe provident dolorem a quaerat quo error facere nihil deleniti
-              eligendi ipsum adipisci, fugit, architecto amet asperiores
-              doloremque deserunt eum nemo.
-            </p>
-
-            <i class="bx bxs-quote-alt-left quote-icon"></i>
-
-            <div class="details">
-              <span class="name">Marnie Lotter</span>
-              <span class="job">Web Developer</span>
-            </div>
-          </div>
+           {% endfor %}
         </div>
         <div class="swiper-button-next nav-btn"></div>
         <div class="swiper-button-prev nav-btn"></div>
         <div class="swiper-pagination"></div>
         
       </div>
+
     </section>
     
     <div class="section_title"  id="natijalar">
     <h1 class="section_title">  Natijalar </h1>
     </div>
     <section class="natijalar">
-    
+
+        {% for i in alooquvchi %}
       <div class="wrapper">
         <div class="card front-face">
-           <img src="./images/serticicate.jpg">
+           <img src="{{i.sertifikat.url}}">
         </div>
         <div class="card back-face">
-           <img src="./images/img2.jpg">
+           <img src="{{i.rasm.url}}">
            <div class="info">
               <div class="title">
-                 Mamataliyov Sardor
+                 {{i.ism}} {{i.fam}}
               </div>
               <p>
-                Mamataliyov Sardor 6 oy tajribaga ega Nodirbek edu o'quvchisi ijtimoyi yo'nalilsh kursi azosi
+                {{i.tarif}}
               </p>
            </div>
            <ul>
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="{{i.facebook}}"><i class="fab fa-facebook-f"></i></a>
+              <a href="{{i.telegram}}"><i class="fab fa-telegram"></i></a>
+              <a href="{{i.instagram}}"><i class="fab fa-instagram"></i></a>
+              <a href="{{i.youtube}}"><i class="fab fa-youtube"></i></a>
            </ul>
         </div>  
      </div>
-   
-     <div class="wrapper">
-      <div class="card front-face">
-         <img src="./images/serticicate.jpg">
-      </div>
-      <div class="card back-face">
-         <img src="./images/img2.jpg">
-         <div class="info">
-            <div class="title">
-               Mamataliyov Sardor
-            </div>
-            <p>
-              Mamataliyov Sardor 6 oy tajribaga ega Nodirbek edu o'quvchisi ijtimoyi yo'nalilsh kursi azosi
-            </p>
-         </div>
-         <ul>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-         </ul>
-      </div>  
-   </div>
-   <div class="wrapper">
-    <div class="card front-face">
-       <img src="./images/serticicate.jpg">
-    </div>
-    <div class="card back-face">
-       <img src="./images/img2.jpg">
-       <div class="info">
-          <div class="title">
-             Mamataliyov Sardor
-          </div>
-          <p>
-            Mamataliyov Sardor  6 oy tajribaga ega Nodirbek edu o'quvchisi ijtimoyi yo'nalilsh kursi azosi
-          </p>
-       </div>
-       <ul>
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-       </ul>
-    </div>  
- </div>
- 
+   {% endfor %}
+
  
 </section>
 
@@ -388,35 +302,35 @@
           <div class="info">Yanada ko'proq ma'lumot olish uchun +998(90) 777 22 12</div>
           <div class="details">
             <div>
-              <p>Asosiy blog</p>
+              <p>Asosiy blok</p>
               <div class="one">
             
-                <span>Biyologiya</span>
-                <p>haftada 6 kun</p>
+                <span>Biologiya</span>
+                <p>Haftada 6 kun</p>
               </div>
              
               <div class="one">
                 <span>Kimyo</span>
-                <p>haftada 6 kun</p>
+                <p>Haftada 6 kun</p>
               </div>
             </div>
-           <p> Majburiy blog</p>
+           <p> Majburiy blok</p>
             <div class="">
               <div class="one">
                 <span>Ona tili</span>
-                <p>haftada 2 kun</p>
+                <p>Haftada 2 kun</p>
               </div>
               <div class="one">
-                <span>Matemetika</span>
-               <p>haftada 2 kun</p>
+                <span>Matematika</span>
+               <p>Haftada 2 kun</p>
               </div>
               <div class="one">
                 <span>Tarix</span>
-               <p>haftada 2 kun</p>
+               <p>Haftada 2 kun</p>
               </div>
             </div>
          
-            <a href="../form/"><button>Kursni boshlash</button></a>
+            <a href="/sorovJonatish/"><button>Kursni boshlash</button></a>
           </div>
         </div>
         <div class="card one">
@@ -428,29 +342,29 @@
           </div>
           <div class="info">Yanada ko'proq ma'lumot olish uchun +998(90) 777 22 12</div>
           <div class="details">
-            <p>Asosiy blog</p>
+            <p>Asosiy blok</p>
             <div class="one">
               <span>Fizika</span>
-              <p>haftada 6 kun</p>
+              <p>Haftada 6 kun</p>
             </div>
             <div class="one">
-              <span>Matemetika</span>
-              <p>haftada 6 kun</p>
+              <span>Matematika</span>
+              <p>Haftada 6 kun</p>
             </div>
-            <p> Majburiy blog</p>
+            <p> Majburiy blok</p>
             <div class="one">
               <span>Ona tili</span>
-              <p>haftada 2 kun</p>
+              <p>Haftada 2 kun</p>
             </div>
             <div class="one">
-              <span>Matemetika</span>
-             <p>haftada 2 kun</p>
+              <span>Matematika</span>
+             <p>Haftada 2 kun</p>
             </div>
             <div class="one">
               <span>Tarix</span>
-             <p>haftada 2 kun</p>
+             <p>Haftada 2 kun</p>
             </div>
-            <a href="../form/"><button>Kursni boshlash</button></a>
+            <a href="/sorovJonatish/"><button>Kursni boshlash</button></a>
           </div>
         </div>
         <div class="card one">
@@ -462,43 +376,191 @@
           </div>
           <div class="info">Yanada ko'proq ma'lumot olish uchun +998(90) 777 22 12</div>
           <div class="details">
-            <p>Asosiy blog</p>
+            <p>Asosiy blok</p>
             <div class="one">
               <span>Ingliz tili</span>
-              <p>haftada 6 kun</p>
+              <p>Haftada 6 kun</p>
             </div>
             <div class="one">
               <span>Ona tili va Adabiyot</span>
-              <p>haftada 6 kun</p>
+              <p>Haftada 6 kun</p>
             </div>
-            <p> Majburiy blog</p>
+            <p> Majburiy blok</p>
             <div class="one">
               <span>Ona tili</span>
-              <p>haftada 2 kun</p>
+              <p>Haftada 2 kun</p>
             </div>
             <div class="one">
-              <span>Matemetika</span>
-             <p>haftada 2 kun</p>
+              <span>Matematika</span>
+             <p>Haftada 2 kun</p>
             </div>
             <div class="one">
               <span>Tarix</span>
-             <p>haftada 2 kun</p>
+             <p>Haftada 2 kun</p>
             </div>
-            <a href="../form/"><button>Kursni boshlash</button></a>
+            <a href="/sorovJonatish/"><button>Kursni boshlash</button></a>
           </div>
         </div>
     </div>
  
     </section>
  
+<footer>
+  <footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
 
+    </ul>
+    <p>&copy;2021 Nadine Coelho | All Rights Reserved</p>
+  </footer>
+</footer>
+
+<style>
+
+.footer {
+  position: relative;
+  width: 100%;
+  background: #3586ff;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 400px;
+}
+
+.social-icon,
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.social-icon__item,
+.menu__item {
+  list-style: none;
+}
+
+.social-icon__link {
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+.menu__link {
+  font-size: 1.2rem;
+  color: #fff;
+  margin: 0 10px;
+  display: inline-block;
+  transition: 0.5s;
+  text-decoration: none;
+  opacity: 0.75;
+  font-weight: 300;
+}
+
+.menu__link:hover {
+  opacity: 1;
+}
+
+.footer p {
+  color: #fff;
+  margin: 15px 0 10px 0;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.wave {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url("https://i.ibb.co/wQZVxxk/wave.png");
+  background-size: 1000px 100px;
+}
+
+.wave#wave1 {
+  opacity: 1;
+  bottom: 0;
+  animation: animateWaves 4s linear infinite;
+}
+
+.wave#wave2 {
+  opacity: 0.5;
+  bottom: 5px;
+  animation: animate 4s linear infinite !important;
+}
+
+.wave#wave3 {
+  opacity: 0.2;
+  bottom: 10px;
+  animation: animateWaves 3s linear infinite;
+}
+
+.wave#wave4 {
+  opacity: 0.7;
+  bottom: 15px;
+  animation: animate 3s linear infinite;
+}
+
+@keyframes animateWaves {
+  0% {
+    background-position-x: 1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+
+@keyframes animate {
+  0% {
+    background-position-x: -1000px;
+  }
+  100% {
+    background-positon-x: 0px;
+  }
+}
+</style>
 
     <!-- Swiper JS -->
-    <script src="swiper-bundle.min.js"> </script>
-
-    <script src="scriptuser.js" ></script>
+    <script src="{% static 'swiper-bundle.min.js' %}"> </script>
+<script src="{% static 'scriptuser.js' %}" ></script>
+    <!-- <script src="scriptuser.js" ></script> -->
 <!-- standatr JS -->
-<script src="standart.js"></script>
+<script src="{% static 'standart.js' %}"></script>
 
 
   </body>

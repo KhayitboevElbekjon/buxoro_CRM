@@ -19,16 +19,16 @@
   <nav class="navbar">
 		<div class="logo_item">
 		  <i class="fa-solid fa-bars" id="sidebarOpen"></i>
-		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		  <img src="/media/mm2n.png" alt=""></i>NodirbekADU
 		</div>
 		<div class="search_bar">
-			 <p>Ustozlar oynasi</p>
+			 <p>Admin oynasi</p>
 		</div>
 		<div class="navbar_content">
 		  <i class="bi bi-grid"></i>
 		  <i class='bx' id="darkLight"></i>
 		  <i class='bx bx-bell' ></i>
-		  <img src="images/profile.jpg" alt="" class="profile" />
+		   <a href="/logout"><img src="/media/logout.png" alt="" class="profile" /></a>
 		</div>
 	  </nav>
 	  <!-- sidebar -->
@@ -76,7 +76,7 @@
           </a>
         </li>
 			  <li class="item">
-          <a href="./sinov.html" class="nav_link">
+          <a href="/asosiy/sinov" class="nav_link">
             <span class="navlink_icon">
               <i class="fa-solid fa-spell-check"></i>               </span>
             <span class="navlink">Sinovdagilar</span>
@@ -86,7 +86,7 @@
 				<a href="/asosiy/talabalar" class="nav_link">
 				  <span class="navlink_icon">
             <i class="fa-solid fa-people-group"></i>                  </span>
-				  <span class="navlink">Talabalar</span>
+				  <span class="navlink">O'quvchilar</span>
 				</a>
 			  </li>
         <li class="item">
@@ -118,7 +118,7 @@
                 </a>
                 </li>
                 <li class="item">
-                  <a href="./dars.html" class="nav_link">
+                  <a href="/asosiy/moliya" class="nav_link">
                     <span class="navlink_icon">
                       <i class="fa-solid fa-sack-dollar"></i>              </span>
                     <span class="navlink">Moliya</span>
@@ -170,22 +170,7 @@
             <label>Davomiyligi (Oy):</label>
             <input class="havola" type="number" min="0" spellcheck="false" name="davomiyligi">
           </div>
-<!--          <div class="row description">-->
-<!--            <label>Fan Nomi:</label>-->
-<!--            <input class="havola" type="text" spellcheck="false">-->
-<!--          </div>-->
-<!--          <div class="row description">-->
-<!--            <label>Fan Nomi:</label>-->
-<!--            <input class="havola" type="text" spellcheck="false">-->
-<!--          </div>-->
-<!--          <div class="row description">-->
-<!--            <label> O'qituvchi</label>-->
-<!--            <input class="havola" type="text" spellcheck="false">-->
-<!--          </div>-->
-<!--          <div class="row description">-->
-<!--            <label>adsfsafd:</label>-->
-<!--            <input class="havola" type="text" spellcheck="false">-->
-<!--          </div>-->
+
           <button></button>
         </form>
 
@@ -205,12 +190,12 @@
 			<span>Guruh nomi</span>
             <p>{{i.guruh_nom}}</p>
 		     <span>Davomiyligi</span>
-            <p>{{i.davomiyligi}}</p>
+            <p>{{i.davomiyligi}} Oy</p>
              <span>Ochilgan vaqti</span>
             <p>{{i.ochilgan_sana}}</p>
 		</div>
 		<div class="bottom-content">
-			<span>5555</span>
+			<span></span>
 			<div class="settings">
 				<i  class="fa-solid fa-ellipsis"></i>
 				<ul class="menu">

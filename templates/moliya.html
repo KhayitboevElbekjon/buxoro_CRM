@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moliya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- root CSS -->
+    <link rel="stylesheet" href="{% static '/root.css' %}">
+    <!-- standart CSS -->
+    <link rel="stylesheet" href="{% static '/standart.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+		<div class="logo_item">
+      <i class="fa-solid fa-bars" id="sidebarOpen"></i>
+		  <img src="/media/mm2n.png" alt=""></i>NodirbekEDU
+		</div>
+		<div class="search_bar">
+			 <p>Admin oynasi</p>
+		</div>
+		<div class="navbar_content">
+		  <i class="bi bi-grid"></i>
+		  <i class='bx' id="darkLight"></i>
+		  <i class='bx bx-bell' ></i>
+		 <a href="/logout"><img src="/media/logout.png" alt="" class="profile" /></a>
+		</div>
+	  </nav>
+	  <!-- sidebar -->
+	  <nav class="sidebar">
+		<div class="menu_content">
+		  <ul class="menu_items">
+			<div class="menu_title menu_dahsboard"></div>
+			<!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+			<!-- start -->
+			<li class="item">
+				<a href="/asosiy/IndexAdmin" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-solid fa-chart-line"></i>
+          
+				  </span>
+				  <span class="navlink"> Dashboard</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="/asosiy/kurslar" class="nav_link">
+            <span class="navlink_icon">
+           <i class="fa-solid fa-book-open-reader"></i>             </span>
+            <span class="navlink"> Kurslar</span>
+          </a>
+          </li>
+        <li class="item">
+          <a href="/asosiy/guruhlar" class="nav_link">
+            <span class="navlink_icon">
+            <i class="fa-solid fa-people-group"></i>                  </span>
+            <span class="navlink"> Guruhlar</span>
+          </a>
+          </li>
+			  <li class="item">
+				<a href="/asosiy/sorov" class="nav_link">
+				  <span class="navlink_icon">
+					<i class="fa-brands fa-stack-overflow"></i>                </span>
+				  <span class="navlink">So'rov</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="/asosiy/kutayotganlar" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-eye"></i>                 </span>
+            <span class="navlink">Kutayotganlar</span>
+          </a>
+        </li>
+			  <li class="item">
+          <a href="/asosiy/sinov" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-spell-check"></i>               </span>
+            <span class="navlink">Sinovdagilar</span>
+          </a>
+        </li>
+			  <li class="item">
+				<a href="/asosiy/talabalar" class="nav_link">
+				  <span class="navlink_icon">
+            <i class="fa-solid fa-people-group"></i>                  </span>
+				  <span class="navlink">O'quvchilar</span>
+				</a>
+			  </li>
+        <li class="item">
+          <a href="/asosiy/davomat" class="nav_link">
+            <span class="navlink_icon">
+              <i class="fa-solid fa-bell-slash"></i>                </span>
+            <span class="navlink">Davomat</span>
+          </a>
+          </li>
+          <li class="item">
+            <a href="/asosiy/hujat" class="nav_link">
+              <span class="navlink_icon">
+                <i class="fa-solid fa-file-pdf"></i>                </span>
+              <span class="navlink">Hujjat</span>
+            </a>
+            </li>
+            <li class="item">
+              <a href="/asosiy/teacher" class="nav_link">
+                <span class="navlink_icon">
+                  <i class="fa-solid fa-chalkboard-user"></i>                </span>
+                <span class="navlink">Teacher</span>
+              </a>
+              </li>
+              <li class="item">
+                <a href="/asosiy/dars" class="nav_link">
+                  <span class="navlink_icon">
+                    <i class="fa-solid fa-graduation-cap"></i>               </span>
+                  <span class="navlink">Dars</span>
+                </a>
+                </li>
+                <li class="item">
+                  <a href="/asosiy/moliya" class="nav_link">
+                    <span class="navlink_icon">
+                      <i class="fa-solid fa-sack-dollar"></i>              </span>
+                    <span class="navlink">Moliya</span>
+                  </a>
+                  </li>
+		  </ul>
+	
+		  <!-- Sidebar Open / Close -->
+		  <div class="bottom_content">
+			<div class="bottom expand_sidebar">
+			  <span> Expand</span>
+			  <i class="fa-solid fa-right-to-bracket"></i>
+			</div>
+			<div class="bottom collapse_sidebar">
+			  <span> Collapse</span>
+			  <i class="fa-solid fa-arrow-left"></i>
+			</div>
+		  </div>
+		</div>
+	  </nav>  
+
+
+    <section class="container">
+      <header>Moliyaviy menejment bo'limi</header>
+      <p>
+Tizimda qilingan xar bir amal uchun menejment o'zi javobgardur. Qilingan nojo'ya qilingan harakat uchun dasturiy ta'minot yaratuvchilari javob bermaydi!
+      </p>
+      <div class="time-content">
+  
+        <div class="time hours">
+          <span class="number"></span>
+          <span class="text">hours</span>
+        </div>
+        <div class="time minutes">
+          <span class="number"></span>
+          <span class="text">minutes</span>
+        </div>
+        <div class="time seconds">
+          <span class="number"></span>
+          <span class="text">seconds</span>
+        </div>
+      </div>
+      <div class="email-content">
+        <p>Moliyaviy menejment turini tanlang...</p>
+        <div class="boshqaruv_turi">
+          <div class="kirim">
+         
+                <div class="tur_text">
+                     <p> Kirim </p> 
+                </div>
+            
+                <span style=" --i:1;">
+                     <a href="/asosiy/moliyaKirim"> <i title="Kirim jadvali" class="fa-solid fa-table-cells"></i></a>
+              </span>
+            
+              <span style=" --i:2;">
+                     <a href="/asosiy/kursSummasi/"> <i title="Kurslar summasini belgilash" class="fa-solid fa-sack-dollar"></i></a>
+              </span>
+              
+              <span style=" --i:3;">
+                      <a href="/asosiy/yechibOlish/"> <i title="Oylik to'lovlarni yechib olish " class="fa-solid fa-hand-holding-dollar"></i></a>
+              </span>
+           
+
+              <span style=" --i:4;" >
+                        <a href="/asosiy/qarizdorlarJadvali/"> <i  title="Qarizdorlik jadvali"  class="fa-solid fa-sack-xmark"></i></a>
+              </span>
+
+          
+          </div>
+
+          <div class="chiqim">
+
+                  <div class="tur_text">
+                      <p> Chiqim </p>
+                  </div>
+
+                  <span style=" --i:1;">
+                      <a href="/asosiy/harajatlarKiritish/"><i title="Harajatni kiritish" class="fa-solid fa-circle-dollar-to-slot"></i></a>
+                </span>
+
+                <span style=" --i:2;">
+                     <a href="/asosiy/moliyaDiagramma"> <i title="Moliya diagrammasi" class="fa-solid fa-chart-pie"></i></a>
+                </span>
+
+                <span style=" --i:3;">
+                     <a href="/asosiy/oqituvchi_oyligi"> <i title="O'qituvchi oyligi" class="fa-regular fa-money-bill-1"></i></a>
+                </span>
+
+                <span style=" --i:4;" >
+                     <a href="/asosiy/barchaHarajatlar"> <i title="Harajatlar jadvali"  class="fa-solid fa-table-cells"></i></a>
+                </span>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <style>
+       /* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+a{
+  text-decoration: none;
+}
+.container {
+  margin-top: 120px;
+  display: flex;
+  row-gap: 15px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.container .image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.container header {
+  padding-top: 100px;
+  font-size: 60px;
+  color: #067aff;
+  font-weight: 600;
+  text-align: center;
+  z-index: 10;
+}
+.container p {
+  font-size: 16px;
+  font-weight: 400;
+  color:  #067aff;
+  max-width: 550px;
+  text-align: center;
+}
+.container .time-content {
+  display: flex;
+  column-gap: 30px;
+  align-items: center;
+}
+.time-content .time {
+  display: flex;
+  align-items: center;
+
+  border: 1px solid blue;
+  padding: 20px;
+  flex-direction: column;
+  border-radius:20px ;
+}
+.time .number,
+.time .text {
+  font-weight: 500;
+  color: #067aff;
+}
+.time .number {
+  font-size: 40px;
+}
+.time .text {
+  text-transform: capitalize;
+  font-size: 12px;
+}
+
+.boshqaruv_turi {
+  /* position: absolute; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 40px;
+  max-width: 360px;
+  width: 100%;
+  margin-top: 120px;
+  column-gap: 20px;
+  margin-bottom: 250px;
+}
+.boshqaruv_turi .kirim , .boshqaruv_turi .chiqim{
+  display: flex;
+align-items: center;
+justify-content: center;
+}
+.tur_text ,
+span a
+{
+height: 60px;
+width: 60px;
+background: #fff;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+box-shadow: 0 0 20px rgba(0,0,0,0.2);
+
+}
+.tur_text{
+  height: 100px;
+  width: 100px;
+  color: #067aff;
+  z-index: 10;                                                                            
+}
+.kirim span{
+    position: absolute;
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+span a:hover{
+  background-color: #93c3fa;
+  box-shadow: 0 0 20px rgba(75, 153, 255, 0.4);
+  transition: .5s;
+}
+
+
+
+.chiqim span{
+    position: absolute;
+    transition: all 0.6s ease;
+    opacity: 0;
+}
+.kirim.open span{
+  transform: rotate(calc(var(--i) * (360deg/8))) translateY(90px);
+  opacity: 1;
+}
+.chiqim.open span{
+  transform: rotate(calc(var(--i) * (360deg/8))) translateY(-90px);
+  opacity: 1;
+}
+
+.kirim span a,
+.chiqim span a
+{ 
+  text-decoration: none;
+}
+.kirim span a i ,
+.chiqim span a i
+{
+  font-size: 20px;
+  color: #067aff ;
+  transform: rotate(calc(var(--i) * (360deg/ -8)));
+}
+
+@media screen and (max-width: 760px) {
+
+}
+@media screen and (max-width: 420px) {
+  .tur_text{
+  height: 60px;
+  width:  60px;
+  }
+  .kirim.open span{
+    transform: rotate(calc(var(--i) * (360deg/8))) translateY(70px);
+  }
+  .chiqim.open span{
+    transform: rotate(calc(var(--i) * (360deg/8))) translateY(-70px);
+  }
+
+}
+@media screen and (max-width: 300px) {
+  .container header {
+    font-size: 50px;
+  }
+}
+    
+    
+</style>
+
+
+<script>
+const kirim = document.querySelector(".kirim");
+const chiqim = document.querySelector(".chiqim");
+
+const toggleBtn = document.querySelectorAll(".tur_text");
+
+kirim.addEventListener("click", () => {
+    toggleBtn.forEach((tur_text) => {
+        tur_text.classList.remove("open");
+    });
+    kirim.classList.toggle("open");
+});
+
+chiqim.addEventListener("click", () => {
+    toggleBtn.forEach((tur_text) => {
+        tur_text.classList.remove("open");
+    });
+    chiqim.classList.toggle("open");
+});
+
+toggleBtn.forEach((tur_text) => {
+    tur_text.addEventListener("click", () => {
+        tur_text.classList.toggle("open");
+    });
+});
+
+// js code to make draggable nav for both sections
+function createDraggableNav(navElement) {
+  navElement.addEventListener("mousemove", onDrag);
+  navElement.addEventListener("mouseleave", () => {
+    navElement.removeEventListener("mousemove", onDrag);
+  });
+}
+
+const firstSectionNav = document.querySelector(".navbar");
+const secondSectionNav = document.querySelector(".sidebar");
+
+createDraggableNav(firstSectionNav);
+createDraggableNav(secondSectionNav);
+
+</script>
+
+
+
+
+    <script>
+
+      const seconds = document.querySelector(".seconds .number"),
+  minutes = document.querySelector(".minutes .number"),
+  hours = document.querySelector(".hours .number");
+setInterval(()=>{
+  
+
+  const mydate = new Date()
+  function addthero(val) {
+      if(val/10 >=1){
+        return val
+      }else{
+        return val=`0${val}`
+      }
+      addthero()
+    }
+                       
+    seconds.textContent  =addthero(mydate.getSeconds());
+    minutes.textContent  = addthero(mydate.getMinutes());
+    hours.textContent    = addthero(mydate.getHours());
+  
+
+},1000)
+    </script>
+    <script src="{% static 'standart.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% load static %}
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  </title> 
+    <link rel="stylesheet" href="{% static 'moliya_form.css' %}">
+   </head>
+  
+<body>
+  <div class="wrapper">
+    <h2>Harajat qo'shish</h2>
+    <form method="post">{% csrf_token %}
+      <div class="input-box">
+          <p>Harajat turini tanlang!</p>
+            <select name="harajat" >
+                <option value="Oylik">Oylik</option>
+                <option value="Soliq">Soliq</option>
+                <option value="Reklama">Reklama</option>
+                <option value="Kamunal xizmatlar">Kommunal xizmatlar</option>
+                <option value="Rag'batlantirish">Rag'batlantirish</option>
+                <option value="Boshqalar">Boshqalar</option>
+
+            </select>
+      </div>
+        <br>
+        <p>Harajat summasini kiriting!</p>
+      <div class="input-box">
+        <input name="summa" type="number" placeholder="Summa" required min="0">
+      </div>
+
+   <p>Harajat haqida qisqacha ta'rif</p>
+      <div class="input-box">
+        <input name="tarif" type="text" placeholder="Ta'rif" required>
+      </div>
+      <div class="input-box button">
+        <input type="Submit" value="Kiritish">
+      </div>
+      <div class="text">
+        <h3><a href="/asosiy/moliya/"> Asosiy menyuga qaytish </a> ||  <a href="/asosiy/barchaHarajatlar/"> Umumiy Harajatlar</a></h3>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

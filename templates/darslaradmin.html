@@ -23,16 +23,16 @@
   <nav class="navbar">
 		<div class="logo_item">
       <i class="fa-solid fa-bars" id="sidebarOpen"></i>
-		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		  <img src="/media/mm2n.png" alt=""></i>NodirbekEDU
 		</div>
 		<div class="search_bar">
-			 <p>Ustozlar oynasi</p>
+			 <p>Admin oynasi</p>
 		</div>
 		<div class="navbar_content">
 		  <i class="bi bi-grid"></i>
 		  <i class='bx' id="darkLight"></i>
 		  <i class='bx bx-bell' ></i>
-		  <img src="images/profile.jpg" alt="" class="profile" />
+		  <a href="/logout"><img src="/media/logout.png" alt="" class="profile" /></a>
 		</div>
 	  </nav>
 	  <!-- sidebar -->
@@ -90,7 +90,7 @@
 				<a href="/asosiy/talabalar" class="nav_link">
 				  <span class="navlink_icon">
             <i class="fa-solid fa-people-group"></i>                  </span>
-				  <span class="navlink">Talabalar</span>
+				  <span class="navlink">O'quvchilar</span>
 				</a>
 			  </li>
         <li class="item">
@@ -122,7 +122,7 @@
                 </a>
                 </li>
                 <li class="item">
-                  <a href="./dars.html" class="nav_link">
+                  <a href="/asosiy/moliya" class="nav_link">
                     <span class="navlink_icon">
                       <i class="fa-solid fa-sack-dollar"></i>              </span>
                     <span class="navlink">Moliya</span>
@@ -207,49 +207,7 @@
             
         </div>
      </section>
-    <section class="container hidden ">
-        <i class="beack fa-solid fa-circle-left fa-xl"></i>
-
-      <form method="post">{{ csrf_token }}
-        <div class="form first">
-            <div class="details personal">
-                <span class="title">Personal Details</span>
-                <div class="fields">
-                    <div class="input-field ">
-                        <label>Ism</label>
-                        <input class="input_ism" type="text" placeholder="Ism" required>
-                    </div>
-                    <div class="input-field">
-                        <label>Tugulgan sana</label>
-                        <input class="input_yili" type="date"  value="2003-06-12" required>
-                    </div>
-                    <div class="input-field">
-                        <label>Familya</label>
-                        <input class="input_fam" type="text" placeholder="Familya" required>
-                    </div>
-                    <div class="input-field">
-                        <label>Telefon raqami</label>
-                        <input class="input_tel" type="tel" value="+998 9" required>
-                    </div>
-                   
-                    <div class="input-field">
-                        <label>Talab Qilinayotgan Fan</label>
-                        <input class="input_fan" type="text" placeholder="Fanni kiriting" required>
-                    </div> 
-                   
-                </div>
-                
-                <div class="buttons">
-                    
-                    <button type="submit" class="sumbit">
-                        <span class="btnText">Submit</span>t
-                    </button>
-                </div>
-            </div>
-        </div>
-    
-    </form>
-    </section>
+<!--    -->
     <section class="select_student hidden">
         <i class="fa-solid fa-xmark fa-xl"></i>
 

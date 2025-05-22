@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="{% static 'root.css' %}">
   <!-- standart CSS -->
   <link rel="stylesheet" href="{% static 'standart.css' %}">
-  <link rel="stylesheet" href="{% static 'hujjat11.css' %}">
+  <link rel="stylesheet" href="{% static 'addbox.css' %}">
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
@@ -24,16 +24,16 @@
   <nav class="navbar">
 		<div class="logo_item">
 		  <i class="fa-solid fa-bars" id="sidebarOpen"></i>
-		  <img src="images/logo.png" alt=""></i>NodirbekADU
+		  <img src="/media/mm2n.png" alt=""></i>NodirbekEDU
 		</div>
 		<div class="search_bar">
-			 <p>Ustozlar oynasi</p>
+			 <p>Admin oynasi</p>
 		</div>
 		<div class="navbar_content">
 		  <i class="bi bi-grid"></i>
 		  <i class='bx' id="darkLight"></i>
 		  <i class='bx bx-bell' ></i>
-		  <img src="images/profile.jpg" alt="" class="profile" />
+		   <a href="/logout"><img src="/media/logout.png" alt="" class="profile" /></a>
 		</div>
 	  </nav>
 	  <!-- sidebar -->
@@ -91,7 +91,7 @@
 				<a href="/asosiy/talabalar" class="nav_link">
 				  <span class="navlink_icon">
             <i class="fa-solid fa-people-group"></i>                  </span>
-				  <span class="navlink">Talabalar</span>
+				  <span class="navlink">O'quvchilar</span>
 				</a>
 			  </li>
         <li class="item">
@@ -123,7 +123,7 @@
                 </a>
                 </li>
                 <li class="item">
-                  <a href="./dars.html" class="nav_link">
+                  <a href="/asosiy/moliya" class="nav_link">
                     <span class="navlink_icon">
                       <i class="fa-solid fa-sack-dollar"></i>              </span>
                     <span class="navlink">Moliya</span>
@@ -144,36 +144,73 @@
 		  </div>
 		</div>
 	  </nav>
-  <div class="wrapper">
-    <header>Hujjatlarni Saqlang</header>
-    <form method="post"> {% csrf_token %}
+  <section class="mavzu">
+
+  <div class="popup-box">
+    <div class="popup">
+      <div class="content">
+        <header>
+          <p></p>
+          <i class="fa-solid fa-xmark"></i>
+        </header>
 
 
-        <input class="file-input" type="file" name="file" >
-        <i class="fas fa-cloud-upload-alt"></i>
-        <p>Yuklang</p>
+        <form method="post" enctype="multipart/form-data">{% csrf_token %}
+          <div class="row title">
+            <label>Fayl:</label>
+            <input name="fayl" type="file" spellcheck="false">
+          </div>
+          <div class="row description">
+            <label>Fayl Nomi:</label>
+            <input name="nom" class="havola" type="text" spellcheck="false">
+          </div>
+          <div class="row description">
+            <label>Ta'rif:</label>
+            <textarea name="tarif" class="havola"  id="" cols="30" rows="10"></textarea>
 
-      <input class="file_name" name="nom" placeholder="fayl nomi" type="text">
-      <button type="submit">Yuklash</button>
-    </form>
-{% for i in hujat %}
-    <section class="progress-area">
-        <li class="row">
-            <div class="content upload">
-              <i class="fas fa-file-alt"></i>
-              <div class="details">
-                <span class="name"> FAyl Nomi • Uploaded</span>
-                <span class="size"></span>
-              </div>
-            </div>
-            <i class="fas fa-check"></i>
-          </li>
-    </section>
-       {% endfor %}
-    <section class="uploaded-area"></section>
+          </div>
+          <button class="input_btn">Kiritish</button>
+<!--          <button class="edit_btn">O'zgartish</button>-->
+        </form>
+      </div>
+    </div>
   </div>
+  <div class="wrapper">
+    <li class="add-box">
+      <div class="icon"> <i class="fa-solid fa-file-import"></i></div>
+      <p >Hujjatni kiriting </p>
+    </li>
+      {% for i in hujat  %}
+  <li class="note">
+    <div class="details">
+      <p>{{i.nom}}</p>
+         <span>{{i.tarif}}</span>
+             <!-- <span>1-chifan</span> -->
+    </div>
+    <div class="bottom-content">
+        <a href="/asosiy/hujatochish/{{i.id}}"> <span>Open</span></a>
+      <div class="settings">
+        <i  class="fa-solid fa-ellipsis"></i>
+        <ul class="menu">
+          <li class="edit" ><i class="fa-solid fa-pen " ></i>Edit</li>
+          <a href="/asosiy/hujatdelete/{{i.id}}"><li><i class="fa-solid fa-trash-can"></i>Delete</li></a>
+        </ul>
+      </div>
+    </div>
+      {% endfor %}
+  </li>
+
+</div>
+</section>
 
 
-<script src="{% static '/standart.js' %}"></script>
-</body>
+<script src="{% static '/addSection.js' %}">
+
+</script>
+
+
+
+
+
+      <script src="{% static '/standart.js' %}"></script></body>
 </html>
